@@ -14,3 +14,4 @@ class TableExample(TemplateView):
 
 class FormExample(TemplateView):
     template_name = "example/form.html"
+

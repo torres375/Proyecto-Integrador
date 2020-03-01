@@ -7,7 +7,8 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.views.generic.edit import FormView
 from django.contrib.auth import login,logout
 from django.http import HttpResponse,HttpResponseRedirect
-from .forms import LoginForm
+from .forms import LoginForm, DepartmentForm
+from apps.users.models import Department
 # Create your views here.
 
 #class Login(FormView):
@@ -57,4 +58,13 @@ def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
     return redirect('login')
+
+class List (ListView):
+    template_name = 'example/table.html'
+    model = Department
+    context_object_name = 'deparment_list'
+    
+
+
+
     

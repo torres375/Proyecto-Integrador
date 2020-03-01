@@ -1,0 +1,67 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+        <div class="card-body">
+            <h4 class="mt-10 header-title">Departamento</h4> <br>
+            <div class="mt-30 table-responsive">
+            <table id="my_datatable" class="my_datatable table table-bordered table-hover  table-condensed dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <thead>
+                    <tr>
+                        <th>Abreviatura</th>
+                        <th>Nombre</th>
+                        <th class="disabled-sorting text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for department in deparment_list %}
+                    <tr class="">
+                        <td>{{department.abbreviation }}</td>
+                        <td>{{department.name}}</td> 
+                        <td class="text-right">
+                            <a href="#"class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>        
+                            <a href="#"class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                            <a onclick="showAlert('#')" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">delete</i></a>
+                        </td>                                
+                    </tr>
+                    <tr class="">
+                        <td>{{department.abbreviation }}</td>
+                        <td>{{department.name}}</td> 
+                        <td class="text-right">
+                            <a href="#"class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>        
+                            <a href="#"class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                            <a onclick="showAlert('#')" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">delete</i></a>
+                        </td>                                
+                    </tr>
+                    <tr class="">
+                        <td>{{department.abbreviation }}</td>
+                        <td>{{department.name}}</td> 
+                        <td class="text-right">
+                            <a href="#"class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>        
+                            <a href="#"class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                            <a onclick="showAlert('#')" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">delete</i></a>
+                        </td>                                
+                    </tr>
+                    <tr class="">
+                        <td>{{department.abbreviation }}</td>
+                        <td>{{department.name}}</td> 
+                        <td class="text-right">
+                            <a href="#"class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>        
+                            <a href="#"class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                            <a onclick="showAlert('#')" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">delete</i></a>
+                        </td>                                
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <a href="#">
+            <button class="btn btn-info">Nuevo</button>
+        </a>
+    </div>
+</div>   
+{% endblock content %}   
