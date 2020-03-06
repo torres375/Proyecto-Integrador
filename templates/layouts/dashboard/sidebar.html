@@ -51,15 +51,15 @@
         <div class="collapse" id="pagesExamples">
             <ul class="nav">
             <li class="nav-item ">
-                <a class="nav-link" href="#">
-                <span class="sidebar-mini"> P </span>
-                <span class="sidebar-normal"> Pagina1 </span>
+                <a class="nav-link" href = "{% url 'index:list_aircraft' %}">
+                <span class="sidebar-mini"> LA </span>
+                <span class="sidebar-normal" > Listado de aeronaves </span>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="#">
-                <span class="sidebar-mini"> RS </span>
-                <span class="sidebar-normal"> Página2 </span>
+                <a class="nav-link" href="{% url 'index:crew_list' %}">
+                <span class="sidebar-mini"> LT </span>
+                <span class="sidebar-normal"> Listado de tripulacion  </span>
                 </a>
             </li>
             </ul>

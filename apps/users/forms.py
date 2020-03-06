@@ -2,7 +2,7 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate
-from apps.users.models import Department
+
 
  
 #class LoginForm(AuthenticationForm):
@@ -33,7 +33,5 @@ class LoginForm(forms.Form):
         user = authenticate(username=username, password=password)
         return user
 
-class DepartmentForm(forms.ModelForm):
-    class Meta:
-        model = Department
-        fields = ('__all__')
+
+

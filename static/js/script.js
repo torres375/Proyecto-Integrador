@@ -226,3 +226,8 @@ $(document).ready(function() {
     alert('You clicked on Like button');
     });
 });
+function modalDelete(obj) {
+    var url = obj.getAttribute("data-link");
+    $('#form_delete').attr('action', url);
+    return false;
+  }

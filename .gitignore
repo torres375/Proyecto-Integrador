@@ -108,5 +108,6 @@ venv.bak/
 apps/*/migrations/
 apps/*/__pycache__/
 media/*
+.DS_Store
 
 blukastor_back/settings\.py

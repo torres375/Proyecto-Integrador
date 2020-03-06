@@ -1,14 +1,14 @@
-from django.shortcuts import render, get_object_or_404,redirect
+from django.shortcuts import render,get_object_or_404,redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView,ListView,DetailView,CreateView,DeleteView,UpdateView 
 from django.views.generic.edit import FormView
 from django.contrib.auth import login,logout
 from django.http import HttpResponse,HttpResponseRedirect
-from .forms import LoginForm, DepartmentForm
-from apps.users.models import Department
+from apps.index.models import Department, AirCraft 
+from .forms import *
 # Create your views here.
 
 #class Login(FormView):
@@ -58,12 +58,6 @@ def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
     return redirect('login')
-
-class List (ListView):
-    template_name = 'example/table.html'
-    model = Department
-    context_object_name = 'deparment_list'
-    
 
 
 

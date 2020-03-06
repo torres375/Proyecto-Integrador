@@ -1,0 +1,11192 @@
+[
+{
+  "model": "index.department",
+  "pk": 1,
+  "fields": {
+    "abbreviation": "AMAZONAS",
+    "name": "AMAZONAS"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 2,
+  "fields": {
+    "abbreviation": "ANTIOQUIA",
+    "name": "ANTIOQUIA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 3,
+  "fields": {
+    "abbreviation": "ARAUCA",
+    "name": "ARAUCA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 4,
+  "fields": {
+    "abbreviation": "ARCHIPIELAGO DE SAN ANDRES",
+    "name": "ARCHIPIELAGO DE SAN ANDRES"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 5,
+  "fields": {
+    "abbreviation": "ATL\u00c1NTICO",
+    "name": "ATL\u00c1NTICO"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 6,
+  "fields": {
+    "abbreviation": "BOGOT\u00c1 D.C.",
+    "name": "BOGOT\u00c1 D.C."
+  }
+},
+{
+  "model": "index.department",
+  "pk": 7,
+  "fields": {
+    "abbreviation": "BOLIVAR",
+    "name": "BOLIVAR"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 8,
+  "fields": {
+    "abbreviation": "BOYAC\u00c1",
+    "name": "BOYAC\u00c1"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 9,
+  "fields": {
+    "abbreviation": "CALDAS",
+    "name": "CALDAS"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 10,
+  "fields": {
+    "abbreviation": "CAQUETA",
+    "name": "CAQUETA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 11,
+  "fields": {
+    "abbreviation": "CASANARE",
+    "name": "CASANARE"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 12,
+  "fields": {
+    "abbreviation": "CAUCA",
+    "name": "CAUCA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 13,
+  "fields": {
+    "abbreviation": "CESAR",
+    "name": "CESAR"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 14,
+  "fields": {
+    "abbreviation": "CHOCO",
+    "name": "CHOCO"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 15,
+  "fields": {
+    "abbreviation": "CORDOBA",
+    "name": "CORDOBA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 16,
+  "fields": {
+    "abbreviation": "CUNDINAMARCA",
+    "name": "CUNDINAMARCA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 17,
+  "fields": {
+    "abbreviation": "GUAINIA",
+    "name": "GUAINIA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 18,
+  "fields": {
+    "abbreviation": "GUAVIARE",
+    "name": "GUAVIARE"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 19,
+  "fields": {
+    "abbreviation": "HUILA",
+    "name": "HUILA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 20,
+  "fields": {
+    "abbreviation": "LA GUAJIRA",
+    "name": "LA GUAJIRA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 21,
+  "fields": {
+    "abbreviation": "MAGDALENA",
+    "name": "MAGDALENA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 22,
+  "fields": {
+    "abbreviation": "META",
+    "name": "META"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 23,
+  "fields": {
+    "abbreviation": "NARI\u00d1O",
+    "name": "NARI\u00d1O"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 24,
+  "fields": {
+    "abbreviation": "NORTE DE SANTANDER",
+    "name": "NORTE DE SANTANDER"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 25,
+  "fields": {
+    "abbreviation": "PUTUMAYO",
+    "name": "PUTUMAYO"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 26,
+  "fields": {
+    "abbreviation": "QUINDIO",
+    "name": "QUINDIO"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 27,
+  "fields": {
+    "abbreviation": "RISARALDA",
+    "name": "RISARALDA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 28,
+  "fields": {
+    "abbreviation": "SANTANDER",
+    "name": "SANTANDER"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 29,
+  "fields": {
+    "abbreviation": "SUCRE",
+    "name": "SUCRE"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 30,
+  "fields": {
+    "abbreviation": "TOLIMA",
+    "name": "TOLIMA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 31,
+  "fields": {
+    "abbreviation": "VALLE DEL CAUCA",
+    "name": "VALLE DEL CAUCA"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 32,
+  "fields": {
+    "abbreviation": "VAUPES",
+    "name": "VAUPES"
+  }
+},
+{
+  "model": "index.department",
+  "pk": 33,
+  "fields": {
+    "abbreviation": "VICHADA",
+    "name": "VICHADA"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1,
+  "fields": {
+    "department": 1,
+    "abbreviation": "El Encanto",
+    "name": "El Encanto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 2,
+  "fields": {
+    "department": 1,
+    "abbreviation": "La Chorrera",
+    "name": "La Chorrera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 3,
+  "fields": {
+    "department": 1,
+    "abbreviation": "La Pedrera",
+    "name": "La Pedrera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 4,
+  "fields": {
+    "department": 1,
+    "abbreviation": "La Victoria",
+    "name": "La Victoria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 5,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Leticia",
+    "name": "Leticia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 6,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Miriti - Paran\u00e1",
+    "name": "Miriti - Paran\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 7,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Puerto Alegria",
+    "name": "Puerto Alegria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 8,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Puerto Arica",
+    "name": "Puerto Arica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 9,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Puerto Nari\u00f1o",
+    "name": "Puerto Nari\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 10,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Puerto Santander",
+    "name": "Puerto Santander"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 11,
+  "fields": {
+    "department": 1,
+    "abbreviation": "Tarapac\u00e1",
+    "name": "Tarapac\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 12,
+  "fields": {
+    "department": 2,
+    "abbreviation": "C\u00e1ceres",
+    "name": "C\u00e1ceres"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 13,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Caucasia",
+    "name": "Caucasia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 14,
+  "fields": {
+    "department": 2,
+    "abbreviation": "El Bagre",
+    "name": "El Bagre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 15,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Nech\u00ed",
+    "name": "Nech\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 16,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Taraz\u00e1",
+    "name": "Taraz\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 17,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Zaragoza",
+    "name": "Zaragoza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 18,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Caracol\u00ed",
+    "name": "Caracol\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 19,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Maceo",
+    "name": "Maceo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 20,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Puerto Berrio",
+    "name": "Puerto Berrio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 21,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Puerto Nare",
+    "name": "Puerto Nare"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 22,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Puerto Triunfo",
+    "name": "Puerto Triunfo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 23,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Yond\u00f3",
+    "name": "Yond\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 24,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Amalfi",
+    "name": "Amalfi"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 25,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Anor\u00ed",
+    "name": "Anor\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 26,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Cisneros",
+    "name": "Cisneros"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 27,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Remedios",
+    "name": "Remedios"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 28,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Roque",
+    "name": "San Roque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 29,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Santo Domingo",
+    "name": "Santo Domingo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 30,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Segovia",
+    "name": "Segovia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 31,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Vegach\u00ed",
+    "name": "Vegach\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 32,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Yal\u00ed",
+    "name": "Yal\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 33,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Yolomb\u00f3",
+    "name": "Yolomb\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 34,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Angostura",
+    "name": "Angostura"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 35,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Belmira",
+    "name": "Belmira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 36,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Brice\u00f1o",
+    "name": "Brice\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 37,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Campamento",
+    "name": "Campamento"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 38,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Carolina",
+    "name": "Carolina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 39,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Don Matias",
+    "name": "Don Matias"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 40,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Entrerrios",
+    "name": "Entrerrios"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 41,
+  "fields": {
+    "department": 2,
+    "abbreviation": "G\u00f3mez Plata",
+    "name": "G\u00f3mez Plata"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 42,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Guadalupe",
+    "name": "Guadalupe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 43,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Ituango",
+    "name": "Ituango"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 44,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Andr\u00e9s",
+    "name": "San Andr\u00e9s"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 45,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Jos\u00e9 De La Monta\u00f1a",
+    "name": "San Jos\u00e9 De La Monta\u00f1a"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 46,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Pedro",
+    "name": "San Pedro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 47,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Santa Rosa De Osos",
+    "name": "Santa Rosa De Osos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 48,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Toledo",
+    "name": "Toledo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 49,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Valdivia",
+    "name": "Valdivia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 50,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Yarumal",
+    "name": "Yarumal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 51,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Abriaqu\u00ed",
+    "name": "Abriaqu\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 52,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Anza",
+    "name": "Anza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 53,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Armenia",
+    "name": "Armenia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 54,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Buritic\u00e1",
+    "name": "Buritic\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 55,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Ca\u00f1asgordas",
+    "name": "Ca\u00f1asgordas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 56,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Dabeiba",
+    "name": "Dabeiba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 57,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Eb\u00e9jico",
+    "name": "Eb\u00e9jico"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 58,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Frontino",
+    "name": "Frontino"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 59,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Giraldo",
+    "name": "Giraldo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 60,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Heliconia",
+    "name": "Heliconia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 61,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Liborina",
+    "name": "Liborina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 62,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Olaya",
+    "name": "Olaya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 63,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Peque",
+    "name": "Peque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 64,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Sabanalarga",
+    "name": "Sabanalarga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 65,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Jer\u00f3nimo",
+    "name": "San Jer\u00f3nimo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 66,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Santaf\u00e9 De Antioquia",
+    "name": "Santaf\u00e9 De Antioquia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 67,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Sopetran",
+    "name": "Sopetran"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 68,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Uramita",
+    "name": "Uramita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 69,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Abejorral",
+    "name": "Abejorral"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 70,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Alejandr\u00eda",
+    "name": "Alejandr\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 71,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Argelia",
+    "name": "Argelia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 72,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Carmen De Viboral",
+    "name": "Carmen De Viboral"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 73,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Cocorn\u00e1",
+    "name": "Cocorn\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 74,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Concepci\u00f3n",
+    "name": "Concepci\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 75,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Granada",
+    "name": "Granada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 76,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Guarne",
+    "name": "Guarne"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 77,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Guatape",
+    "name": "Guatape"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 78,
+  "fields": {
+    "department": 2,
+    "abbreviation": "La Ceja",
+    "name": "La Ceja"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 79,
+  "fields": {
+    "department": 2,
+    "abbreviation": "La Uni\u00f3n",
+    "name": "La Uni\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 80,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Marinilla",
+    "name": "Marinilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 81,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Nari\u00f1o",
+    "name": "Nari\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 82,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Pe\u00f1ol",
+    "name": "Pe\u00f1ol"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 83,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Retiro",
+    "name": "Retiro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 84,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Rionegro",
+    "name": "Rionegro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 85,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Carlos",
+    "name": "San Carlos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 86,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Francisco",
+    "name": "San Francisco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 87,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Luis",
+    "name": "San Luis"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 88,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Rafael",
+    "name": "San Rafael"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 89,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Vicente",
+    "name": "San Vicente"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 90,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Santuario",
+    "name": "Santuario"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 91,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Sonson",
+    "name": "Sonson"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 92,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Amaga",
+    "name": "Amaga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 93,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Andes",
+    "name": "Andes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 94,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Angelopolis",
+    "name": "Angelopolis"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 95,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Betania",
+    "name": "Betania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 96,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Betulia",
+    "name": "Betulia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 97,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Caicedo",
+    "name": "Caicedo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 98,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Caramanta",
+    "name": "Caramanta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 99,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Ciudad Bol\u00edvar",
+    "name": "Ciudad Bol\u00edvar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 100,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Concordia",
+    "name": "Concordia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 101,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Fredonia",
+    "name": "Fredonia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 102,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Hispania",
+    "name": "Hispania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 103,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Jard\u00edn",
+    "name": "Jard\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 104,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Jeric\u00f3",
+    "name": "Jeric\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 105,
+  "fields": {
+    "department": 2,
+    "abbreviation": "La Pintada",
+    "name": "La Pintada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 106,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Montebello",
+    "name": "Montebello"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 107,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Pueblorrico",
+    "name": "Pueblorrico"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 108,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Salgar",
+    "name": "Salgar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 109,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Santa Barbara",
+    "name": "Santa Barbara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 110,
+  "fields": {
+    "department": 2,
+    "abbreviation": "T\u00e1mesis",
+    "name": "T\u00e1mesis"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 111,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Tarso",
+    "name": "Tarso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 112,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Titirib\u00ed",
+    "name": "Titirib\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 113,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Urrao",
+    "name": "Urrao"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 114,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Valparaiso",
+    "name": "Valparaiso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 115,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Venecia",
+    "name": "Venecia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 116,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Apartad\u00f3",
+    "name": "Apartad\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 117,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Arboletes",
+    "name": "Arboletes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 118,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Carepa",
+    "name": "Carepa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 119,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Chigorod\u00f3",
+    "name": "Chigorod\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 120,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Murind\u00f3",
+    "name": "Murind\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 121,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Mutata",
+    "name": "Mutata"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 122,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Necocl\u00ed",
+    "name": "Necocl\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 123,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Juan De Uraba",
+    "name": "San Juan De Uraba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 124,
+  "fields": {
+    "department": 2,
+    "abbreviation": "San Pedro De Uraba",
+    "name": "San Pedro De Uraba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 125,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Turbo",
+    "name": "Turbo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 126,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Vig\u00eda Del Fuerte",
+    "name": "Vig\u00eda Del Fuerte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 127,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Barbosa",
+    "name": "Barbosa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 128,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Bello",
+    "name": "Bello"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 129,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Caldas",
+    "name": "Caldas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 130,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Copacabana",
+    "name": "Copacabana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 131,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Envigado",
+    "name": "Envigado"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 132,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Girardota",
+    "name": "Girardota"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 133,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Itagui",
+    "name": "Itagui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 134,
+  "fields": {
+    "department": 2,
+    "abbreviation": "La Estrella",
+    "name": "La Estrella"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 135,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Medell\u00edn",
+    "name": "Medell\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 136,
+  "fields": {
+    "department": 2,
+    "abbreviation": "Sabaneta",
+    "name": "Sabaneta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 137,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Arauca",
+    "name": "Arauca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 138,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Arauquita",
+    "name": "Arauquita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 139,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Cravo Norte",
+    "name": "Cravo Norte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 140,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Fortul",
+    "name": "Fortul"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 141,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Puerto Rond\u00f3n",
+    "name": "Puerto Rond\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 142,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Saravena",
+    "name": "Saravena"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 143,
+  "fields": {
+    "department": 3,
+    "abbreviation": "Tame",
+    "name": "Tame"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 144,
+  "fields": {
+    "department": 4,
+    "abbreviation": "Providencia Y Santa Catalina",
+    "name": "Providencia Y Santa Catalina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 145,
+  "fields": {
+    "department": 4,
+    "abbreviation": "San Andres",
+    "name": "San Andres"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 146,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Barranquilla",
+    "name": "Barranquilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 147,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Galapa",
+    "name": "Galapa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 148,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Malambo",
+    "name": "Malambo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 149,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Puerto Colombia",
+    "name": "Puerto Colombia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 150,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Soledad",
+    "name": "Soledad"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 151,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Campo De La Cruz",
+    "name": "Campo De La Cruz"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 152,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Candelaria",
+    "name": "Candelaria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 153,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Luruaco",
+    "name": "Luruaco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 154,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Manati",
+    "name": "Manati"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 155,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Repelon",
+    "name": "Repelon"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 156,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Santa Lucia",
+    "name": "Santa Lucia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 157,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Suan",
+    "name": "Suan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 158,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Baranoa",
+    "name": "Baranoa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 159,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Palmar De Varela",
+    "name": "Palmar De Varela"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 160,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Polonuevo",
+    "name": "Polonuevo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 161,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Ponedera",
+    "name": "Ponedera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 162,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Sabanagrande",
+    "name": "Sabanagrande"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 163,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Sabanalarga",
+    "name": "Sabanalarga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 164,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Santo Tomas",
+    "name": "Santo Tomas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 165,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Juan De Acosta",
+    "name": "Juan De Acosta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 166,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Pioj\u00f3",
+    "name": "Pioj\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 167,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Tubara",
+    "name": "Tubara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 168,
+  "fields": {
+    "department": 5,
+    "abbreviation": "Usiacuri",
+    "name": "Usiacuri"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 169,
+  "fields": {
+    "department": 6,
+    "abbreviation": "Bogota D.C.",
+    "name": "Bogota D.C."
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 170,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Cicuco",
+    "name": "Cicuco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 171,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Hatillo De Loba",
+    "name": "Hatillo De Loba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 172,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Margarita",
+    "name": "Margarita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 173,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Momp\u00f3s",
+    "name": "Momp\u00f3s"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 174,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Fernando",
+    "name": "San Fernando"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 175,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Talaigua Nuevo",
+    "name": "Talaigua Nuevo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 176,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Arjona",
+    "name": "Arjona"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 177,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Arroyohondo",
+    "name": "Arroyohondo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 178,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Calamar",
+    "name": "Calamar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 179,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Cartagena",
+    "name": "Cartagena"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 180,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Clemencia",
+    "name": "Clemencia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 181,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Mahates",
+    "name": "Mahates"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 182,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Cristobal",
+    "name": "San Cristobal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 183,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Estanislao",
+    "name": "San Estanislao"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 184,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Santa Catalina",
+    "name": "Santa Catalina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 185,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Santa Rosa De Lima",
+    "name": "Santa Rosa De Lima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 186,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Soplaviento",
+    "name": "Soplaviento"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 187,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Turbaco",
+    "name": "Turbaco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 188,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Turbana",
+    "name": "Turbana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 189,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Villanueva",
+    "name": "Villanueva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 190,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Altos Del Rosario",
+    "name": "Altos Del Rosario"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 191,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Barranco De Loba",
+    "name": "Barranco De Loba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 192,
+  "fields": {
+    "department": 7,
+    "abbreviation": "El Pe\u00f1on",
+    "name": "El Pe\u00f1on"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 193,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Regidor",
+    "name": "Regidor"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 194,
+  "fields": {
+    "department": 7,
+    "abbreviation": "R\u00edo Viejo",
+    "name": "R\u00edo Viejo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 195,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Martin De Loba",
+    "name": "San Martin De Loba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 196,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Arenal",
+    "name": "Arenal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 197,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Cantagallo",
+    "name": "Cantagallo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 198,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Morales",
+    "name": "Morales"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 199,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Pablo",
+    "name": "San Pablo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 200,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Santa Rosa Del Sur",
+    "name": "Santa Rosa Del Sur"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 201,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Simit\u00ed",
+    "name": "Simit\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 202,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Ach\u00ed",
+    "name": "Ach\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 203,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Magangu\u00e9",
+    "name": "Magangu\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 204,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Montecristo",
+    "name": "Montecristo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 205,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Pinillos",
+    "name": "Pinillos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 206,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Jacinto Del Cauca",
+    "name": "San Jacinto Del Cauca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 207,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Tiquisio",
+    "name": "Tiquisio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 208,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Carmen De Bol\u00edvar",
+    "name": "Carmen De Bol\u00edvar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 209,
+  "fields": {
+    "department": 7,
+    "abbreviation": "C\u00f3rdoba",
+    "name": "C\u00f3rdoba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 210,
+  "fields": {
+    "department": 7,
+    "abbreviation": "El Guamo",
+    "name": "El Guamo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 211,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Mar\u00eda La Baja",
+    "name": "Mar\u00eda La Baja"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 212,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Jacinto",
+    "name": "San Jacinto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 213,
+  "fields": {
+    "department": 7,
+    "abbreviation": "San Juan Nepomuceno",
+    "name": "San Juan Nepomuceno"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 214,
+  "fields": {
+    "department": 7,
+    "abbreviation": "Zambrano",
+    "name": "Zambrano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 215,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Ch\u00edquiza",
+    "name": "Ch\u00edquiza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 216,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chivat\u00e1",
+    "name": "Chivat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 217,
+  "fields": {
+    "department": 8,
+    "abbreviation": "C\u00f3mbita",
+    "name": "C\u00f3mbita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 218,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Cucaita",
+    "name": "Cucaita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 219,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Motavita",
+    "name": "Motavita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 220,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Oicat\u00e1",
+    "name": "Oicat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 221,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Samac\u00e1",
+    "name": "Samac\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 222,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Siachoque",
+    "name": "Siachoque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 223,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sora",
+    "name": "Sora"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 224,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sorac\u00e1",
+    "name": "Sorac\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 225,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sotaquir\u00e1",
+    "name": "Sotaquir\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 226,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Toca",
+    "name": "Toca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 227,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tunja",
+    "name": "Tunja"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 228,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tuta",
+    "name": "Tuta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 229,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Ventaquemada",
+    "name": "Ventaquemada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 230,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chiscas",
+    "name": "Chiscas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 231,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Cubar\u00e1",
+    "name": "Cubar\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 232,
+  "fields": {
+    "department": 8,
+    "abbreviation": "El Cocuy",
+    "name": "El Cocuy"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 233,
+  "fields": {
+    "department": 8,
+    "abbreviation": "El Espino",
+    "name": "El Espino"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 234,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Guacamayas",
+    "name": "Guacamayas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 235,
+  "fields": {
+    "department": 8,
+    "abbreviation": "G\u00fcic\u00e1n",
+    "name": "G\u00fcic\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 236,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Panqueba",
+    "name": "Panqueba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 237,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Labranzagrande",
+    "name": "Labranzagrande"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 238,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Pajarito",
+    "name": "Pajarito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 239,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Paya",
+    "name": "Paya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 240,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Pisba",
+    "name": "Pisba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 241,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Berbeo",
+    "name": "Berbeo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 242,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Campohermoso",
+    "name": "Campohermoso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 243,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Miraflores",
+    "name": "Miraflores"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 244,
+  "fields": {
+    "department": 8,
+    "abbreviation": "P\u00e1ez",
+    "name": "P\u00e1ez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 245,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Eduardo",
+    "name": "San Eduardo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 246,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Zetaquira",
+    "name": "Zetaquira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 247,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Boyac\u00e1",
+    "name": "Boyac\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 248,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Ci\u00e9nega",
+    "name": "Ci\u00e9nega"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 249,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Jenesano",
+    "name": "Jenesano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 250,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Nuevo Col\u00f3n",
+    "name": "Nuevo Col\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 251,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Ramiriqu\u00ed",
+    "name": "Ramiriqu\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 252,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Rond\u00f3n",
+    "name": "Rond\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 253,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tiban\u00e1",
+    "name": "Tiban\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 254,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Turmequ\u00e9",
+    "name": "Turmequ\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 255,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Umbita",
+    "name": "Umbita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 256,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Viracach\u00e1",
+    "name": "Viracach\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 257,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chinavita",
+    "name": "Chinavita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 258,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Garagoa",
+    "name": "Garagoa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 259,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Macanal",
+    "name": "Macanal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 260,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Pachavita",
+    "name": "Pachavita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 261,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Luis De Gaceno",
+    "name": "San Luis De Gaceno"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 262,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Santa Mar\u00eda",
+    "name": "Santa Mar\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 263,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Boavita",
+    "name": "Boavita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 264,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Covarach\u00eda",
+    "name": "Covarach\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 265,
+  "fields": {
+    "department": 8,
+    "abbreviation": "La Uvita",
+    "name": "La Uvita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 266,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Mateo",
+    "name": "San Mateo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 267,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sativanorte",
+    "name": "Sativanorte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 268,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sativasur",
+    "name": "Sativasur"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 269,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Soat\u00e1",
+    "name": "Soat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 270,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Susac\u00f3n",
+    "name": "Susac\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 271,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tipacoque",
+    "name": "Tipacoque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 272,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Brice\u00f1o",
+    "name": "Brice\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 273,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Buenavista",
+    "name": "Buenavista"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 274,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Caldas",
+    "name": "Caldas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 275,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chiquinquir\u00e1",
+    "name": "Chiquinquir\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 276,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Coper",
+    "name": "Coper"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 277,
+  "fields": {
+    "department": 8,
+    "abbreviation": "La Victoria",
+    "name": "La Victoria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 278,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Marip\u00ed",
+    "name": "Marip\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 279,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Muzo",
+    "name": "Muzo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 280,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Otanche",
+    "name": "Otanche"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 281,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Pauna",
+    "name": "Pauna"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 282,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Puerto Boyaca",
+    "name": "Puerto Boyaca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 283,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Qu\u00edpama",
+    "name": "Qu\u00edpama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 284,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Saboy\u00e1",
+    "name": "Saboy\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 285,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Miguel De Sema",
+    "name": "San Miguel De Sema"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 286,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Pablo Borbur",
+    "name": "San Pablo Borbur"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 287,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tunungu\u00e1",
+    "name": "Tunungu\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 288,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Almeida",
+    "name": "Almeida"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 289,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chivor",
+    "name": "Chivor"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 290,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Guateque",
+    "name": "Guateque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 291,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Guayat\u00e1",
+    "name": "Guayat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 292,
+  "fields": {
+    "department": 8,
+    "abbreviation": "La Capilla",
+    "name": "La Capilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 293,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Somondoco",
+    "name": "Somondoco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 294,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sutatenza",
+    "name": "Sutatenza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 295,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tenza",
+    "name": "Tenza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 296,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Arcabuco",
+    "name": "Arcabuco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 297,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chitaraque",
+    "name": "Chitaraque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 298,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Gachantiv\u00e1",
+    "name": "Gachantiv\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 299,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Moniquir\u00e1",
+    "name": "Moniquir\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 300,
+  "fields": {
+    "department": 8,
+    "abbreviation": "R\u00e1quira",
+    "name": "R\u00e1quira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 301,
+  "fields": {
+    "department": 8,
+    "abbreviation": "S\u00e1chica",
+    "name": "S\u00e1chica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 302,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Jos\u00e9 De Pare",
+    "name": "San Jos\u00e9 De Pare"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 303,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Santa Sof\u00eda",
+    "name": "Santa Sof\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 304,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Santana",
+    "name": "Santana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 305,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sutamarch\u00e1n",
+    "name": "Sutamarch\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 306,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tinjac\u00e1",
+    "name": "Tinjac\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 307,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tog\u00fc\u00ed",
+    "name": "Tog\u00fc\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 308,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Villa De Leyva",
+    "name": "Villa De Leyva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 309,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Aquitania",
+    "name": "Aquitania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 310,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Cu\u00edtiva",
+    "name": "Cu\u00edtiva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 311,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Firavitoba",
+    "name": "Firavitoba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 312,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Gameza",
+    "name": "Gameza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 313,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Iza",
+    "name": "Iza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 314,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Mongua",
+    "name": "Mongua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 315,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Mongu\u00ed",
+    "name": "Mongu\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 316,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Nobsa",
+    "name": "Nobsa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 317,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Pesca",
+    "name": "Pesca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 318,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Sogamoso",
+    "name": "Sogamoso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 319,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tibasosa",
+    "name": "Tibasosa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 320,
+  "fields": {
+    "department": 8,
+    "abbreviation": "T\u00f3paga",
+    "name": "T\u00f3paga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 321,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tota",
+    "name": "Tota"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 322,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Bel\u00e9n",
+    "name": "Bel\u00e9n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 323,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Busbanz\u00e1",
+    "name": "Busbanz\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 324,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Cerinza",
+    "name": "Cerinza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 325,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Corrales",
+    "name": "Corrales"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 326,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Duitama",
+    "name": "Duitama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 327,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Floresta",
+    "name": "Floresta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 328,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Paipa",
+    "name": "Paipa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 329,
+  "fields": {
+    "department": 8,
+    "abbreviation": "San Rosa Viterbo",
+    "name": "San Rosa Viterbo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 330,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tutaz\u00e1",
+    "name": "Tutaz\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 331,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Bet\u00e9itiva",
+    "name": "Bet\u00e9itiva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 332,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Chita",
+    "name": "Chita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 333,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Jeric\u00f3",
+    "name": "Jeric\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 334,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Paz De R\u00edo",
+    "name": "Paz De R\u00edo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 335,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Socha",
+    "name": "Socha"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 336,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Socot\u00e1",
+    "name": "Socot\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 337,
+  "fields": {
+    "department": 8,
+    "abbreviation": "Tasco",
+    "name": "Tasco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 338,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Filadelfia",
+    "name": "Filadelfia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 339,
+  "fields": {
+    "department": 9,
+    "abbreviation": "La Merced",
+    "name": "La Merced"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 340,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Marmato",
+    "name": "Marmato"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 341,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Riosucio",
+    "name": "Riosucio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 342,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Sup\u00eda",
+    "name": "Sup\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 343,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Manzanares",
+    "name": "Manzanares"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 344,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Marquetalia",
+    "name": "Marquetalia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 345,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Marulanda",
+    "name": "Marulanda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 346,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Pensilvania",
+    "name": "Pensilvania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 347,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Anserma",
+    "name": "Anserma"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 348,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Belalc\u00e1zar",
+    "name": "Belalc\u00e1zar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 349,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Risaralda",
+    "name": "Risaralda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 350,
+  "fields": {
+    "department": 9,
+    "abbreviation": "San Jos\u00e9",
+    "name": "San Jos\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 351,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Viterbo",
+    "name": "Viterbo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 352,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Chinchina",
+    "name": "Chinchina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 353,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Manizales",
+    "name": "Manizales"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 354,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Neira",
+    "name": "Neira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 355,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Palestina",
+    "name": "Palestina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 356,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Villamaria",
+    "name": "Villamaria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 357,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Aguadas",
+    "name": "Aguadas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 358,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Aranzazu",
+    "name": "Aranzazu"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 359,
+  "fields": {
+    "department": 9,
+    "abbreviation": "P\u00e1cora",
+    "name": "P\u00e1cora"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 360,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Salamina",
+    "name": "Salamina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 361,
+  "fields": {
+    "department": 9,
+    "abbreviation": "La Dorada",
+    "name": "La Dorada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 362,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Norcasia",
+    "name": "Norcasia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 363,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Saman\u00e1",
+    "name": "Saman\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 364,
+  "fields": {
+    "department": 9,
+    "abbreviation": "Victoria",
+    "name": "Victoria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 365,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Albania",
+    "name": "Albania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 366,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Bel\u00e9n De Los Andaquies",
+    "name": "Bel\u00e9n De Los Andaquies"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 367,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Cartagena Del Chair\u00e1",
+    "name": "Cartagena Del Chair\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 368,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Currillo",
+    "name": "Currillo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 369,
+  "fields": {
+    "department": 10,
+    "abbreviation": "El Doncello",
+    "name": "El Doncello"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 370,
+  "fields": {
+    "department": 10,
+    "abbreviation": "El Paujil",
+    "name": "El Paujil"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 371,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Florencia",
+    "name": "Florencia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 372,
+  "fields": {
+    "department": 10,
+    "abbreviation": "La Monta\u00f1ita",
+    "name": "La Monta\u00f1ita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 373,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Milan",
+    "name": "Milan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 374,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Morelia",
+    "name": "Morelia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 375,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Puerto Rico",
+    "name": "Puerto Rico"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 376,
+  "fields": {
+    "department": 10,
+    "abbreviation": "San Jose Del Fragua",
+    "name": "San Jose Del Fragua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 377,
+  "fields": {
+    "department": 10,
+    "abbreviation": "San Vicente Del Cagu\u00e1n",
+    "name": "San Vicente Del Cagu\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 378,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Solano",
+    "name": "Solano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 379,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Solita",
+    "name": "Solita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 380,
+  "fields": {
+    "department": 10,
+    "abbreviation": "Valparaiso",
+    "name": "Valparaiso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 381,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Aguazul",
+    "name": "Aguazul"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 382,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Chameza",
+    "name": "Chameza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 383,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Hato Corozal",
+    "name": "Hato Corozal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 384,
+  "fields": {
+    "department": 11,
+    "abbreviation": "La Salina",
+    "name": "La Salina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 385,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Man\u00ed",
+    "name": "Man\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 386,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Monterrey",
+    "name": "Monterrey"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 387,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Nunch\u00eda",
+    "name": "Nunch\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 388,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Orocu\u00e9",
+    "name": "Orocu\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 389,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Paz De Ariporo",
+    "name": "Paz De Ariporo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 390,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Pore",
+    "name": "Pore"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 391,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Recetor",
+    "name": "Recetor"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 392,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Sabanalarga",
+    "name": "Sabanalarga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 393,
+  "fields": {
+    "department": 11,
+    "abbreviation": "S\u00e1cama",
+    "name": "S\u00e1cama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 394,
+  "fields": {
+    "department": 11,
+    "abbreviation": "San Luis De Palenque",
+    "name": "San Luis De Palenque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 395,
+  "fields": {
+    "department": 11,
+    "abbreviation": "T\u00e1mara",
+    "name": "T\u00e1mara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 396,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Tauramena",
+    "name": "Tauramena"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 397,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Trinidad",
+    "name": "Trinidad"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 398,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Villanueva",
+    "name": "Villanueva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 399,
+  "fields": {
+    "department": 11,
+    "abbreviation": "Yopal",
+    "name": "Yopal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 400,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Cajib\u00edo",
+    "name": "Cajib\u00edo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 401,
+  "fields": {
+    "department": 12,
+    "abbreviation": "El Tambo",
+    "name": "El Tambo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 402,
+  "fields": {
+    "department": 12,
+    "abbreviation": "La Sierra",
+    "name": "La Sierra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 403,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Morales",
+    "name": "Morales"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 404,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Piendamo",
+    "name": "Piendamo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 405,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Popay\u00e1n",
+    "name": "Popay\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 406,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Rosas",
+    "name": "Rosas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 407,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Sotara",
+    "name": "Sotara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 408,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Timbio",
+    "name": "Timbio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 409,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Buenos Aires",
+    "name": "Buenos Aires"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 410,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Caloto",
+    "name": "Caloto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 411,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Corinto",
+    "name": "Corinto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 412,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Miranda",
+    "name": "Miranda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 413,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Padilla",
+    "name": "Padilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 414,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Puerto Tejada",
+    "name": "Puerto Tejada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 415,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Santander De Quilichao",
+    "name": "Santander De Quilichao"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 416,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Suarez",
+    "name": "Suarez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 417,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Villa Rica",
+    "name": "Villa Rica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 418,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Guapi",
+    "name": "Guapi"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 419,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Lopez",
+    "name": "Lopez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 420,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Timbiqui",
+    "name": "Timbiqui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 421,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Caldono",
+    "name": "Caldono"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 422,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Inz\u00e1",
+    "name": "Inz\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 423,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Jambalo",
+    "name": "Jambalo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 424,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Paez",
+    "name": "Paez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 425,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Purace",
+    "name": "Purace"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 426,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Silvia",
+    "name": "Silvia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 427,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Toribio",
+    "name": "Toribio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 428,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Totoro",
+    "name": "Totoro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 429,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Almaguer",
+    "name": "Almaguer"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 430,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Argelia",
+    "name": "Argelia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 431,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Balboa",
+    "name": "Balboa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 432,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Bol\u00edvar",
+    "name": "Bol\u00edvar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 433,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Florencia",
+    "name": "Florencia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 434,
+  "fields": {
+    "department": 12,
+    "abbreviation": "La Vega",
+    "name": "La Vega"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 435,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Mercaderes",
+    "name": "Mercaderes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 436,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Patia",
+    "name": "Patia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 437,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Piamonte",
+    "name": "Piamonte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 438,
+  "fields": {
+    "department": 12,
+    "abbreviation": "San Sebastian",
+    "name": "San Sebastian"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 439,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Santa Rosa",
+    "name": "Santa Rosa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 440,
+  "fields": {
+    "department": 12,
+    "abbreviation": "Sucre",
+    "name": "Sucre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 441,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Becerril",
+    "name": "Becerril"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 442,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Chimichagua",
+    "name": "Chimichagua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 443,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Chiriguana",
+    "name": "Chiriguana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 444,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Curuman\u00ed",
+    "name": "Curuman\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 445,
+  "fields": {
+    "department": 13,
+    "abbreviation": "La Jagua De Ibirico",
+    "name": "La Jagua De Ibirico"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 446,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Pailitas",
+    "name": "Pailitas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 447,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Tamalameque",
+    "name": "Tamalameque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 448,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Astrea",
+    "name": "Astrea"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 449,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Bosconia",
+    "name": "Bosconia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 450,
+  "fields": {
+    "department": 13,
+    "abbreviation": "El Copey",
+    "name": "El Copey"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 451,
+  "fields": {
+    "department": 13,
+    "abbreviation": "El Paso",
+    "name": "El Paso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 452,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Agust\u00edn Codazzi",
+    "name": "Agust\u00edn Codazzi"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 453,
+  "fields": {
+    "department": 13,
+    "abbreviation": "La Paz",
+    "name": "La Paz"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 454,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Manaure",
+    "name": "Manaure"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 455,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Pueblo Bello",
+    "name": "Pueblo Bello"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 456,
+  "fields": {
+    "department": 13,
+    "abbreviation": "San Diego",
+    "name": "San Diego"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 457,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Valledupar",
+    "name": "Valledupar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 458,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Aguachica",
+    "name": "Aguachica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 459,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Gamarra",
+    "name": "Gamarra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 460,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Gonz\u00e1lez",
+    "name": "Gonz\u00e1lez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 461,
+  "fields": {
+    "department": 13,
+    "abbreviation": "La Gloria",
+    "name": "La Gloria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 462,
+  "fields": {
+    "department": 13,
+    "abbreviation": "Pelaya",
+    "name": "Pelaya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 463,
+  "fields": {
+    "department": 13,
+    "abbreviation": "R\u00edo De Oro",
+    "name": "R\u00edo De Oro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 464,
+  "fields": {
+    "department": 13,
+    "abbreviation": "San Alberto",
+    "name": "San Alberto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 465,
+  "fields": {
+    "department": 13,
+    "abbreviation": "San Mart\u00edn",
+    "name": "San Mart\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 466,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Atrato",
+    "name": "Atrato"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 467,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Bagad\u00f3",
+    "name": "Bagad\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 468,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Bojaya",
+    "name": "Bojaya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 469,
+  "fields": {
+    "department": 14,
+    "abbreviation": "El Carmen De Atrato",
+    "name": "El Carmen De Atrato"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 470,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Llor\u00f3",
+    "name": "Llor\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 471,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Medio Atrato",
+    "name": "Medio Atrato"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 472,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Quibd\u00f3",
+    "name": "Quibd\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 473,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Rio Quito",
+    "name": "Rio Quito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 474,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Acand\u00ed",
+    "name": "Acand\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 475,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Bel\u00e9n De Bajira",
+    "name": "Bel\u00e9n De Bajira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 476,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Carm\u00e9n Del Dari\u00e9n",
+    "name": "Carm\u00e9n Del Dari\u00e9n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 477,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Riosucio",
+    "name": "Riosucio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 478,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Ungu\u00eda",
+    "name": "Ungu\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 479,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Bah\u00eda Solano",
+    "name": "Bah\u00eda Solano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 480,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Jurad\u00f3",
+    "name": "Jurad\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 481,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Nuqu\u00ed",
+    "name": "Nuqu\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 482,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Alto Baud\u00f3",
+    "name": "Alto Baud\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 483,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Bajo Baud\u00f3",
+    "name": "Bajo Baud\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 484,
+  "fields": {
+    "department": 14,
+    "abbreviation": "El Litoral Del San Juan",
+    "name": "El Litoral Del San Juan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 485,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Medio Baud\u00f3",
+    "name": "Medio Baud\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 486,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Canton De San Pablo",
+    "name": "Canton De San Pablo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 487,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Certegui",
+    "name": "Certegui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 488,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Condoto",
+    "name": "Condoto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 489,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Itsmina",
+    "name": "Itsmina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 490,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Medio San Juan",
+    "name": "Medio San Juan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 491,
+  "fields": {
+    "department": 14,
+    "abbreviation": "N\u00f3vita",
+    "name": "N\u00f3vita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 492,
+  "fields": {
+    "department": 14,
+    "abbreviation": "R\u00edo Fr\u00edo",
+    "name": "R\u00edo Fr\u00edo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 493,
+  "fields": {
+    "department": 14,
+    "abbreviation": "San Jos\u00e9 Del Palmar",
+    "name": "San Jos\u00e9 Del Palmar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 494,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Sip\u00ed",
+    "name": "Sip\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 495,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Tad\u00f3",
+    "name": "Tad\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 496,
+  "fields": {
+    "department": 14,
+    "abbreviation": "Union Panamericana",
+    "name": "Union Panamericana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 497,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Tierralta",
+    "name": "Tierralta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 498,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Valencia",
+    "name": "Valencia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 499,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Chim\u00e1",
+    "name": "Chim\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 500,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Cotorra",
+    "name": "Cotorra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 501,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Lorica",
+    "name": "Lorica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 502,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Momil",
+    "name": "Momil"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 503,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Pur\u00edsima",
+    "name": "Pur\u00edsima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 504,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Monter\u00eda",
+    "name": "Monter\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 505,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Canalete",
+    "name": "Canalete"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 506,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Los C\u00f3rdobas",
+    "name": "Los C\u00f3rdobas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 507,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Mo\u00f1itos",
+    "name": "Mo\u00f1itos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 508,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Puerto Escondido",
+    "name": "Puerto Escondido"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 509,
+  "fields": {
+    "department": 15,
+    "abbreviation": "San Antero",
+    "name": "San Antero"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 510,
+  "fields": {
+    "department": 15,
+    "abbreviation": "San Bernardo Del Viento",
+    "name": "San Bernardo Del Viento"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 511,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Chin\u00fa",
+    "name": "Chin\u00fa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 512,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Sahag\u00fan",
+    "name": "Sahag\u00fan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 513,
+  "fields": {
+    "department": 15,
+    "abbreviation": "San Andr\u00e9s Sotavento",
+    "name": "San Andr\u00e9s Sotavento"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 514,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Ayapel",
+    "name": "Ayapel"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 515,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Buenavista",
+    "name": "Buenavista"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 516,
+  "fields": {
+    "department": 15,
+    "abbreviation": "La Apartada",
+    "name": "La Apartada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 517,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Montel\u00edbano",
+    "name": "Montel\u00edbano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 518,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Planeta Rica",
+    "name": "Planeta Rica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 519,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Pueblo Nuevo",
+    "name": "Pueblo Nuevo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 520,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Puerto Libertador",
+    "name": "Puerto Libertador"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 521,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Ceret\u00e9",
+    "name": "Ceret\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 522,
+  "fields": {
+    "department": 15,
+    "abbreviation": "Ci\u00e9naga De Oro",
+    "name": "Ci\u00e9naga De Oro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 523,
+  "fields": {
+    "department": 15,
+    "abbreviation": "San Carlos",
+    "name": "San Carlos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 524,
+  "fields": {
+    "department": 15,
+    "abbreviation": "San Pelayo",
+    "name": "San Pelayo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 525,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Chocont\u00e1",
+    "name": "Chocont\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 526,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Macheta",
+    "name": "Macheta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 527,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Manta",
+    "name": "Manta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 528,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Sesquil\u00e9",
+    "name": "Sesquil\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 529,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Suesca",
+    "name": "Suesca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 530,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tibirita",
+    "name": "Tibirita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 531,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Villapinz\u00f3n",
+    "name": "Villapinz\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 532,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Agua De Dios",
+    "name": "Agua De Dios"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 533,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Girardot",
+    "name": "Girardot"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 534,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guataqu\u00ed",
+    "name": "Guataqu\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 535,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Jerusal\u00e9n",
+    "name": "Jerusal\u00e9n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 536,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Nari\u00f1o",
+    "name": "Nari\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 537,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Nilo",
+    "name": "Nilo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 538,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Ricaurte",
+    "name": "Ricaurte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 539,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tocaima",
+    "name": "Tocaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 540,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Caparrap\u00ed",
+    "name": "Caparrap\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 541,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guaduas",
+    "name": "Guaduas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 542,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Puerto Salgar",
+    "name": "Puerto Salgar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 543,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Alb\u00e1n",
+    "name": "Alb\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 544,
+  "fields": {
+    "department": 16,
+    "abbreviation": "La Pe\u00f1a",
+    "name": "La Pe\u00f1a"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 545,
+  "fields": {
+    "department": 16,
+    "abbreviation": "La Vega",
+    "name": "La Vega"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 546,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Nimaima",
+    "name": "Nimaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 547,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Nocaima",
+    "name": "Nocaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 548,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Quebradanegra",
+    "name": "Quebradanegra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 549,
+  "fields": {
+    "department": 16,
+    "abbreviation": "San Francisco",
+    "name": "San Francisco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 550,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Sasaima",
+    "name": "Sasaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 551,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Supat\u00e1",
+    "name": "Supat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 552,
+  "fields": {
+    "department": 16,
+    "abbreviation": "\u00datica",
+    "name": "\u00datica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 553,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Vergara",
+    "name": "Vergara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 554,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Villeta",
+    "name": "Villeta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 555,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Gachala",
+    "name": "Gachala"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 556,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Gacheta",
+    "name": "Gacheta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 557,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Gama",
+    "name": "Gama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 558,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guasca",
+    "name": "Guasca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 559,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guatavita",
+    "name": "Guatavita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 560,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Jun\u00edn",
+    "name": "Jun\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 561,
+  "fields": {
+    "department": 16,
+    "abbreviation": "La Calera",
+    "name": "La Calera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 562,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Ubal\u00e1",
+    "name": "Ubal\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 563,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Beltr\u00e1n",
+    "name": "Beltr\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 564,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Bituima",
+    "name": "Bituima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 565,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Chaguan\u00ed",
+    "name": "Chaguan\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 566,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guayabal De Siquima",
+    "name": "Guayabal De Siquima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 567,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Puli",
+    "name": "Puli"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 568,
+  "fields": {
+    "department": 16,
+    "abbreviation": "San Juan De R\u00edo Seco",
+    "name": "San Juan De R\u00edo Seco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 569,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Vian\u00ed",
+    "name": "Vian\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 570,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Medina",
+    "name": "Medina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 571,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Paratebueno",
+    "name": "Paratebueno"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 572,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Caqueza",
+    "name": "Caqueza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 573,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Chipaque",
+    "name": "Chipaque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 574,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Choach\u00ed",
+    "name": "Choach\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 575,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Fomeque",
+    "name": "Fomeque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 576,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Fosca",
+    "name": "Fosca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 577,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guayabetal",
+    "name": "Guayabetal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 578,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guti\u00e9rrez",
+    "name": "Guti\u00e9rrez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 579,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Quetame",
+    "name": "Quetame"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 580,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Ubaque",
+    "name": "Ubaque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 581,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Une",
+    "name": "Une"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 582,
+  "fields": {
+    "department": 16,
+    "abbreviation": "El Pe\u00f1\u00f3n",
+    "name": "El Pe\u00f1\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 583,
+  "fields": {
+    "department": 16,
+    "abbreviation": "La Palma",
+    "name": "La Palma"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 584,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Pacho",
+    "name": "Pacho"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 585,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Paime",
+    "name": "Paime"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 586,
+  "fields": {
+    "department": 16,
+    "abbreviation": "San Cayetano",
+    "name": "San Cayetano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 587,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Topaipi",
+    "name": "Topaipi"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 588,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Villagomez",
+    "name": "Villagomez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 589,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Yacop\u00ed",
+    "name": "Yacop\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 590,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Cajic\u00e1",
+    "name": "Cajic\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 591,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Ch\u00eda",
+    "name": "Ch\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 592,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Cogua",
+    "name": "Cogua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 593,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Gachancip\u00e1",
+    "name": "Gachancip\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 594,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Nemocon",
+    "name": "Nemocon"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 595,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Sop\u00f3",
+    "name": "Sop\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 596,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tabio",
+    "name": "Tabio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 597,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tocancip\u00e1",
+    "name": "Tocancip\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 598,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Zipaquir\u00e1",
+    "name": "Zipaquir\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 599,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Bojac\u00e1",
+    "name": "Bojac\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 600,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Cota",
+    "name": "Cota"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 601,
+  "fields": {
+    "department": 16,
+    "abbreviation": "El Rosal",
+    "name": "El Rosal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 602,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Facatativ\u00e1",
+    "name": "Facatativ\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 603,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Funza",
+    "name": "Funza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 604,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Madrid",
+    "name": "Madrid"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 605,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Mosquera",
+    "name": "Mosquera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 606,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Subachoque",
+    "name": "Subachoque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 607,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tenjo",
+    "name": "Tenjo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 608,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Zipacon",
+    "name": "Zipacon"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 609,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Sibat\u00e9",
+    "name": "Sibat\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 610,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Soacha",
+    "name": "Soacha"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 611,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Arbel\u00e1ez",
+    "name": "Arbel\u00e1ez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 612,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Cabrera",
+    "name": "Cabrera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 613,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Fusagasug\u00e1",
+    "name": "Fusagasug\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 614,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Granada",
+    "name": "Granada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 615,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Pandi",
+    "name": "Pandi"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 616,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Pasca",
+    "name": "Pasca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 617,
+  "fields": {
+    "department": 16,
+    "abbreviation": "San Bernardo",
+    "name": "San Bernardo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 618,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Silvania",
+    "name": "Silvania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 619,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tibacuy",
+    "name": "Tibacuy"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 620,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Venecia",
+    "name": "Venecia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 621,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Anapoima",
+    "name": "Anapoima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 622,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Anolaima",
+    "name": "Anolaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 623,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Apulo",
+    "name": "Apulo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 624,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Cachipay",
+    "name": "Cachipay"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 625,
+  "fields": {
+    "department": 16,
+    "abbreviation": "El Colegio",
+    "name": "El Colegio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 626,
+  "fields": {
+    "department": 16,
+    "abbreviation": "La Mesa",
+    "name": "La Mesa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 627,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Quipile",
+    "name": "Quipile"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 628,
+  "fields": {
+    "department": 16,
+    "abbreviation": "San Antonio De Tequendama",
+    "name": "San Antonio De Tequendama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 629,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tena",
+    "name": "Tena"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 630,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Viot\u00e1",
+    "name": "Viot\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 631,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Carmen De Carupa",
+    "name": "Carmen De Carupa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 632,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Cucunub\u00e1",
+    "name": "Cucunub\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 633,
+  "fields": {
+    "department": 16,
+    "abbreviation": "F\u00faquene",
+    "name": "F\u00faquene"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 634,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Guachet\u00e1",
+    "name": "Guachet\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 635,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Lenguazaque",
+    "name": "Lenguazaque"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 636,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Simijaca",
+    "name": "Simijaca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 637,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Susa",
+    "name": "Susa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 638,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Sutatausa",
+    "name": "Sutatausa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 639,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Tausa",
+    "name": "Tausa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 640,
+  "fields": {
+    "department": 16,
+    "abbreviation": "Ubate",
+    "name": "Ubate"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 641,
+  "fields": {
+    "department": 17,
+    "abbreviation": "Barranco Mina",
+    "name": "Barranco Mina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 642,
+  "fields": {
+    "department": 17,
+    "abbreviation": "Cacahual",
+    "name": "Cacahual"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 643,
+  "fields": {
+    "department": 17,
+    "abbreviation": "In\u00edrida",
+    "name": "In\u00edrida"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 644,
+  "fields": {
+    "department": 17,
+    "abbreviation": "La Guadalupe",
+    "name": "La Guadalupe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 645,
+  "fields": {
+    "department": 17,
+    "abbreviation": "Mapiripan",
+    "name": "Mapiripan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 646,
+  "fields": {
+    "department": 17,
+    "abbreviation": "Morichal",
+    "name": "Morichal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 647,
+  "fields": {
+    "department": 17,
+    "abbreviation": "Pana Pana",
+    "name": "Pana Pana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 648,
+  "fields": {
+    "department": 17,
+    "abbreviation": "Puerto Colombia",
+    "name": "Puerto Colombia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 649,
+  "fields": {
+    "department": 17,
+    "abbreviation": "San Felipe",
+    "name": "San Felipe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 650,
+  "fields": {
+    "department": 18,
+    "abbreviation": "Calamar",
+    "name": "Calamar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 651,
+  "fields": {
+    "department": 18,
+    "abbreviation": "El Retorno",
+    "name": "El Retorno"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 652,
+  "fields": {
+    "department": 18,
+    "abbreviation": "Miraflores",
+    "name": "Miraflores"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 653,
+  "fields": {
+    "department": 18,
+    "abbreviation": "San Jos\u00e9 Del Guaviare",
+    "name": "San Jos\u00e9 Del Guaviare"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 654,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Agrado",
+    "name": "Agrado"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 655,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Altamira",
+    "name": "Altamira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 656,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Garz\u00f3n",
+    "name": "Garz\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 657,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Gigante",
+    "name": "Gigante"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 658,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Guadalupe",
+    "name": "Guadalupe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 659,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Pital",
+    "name": "Pital"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 660,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Suaza",
+    "name": "Suaza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 661,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Tarqui",
+    "name": "Tarqui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 662,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Aipe",
+    "name": "Aipe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 663,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Algeciras",
+    "name": "Algeciras"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 664,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Baraya",
+    "name": "Baraya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 665,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Campoalegre",
+    "name": "Campoalegre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 666,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Colombia",
+    "name": "Colombia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 667,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Hobo",
+    "name": "Hobo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 668,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Iquira",
+    "name": "Iquira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 669,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Neiva",
+    "name": "Neiva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 670,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Palermo",
+    "name": "Palermo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 671,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Rivera",
+    "name": "Rivera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 672,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Santa Mar\u00eda",
+    "name": "Santa Mar\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 673,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Tello",
+    "name": "Tello"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 674,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Teruel",
+    "name": "Teruel"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 675,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Villavieja",
+    "name": "Villavieja"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 676,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Yaguar\u00e1",
+    "name": "Yaguar\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 677,
+  "fields": {
+    "department": 19,
+    "abbreviation": "La Argentina",
+    "name": "La Argentina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 678,
+  "fields": {
+    "department": 19,
+    "abbreviation": "La Plata",
+    "name": "La Plata"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 679,
+  "fields": {
+    "department": 19,
+    "abbreviation": "N\u00e1taga",
+    "name": "N\u00e1taga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 680,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Paicol",
+    "name": "Paicol"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 681,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Tesalia",
+    "name": "Tesalia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 682,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Acevedo",
+    "name": "Acevedo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 683,
+  "fields": {
+    "department": 19,
+    "abbreviation": "El\u00edas",
+    "name": "El\u00edas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 684,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Isnos",
+    "name": "Isnos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 685,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Oporapa",
+    "name": "Oporapa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 686,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Palestina",
+    "name": "Palestina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 687,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Pitalito",
+    "name": "Pitalito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 688,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Saladoblanco",
+    "name": "Saladoblanco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 689,
+  "fields": {
+    "department": 19,
+    "abbreviation": "San Agust\u00edn",
+    "name": "San Agust\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 690,
+  "fields": {
+    "department": 19,
+    "abbreviation": "Timan\u00e1",
+    "name": "Timan\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 691,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Albania",
+    "name": "Albania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 692,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Dibulla",
+    "name": "Dibulla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 693,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Maicao",
+    "name": "Maicao"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 694,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Manaure",
+    "name": "Manaure"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 695,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Riohacha",
+    "name": "Riohacha"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 696,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Uribia",
+    "name": "Uribia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 697,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Barrancas",
+    "name": "Barrancas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 698,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Distraccion",
+    "name": "Distraccion"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 699,
+  "fields": {
+    "department": 20,
+    "abbreviation": "El Molino",
+    "name": "El Molino"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 700,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Fonseca",
+    "name": "Fonseca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 701,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Hatonuevo",
+    "name": "Hatonuevo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 702,
+  "fields": {
+    "department": 20,
+    "abbreviation": "La Jagua Del Pilar",
+    "name": "La Jagua Del Pilar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 703,
+  "fields": {
+    "department": 20,
+    "abbreviation": "San Juan Del Cesar",
+    "name": "San Juan Del Cesar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 704,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Urumita",
+    "name": "Urumita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 705,
+  "fields": {
+    "department": 20,
+    "abbreviation": "Villanueva",
+    "name": "Villanueva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 706,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Ariguan\u00ed",
+    "name": "Ariguan\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 707,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Chibolo",
+    "name": "Chibolo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 708,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Nueva Granada",
+    "name": "Nueva Granada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 709,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Plato",
+    "name": "Plato"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 710,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Sabanas De San Angel",
+    "name": "Sabanas De San Angel"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 711,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Tenerife",
+    "name": "Tenerife"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 712,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Algarrobo",
+    "name": "Algarrobo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 713,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Aracataca",
+    "name": "Aracataca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 714,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Ci\u00e9naga",
+    "name": "Ci\u00e9naga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 715,
+  "fields": {
+    "department": 21,
+    "abbreviation": "El Reten",
+    "name": "El Reten"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 716,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Fundacion",
+    "name": "Fundacion"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 717,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Pueblo Viejo",
+    "name": "Pueblo Viejo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 718,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Zona Bananera",
+    "name": "Zona Bananera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 719,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Cerro San Antonio",
+    "name": "Cerro San Antonio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 720,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Concordia",
+    "name": "Concordia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 721,
+  "fields": {
+    "department": 21,
+    "abbreviation": "El Pi\u00f1on",
+    "name": "El Pi\u00f1on"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 722,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Pedraza",
+    "name": "Pedraza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 723,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Pivijay",
+    "name": "Pivijay"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 724,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Remolino",
+    "name": "Remolino"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 725,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Salamina",
+    "name": "Salamina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 726,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Sitionuevo",
+    "name": "Sitionuevo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 727,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Zapayan",
+    "name": "Zapayan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 728,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Santa Marta",
+    "name": "Santa Marta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 729,
+  "fields": {
+    "department": 21,
+    "abbreviation": "El Banco",
+    "name": "El Banco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 730,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Guamal",
+    "name": "Guamal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 731,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Piji\u00f1o Del Carmen",
+    "name": "Piji\u00f1o Del Carmen"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 732,
+  "fields": {
+    "department": 21,
+    "abbreviation": "San Sebastian De Buenavista",
+    "name": "San Sebastian De Buenavista"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 733,
+  "fields": {
+    "department": 21,
+    "abbreviation": "San Zenon",
+    "name": "San Zenon"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 734,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Santa Ana",
+    "name": "Santa Ana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 735,
+  "fields": {
+    "department": 21,
+    "abbreviation": "Santa Barbara De Pinto",
+    "name": "Santa Barbara De Pinto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 736,
+  "fields": {
+    "department": 22,
+    "abbreviation": "El Castillo",
+    "name": "El Castillo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 737,
+  "fields": {
+    "department": 22,
+    "abbreviation": "El Dorado",
+    "name": "El Dorado"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 738,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Fuente De Oro",
+    "name": "Fuente De Oro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 739,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Granada",
+    "name": "Granada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 740,
+  "fields": {
+    "department": 22,
+    "abbreviation": "La Macarena",
+    "name": "La Macarena"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 741,
+  "fields": {
+    "department": 22,
+    "abbreviation": "La Uribe",
+    "name": "La Uribe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 742,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Lejan\u00edas",
+    "name": "Lejan\u00edas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 743,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Mapiripan",
+    "name": "Mapiripan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 744,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Mesetas",
+    "name": "Mesetas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 745,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Puerto Concordia",
+    "name": "Puerto Concordia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 746,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Puerto Lleras",
+    "name": "Puerto Lleras"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 747,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Puerto Rico",
+    "name": "Puerto Rico"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 748,
+  "fields": {
+    "department": 22,
+    "abbreviation": "San Juan De Arama",
+    "name": "San Juan De Arama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 749,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Vista Hermosa",
+    "name": "Vista Hermosa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 750,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Villavicencio",
+    "name": "Villavicencio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 751,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Acacias",
+    "name": "Acacias"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 752,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Barranca De Upia",
+    "name": "Barranca De Upia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 753,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Castilla La Nueva",
+    "name": "Castilla La Nueva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 754,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Cumaral",
+    "name": "Cumaral"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 755,
+  "fields": {
+    "department": 22,
+    "abbreviation": "El Calvario",
+    "name": "El Calvario"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 756,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Guamal",
+    "name": "Guamal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 757,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Restrepo",
+    "name": "Restrepo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 758,
+  "fields": {
+    "department": 22,
+    "abbreviation": "San Carlos Guaroa",
+    "name": "San Carlos Guaroa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 759,
+  "fields": {
+    "department": 22,
+    "abbreviation": "San Juanito",
+    "name": "San Juanito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 760,
+  "fields": {
+    "department": 22,
+    "abbreviation": "San Luis De Cubarral",
+    "name": "San Luis De Cubarral"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 761,
+  "fields": {
+    "department": 22,
+    "abbreviation": "San Mart\u00edn",
+    "name": "San Mart\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 762,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Cabuyaro",
+    "name": "Cabuyaro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 763,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Puerto Gait\u00e1n",
+    "name": "Puerto Gait\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 764,
+  "fields": {
+    "department": 22,
+    "abbreviation": "Puerto Lopez",
+    "name": "Puerto Lopez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 765,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Chachagui",
+    "name": "Chachagui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 766,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Consaca",
+    "name": "Consaca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 767,
+  "fields": {
+    "department": 23,
+    "abbreviation": "El Pe\u00f1ol",
+    "name": "El Pe\u00f1ol"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 768,
+  "fields": {
+    "department": 23,
+    "abbreviation": "El Tambo",
+    "name": "El Tambo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 769,
+  "fields": {
+    "department": 23,
+    "abbreviation": "La Florida",
+    "name": "La Florida"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 770,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Nari\u00f1o",
+    "name": "Nari\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 771,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Pasto",
+    "name": "Pasto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 772,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Sandon\u00e1",
+    "name": "Sandon\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 773,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Tangua",
+    "name": "Tangua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 774,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Yacuanquer",
+    "name": "Yacuanquer"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 775,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Ancuya",
+    "name": "Ancuya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 776,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Guaitarilla",
+    "name": "Guaitarilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 777,
+  "fields": {
+    "department": 23,
+    "abbreviation": "La Llanada",
+    "name": "La Llanada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 778,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Linares",
+    "name": "Linares"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 779,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Los Andes",
+    "name": "Los Andes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 780,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Mallama",
+    "name": "Mallama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 781,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Ospina",
+    "name": "Ospina"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 782,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Providencia",
+    "name": "Providencia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 783,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Ricaurte",
+    "name": "Ricaurte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 784,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Samaniego",
+    "name": "Samaniego"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 785,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Santa Cruz",
+    "name": "Santa Cruz"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 786,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Sapuyes",
+    "name": "Sapuyes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 787,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Tuquerres",
+    "name": "Tuquerres"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 788,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Barbacoas",
+    "name": "Barbacoas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 789,
+  "fields": {
+    "department": 23,
+    "abbreviation": "El Charco",
+    "name": "El Charco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 790,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Francisco Pizarro",
+    "name": "Francisco Pizarro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 791,
+  "fields": {
+    "department": 23,
+    "abbreviation": "La Tola",
+    "name": "La Tola"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 792,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Magui",
+    "name": "Magui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 793,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Mosquera",
+    "name": "Mosquera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 794,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Olaya Herrera",
+    "name": "Olaya Herrera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 795,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Roberto Payan",
+    "name": "Roberto Payan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 796,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Santa Barbara",
+    "name": "Santa Barbara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 797,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Tumaco",
+    "name": "Tumaco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 798,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Alban",
+    "name": "Alban"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 799,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Arboleda",
+    "name": "Arboleda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 800,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Belen",
+    "name": "Belen"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 801,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Buesaco",
+    "name": "Buesaco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 802,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Colon",
+    "name": "Colon"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 803,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Cumbitara",
+    "name": "Cumbitara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 804,
+  "fields": {
+    "department": 23,
+    "abbreviation": "El Rosario",
+    "name": "El Rosario"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 805,
+  "fields": {
+    "department": 23,
+    "abbreviation": "El Tablon De Gomez",
+    "name": "El Tablon De Gomez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 806,
+  "fields": {
+    "department": 23,
+    "abbreviation": "La Cruz",
+    "name": "La Cruz"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 807,
+  "fields": {
+    "department": 23,
+    "abbreviation": "La Union",
+    "name": "La Union"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 808,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Leiva",
+    "name": "Leiva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 809,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Policarpa",
+    "name": "Policarpa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 810,
+  "fields": {
+    "department": 23,
+    "abbreviation": "San Bernardo",
+    "name": "San Bernardo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 811,
+  "fields": {
+    "department": 23,
+    "abbreviation": "San Lorenzo",
+    "name": "San Lorenzo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 812,
+  "fields": {
+    "department": 23,
+    "abbreviation": "San Pablo",
+    "name": "San Pablo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 813,
+  "fields": {
+    "department": 23,
+    "abbreviation": "San Pedro De Cartago",
+    "name": "San Pedro De Cartago"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 814,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Taminango",
+    "name": "Taminango"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 815,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Aldana",
+    "name": "Aldana"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 816,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Contadero",
+    "name": "Contadero"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 817,
+  "fields": {
+    "department": 23,
+    "abbreviation": "C\u00f3rdoba",
+    "name": "C\u00f3rdoba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 818,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Cuaspud",
+    "name": "Cuaspud"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 819,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Cumbal",
+    "name": "Cumbal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 820,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Funes",
+    "name": "Funes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 821,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Guachucal",
+    "name": "Guachucal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 822,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Gualmatan",
+    "name": "Gualmatan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 823,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Iles",
+    "name": "Iles"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 824,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Imues",
+    "name": "Imues"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 825,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Ipiales",
+    "name": "Ipiales"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 826,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Potos\u00ed",
+    "name": "Potos\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 827,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Puerres",
+    "name": "Puerres"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 828,
+  "fields": {
+    "department": 23,
+    "abbreviation": "Pupiales",
+    "name": "Pupiales"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 829,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Arboledas",
+    "name": "Arboledas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 830,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Cucutilla",
+    "name": "Cucutilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 831,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Gramalote",
+    "name": "Gramalote"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 832,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Lourdes",
+    "name": "Lourdes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 833,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Salazar",
+    "name": "Salazar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 834,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Santiago",
+    "name": "Santiago"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 835,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Villa Caro",
+    "name": "Villa Caro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 836,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Bucarasica",
+    "name": "Bucarasica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 837,
+  "fields": {
+    "department": 24,
+    "abbreviation": "El Tarra",
+    "name": "El Tarra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 838,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Sardinata",
+    "name": "Sardinata"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 839,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Tib\u00fa",
+    "name": "Tib\u00fa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 840,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Abrego",
+    "name": "Abrego"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 841,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Cachir\u00e1",
+    "name": "Cachir\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 842,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Convenci\u00f3n",
+    "name": "Convenci\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 843,
+  "fields": {
+    "department": 24,
+    "abbreviation": "El Carmen",
+    "name": "El Carmen"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 844,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Hacar\u00ed",
+    "name": "Hacar\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 845,
+  "fields": {
+    "department": 24,
+    "abbreviation": "La Esperanza",
+    "name": "La Esperanza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 846,
+  "fields": {
+    "department": 24,
+    "abbreviation": "La Playa",
+    "name": "La Playa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 847,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Oca\u00f1a",
+    "name": "Oca\u00f1a"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 848,
+  "fields": {
+    "department": 24,
+    "abbreviation": "San Calixto",
+    "name": "San Calixto"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 849,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Teorama",
+    "name": "Teorama"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 850,
+  "fields": {
+    "department": 24,
+    "abbreviation": "C\u00facuta",
+    "name": "C\u00facuta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 851,
+  "fields": {
+    "department": 24,
+    "abbreviation": "El Zulia",
+    "name": "El Zulia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 852,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Los Patios",
+    "name": "Los Patios"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 853,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Puerto Santander",
+    "name": "Puerto Santander"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 854,
+  "fields": {
+    "department": 24,
+    "abbreviation": "San Cayetano",
+    "name": "San Cayetano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 855,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Villa Del Rosario",
+    "name": "Villa Del Rosario"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 856,
+  "fields": {
+    "department": 24,
+    "abbreviation": "C\u00e1cota",
+    "name": "C\u00e1cota"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 857,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Chitag\u00e1",
+    "name": "Chitag\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 858,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Mutiscua",
+    "name": "Mutiscua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 859,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Pamplona",
+    "name": "Pamplona"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 860,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Pamplonita",
+    "name": "Pamplonita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 861,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Silos",
+    "name": "Silos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 862,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Bochalema",
+    "name": "Bochalema"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 863,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Chin\u00e1cota",
+    "name": "Chin\u00e1cota"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 864,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Durania",
+    "name": "Durania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 865,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Herr\u00e1n",
+    "name": "Herr\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 866,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Labateca",
+    "name": "Labateca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 867,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Ragonvalia",
+    "name": "Ragonvalia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 868,
+  "fields": {
+    "department": 24,
+    "abbreviation": "Toledo",
+    "name": "Toledo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 869,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Col\u00f3n",
+    "name": "Col\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 870,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Mocoa",
+    "name": "Mocoa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 871,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Orito",
+    "name": "Orito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 872,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Puerto Asis",
+    "name": "Puerto Asis"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 873,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Puerto Caicedo",
+    "name": "Puerto Caicedo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 874,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Puerto Guzman",
+    "name": "Puerto Guzman"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 875,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Puerto Leguizamo",
+    "name": "Puerto Leguizamo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 876,
+  "fields": {
+    "department": 25,
+    "abbreviation": "San Francisco",
+    "name": "San Francisco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 877,
+  "fields": {
+    "department": 25,
+    "abbreviation": "San Miguel",
+    "name": "San Miguel"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 878,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Santiago",
+    "name": "Santiago"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 879,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Sibundoy",
+    "name": "Sibundoy"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 880,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Valle Del Guamuez",
+    "name": "Valle Del Guamuez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 881,
+  "fields": {
+    "department": 25,
+    "abbreviation": "Villa Garzon",
+    "name": "Villa Garzon"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 882,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Armenia",
+    "name": "Armenia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 883,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Buenavista",
+    "name": "Buenavista"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 884,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Calarca",
+    "name": "Calarca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 885,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Cordoba",
+    "name": "Cordoba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 886,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Genova",
+    "name": "Genova"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 887,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Pijao",
+    "name": "Pijao"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 888,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Filandia",
+    "name": "Filandia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 889,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Salento",
+    "name": "Salento"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 890,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Circasia",
+    "name": "Circasia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 891,
+  "fields": {
+    "department": 26,
+    "abbreviation": "La Tebaida",
+    "name": "La Tebaida"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 892,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Montengro",
+    "name": "Montengro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 893,
+  "fields": {
+    "department": 26,
+    "abbreviation": "Quimbaya",
+    "name": "Quimbaya"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 894,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Dosquebradas",
+    "name": "Dosquebradas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 895,
+  "fields": {
+    "department": 27,
+    "abbreviation": "La Virginia",
+    "name": "La Virginia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 896,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Marsella",
+    "name": "Marsella"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 897,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Pereira",
+    "name": "Pereira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 898,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Santa Rosa De Cabal",
+    "name": "Santa Rosa De Cabal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 899,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Ap\u00eda",
+    "name": "Ap\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 900,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Balboa",
+    "name": "Balboa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 901,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Bel\u00e9n De Umbr\u00eda",
+    "name": "Bel\u00e9n De Umbr\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 902,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Gu\u00e1tica",
+    "name": "Gu\u00e1tica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 903,
+  "fields": {
+    "department": 27,
+    "abbreviation": "La Celia",
+    "name": "La Celia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 904,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Quinchia",
+    "name": "Quinchia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 905,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Santuario",
+    "name": "Santuario"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 906,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Mistrat\u00f3",
+    "name": "Mistrat\u00f3"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 907,
+  "fields": {
+    "department": 27,
+    "abbreviation": "Pueblo Rico",
+    "name": "Pueblo Rico"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 908,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Chima",
+    "name": "Chima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 909,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Confines",
+    "name": "Confines"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 910,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Contrataci\u00f3n",
+    "name": "Contrataci\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 911,
+  "fields": {
+    "department": 28,
+    "abbreviation": "El Guacamayo",
+    "name": "El Guacamayo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 912,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Gal\u00e1n",
+    "name": "Gal\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 913,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Gambita",
+    "name": "Gambita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 914,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Guadalupe",
+    "name": "Guadalupe"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 915,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Guapot\u00e1",
+    "name": "Guapot\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 916,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Hato",
+    "name": "Hato"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 917,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Oiba",
+    "name": "Oiba"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 918,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Palmar",
+    "name": "Palmar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 919,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Palmas Del Socorro",
+    "name": "Palmas Del Socorro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 920,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Santa Helena Del Op\u00f3n",
+    "name": "Santa Helena Del Op\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 921,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Simacota",
+    "name": "Simacota"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 922,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Socorro",
+    "name": "Socorro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 923,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Suaita",
+    "name": "Suaita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 924,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Capitanejo",
+    "name": "Capitanejo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 925,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Carcas\u00ed",
+    "name": "Carcas\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 926,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Cepit\u00e1",
+    "name": "Cepit\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 927,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Cerrito",
+    "name": "Cerrito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 928,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Concepci\u00f3n",
+    "name": "Concepci\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 929,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Enciso",
+    "name": "Enciso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 930,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Guaca",
+    "name": "Guaca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 931,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Macaravita",
+    "name": "Macaravita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 932,
+  "fields": {
+    "department": 28,
+    "abbreviation": "M\u00e1laga",
+    "name": "M\u00e1laga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 933,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Molagavita",
+    "name": "Molagavita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 934,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Andr\u00e9s",
+    "name": "San Andr\u00e9s"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 935,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Jos\u00e9 De Miranda",
+    "name": "San Jos\u00e9 De Miranda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 936,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Miguel",
+    "name": "San Miguel"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 937,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Aratoca",
+    "name": "Aratoca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 938,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Barichara",
+    "name": "Barichara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 939,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Cabrera",
+    "name": "Cabrera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 940,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Charal\u00e1",
+    "name": "Charal\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 941,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Coromoro",
+    "name": "Coromoro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 942,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Curit\u00ed",
+    "name": "Curit\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 943,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Encino",
+    "name": "Encino"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 944,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Jord\u00e1n",
+    "name": "Jord\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 945,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Mogotes",
+    "name": "Mogotes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 946,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Ocamonte",
+    "name": "Ocamonte"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 947,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Onzaga",
+    "name": "Onzaga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 948,
+  "fields": {
+    "department": 28,
+    "abbreviation": "P\u00e1ramo",
+    "name": "P\u00e1ramo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 949,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Pinchote",
+    "name": "Pinchote"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 950,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Gil",
+    "name": "San Gil"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 951,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Joaqu\u00edn",
+    "name": "San Joaqu\u00edn"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 952,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Valle De San Jos\u00e9",
+    "name": "Valle De San Jos\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 953,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Villanueva",
+    "name": "Villanueva"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 954,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Barrancabermeja",
+    "name": "Barrancabermeja"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 955,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Betulia",
+    "name": "Betulia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 956,
+  "fields": {
+    "department": 28,
+    "abbreviation": "El Carmen De Chucur\u00ed",
+    "name": "El Carmen De Chucur\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 957,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Puerto Wilches",
+    "name": "Puerto Wilches"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 958,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Sabana De Torres",
+    "name": "Sabana De Torres"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 959,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Vicente De Chucur\u00ed",
+    "name": "San Vicente De Chucur\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 960,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Zapatoca",
+    "name": "Zapatoca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 961,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Bucaramanga",
+    "name": "Bucaramanga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 962,
+  "fields": {
+    "department": 28,
+    "abbreviation": "California",
+    "name": "California"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 963,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Charta",
+    "name": "Charta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 964,
+  "fields": {
+    "department": 28,
+    "abbreviation": "El Play\u00f3n",
+    "name": "El Play\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 965,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Floridablanca",
+    "name": "Floridablanca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 966,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Gir\u00f3n",
+    "name": "Gir\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 967,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Lebr\u00edja",
+    "name": "Lebr\u00edja"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 968,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Los Santos",
+    "name": "Los Santos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 969,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Matanza",
+    "name": "Matanza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 970,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Piedecuesta",
+    "name": "Piedecuesta"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 971,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Rionegro",
+    "name": "Rionegro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 972,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Santa B\u00e1rbara",
+    "name": "Santa B\u00e1rbara"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 973,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Surata",
+    "name": "Surata"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 974,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Tona",
+    "name": "Tona"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 975,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Vetas",
+    "name": "Vetas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 976,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Aguada",
+    "name": "Aguada"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 977,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Albania",
+    "name": "Albania"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 978,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Barbosa",
+    "name": "Barbosa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 979,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Bol\u00edvar",
+    "name": "Bol\u00edvar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 980,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Chipat\u00e1",
+    "name": "Chipat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 981,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Cimitarra",
+    "name": "Cimitarra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 982,
+  "fields": {
+    "department": 28,
+    "abbreviation": "El Pe\u00f1\u00f3n",
+    "name": "El Pe\u00f1\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 983,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Flori\u00e1n",
+    "name": "Flori\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 984,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Guavat\u00e1",
+    "name": "Guavat\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 985,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Guepsa",
+    "name": "Guepsa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 986,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Jes\u00fas Mar\u00eda",
+    "name": "Jes\u00fas Mar\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 987,
+  "fields": {
+    "department": 28,
+    "abbreviation": "La Belleza",
+    "name": "La Belleza"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 988,
+  "fields": {
+    "department": 28,
+    "abbreviation": "La Paz",
+    "name": "La Paz"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 989,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Land\u00e1zuri",
+    "name": "Land\u00e1zuri"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 990,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Puente Nacional",
+    "name": "Puente Nacional"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 991,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Puerto Parra",
+    "name": "Puerto Parra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 992,
+  "fields": {
+    "department": 28,
+    "abbreviation": "San Benito",
+    "name": "San Benito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 993,
+  "fields": {
+    "department": 28,
+    "abbreviation": "Sucre",
+    "name": "Sucre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 994,
+  "fields": {
+    "department": 28,
+    "abbreviation": "V\u00e9lez",
+    "name": "V\u00e9lez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 995,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Guaranda",
+    "name": "Guaranda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 996,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Majagual",
+    "name": "Majagual"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 997,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Sucre",
+    "name": "Sucre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 998,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Chal\u00e1n",
+    "name": "Chal\u00e1n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 999,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Coloso",
+    "name": "Coloso"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1000,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Morroa",
+    "name": "Morroa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1001,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Ovejas",
+    "name": "Ovejas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1002,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Sincelejo",
+    "name": "Sincelejo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1003,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Cove\u00f1as",
+    "name": "Cove\u00f1as"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1004,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Palmito",
+    "name": "Palmito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1005,
+  "fields": {
+    "department": 29,
+    "abbreviation": "San Onofre",
+    "name": "San Onofre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1006,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Santiago De Tol\u00fa",
+    "name": "Santiago De Tol\u00fa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1007,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Tol\u00fa Viejo",
+    "name": "Tol\u00fa Viejo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1008,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Buenavista",
+    "name": "Buenavista"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1009,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Corozal",
+    "name": "Corozal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1010,
+  "fields": {
+    "department": 29,
+    "abbreviation": "El Roble",
+    "name": "El Roble"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1011,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Galeras",
+    "name": "Galeras"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1012,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Los Palmitos",
+    "name": "Los Palmitos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1013,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Sampu\u00e9s",
+    "name": "Sampu\u00e9s"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1014,
+  "fields": {
+    "department": 29,
+    "abbreviation": "San Juan Betulia",
+    "name": "San Juan Betulia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1015,
+  "fields": {
+    "department": 29,
+    "abbreviation": "San Pedro",
+    "name": "San Pedro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1016,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Sinc\u00e9",
+    "name": "Sinc\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1017,
+  "fields": {
+    "department": 29,
+    "abbreviation": "Caimito",
+    "name": "Caimito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1018,
+  "fields": {
+    "department": 29,
+    "abbreviation": "La Uni\u00f3n",
+    "name": "La Uni\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1019,
+  "fields": {
+    "department": 29,
+    "abbreviation": "San Benito Abad",
+    "name": "San Benito Abad"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1020,
+  "fields": {
+    "department": 29,
+    "abbreviation": "San Marcos",
+    "name": "San Marcos"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1021,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Ambalema",
+    "name": "Ambalema"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1022,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Armero",
+    "name": "Armero"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1023,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Falan",
+    "name": "Falan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1024,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Fresno",
+    "name": "Fresno"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1025,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Honda",
+    "name": "Honda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1026,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Mariquita",
+    "name": "Mariquita"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1027,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Palocabildo",
+    "name": "Palocabildo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1028,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Carmen De Apical\u00e1",
+    "name": "Carmen De Apical\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1029,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Cunday",
+    "name": "Cunday"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1030,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Icononzo",
+    "name": "Icononzo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1031,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Melgar",
+    "name": "Melgar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1032,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Villarrica",
+    "name": "Villarrica"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1033,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Ataco",
+    "name": "Ataco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1034,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Chaparral",
+    "name": "Chaparral"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1035,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Coyaima",
+    "name": "Coyaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1036,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Natagaima",
+    "name": "Natagaima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1037,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Ortega",
+    "name": "Ortega"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1038,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Planadas",
+    "name": "Planadas"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1039,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Rioblanco",
+    "name": "Rioblanco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1040,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Roncesvalles",
+    "name": "Roncesvalles"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1041,
+  "fields": {
+    "department": 30,
+    "abbreviation": "San Antonio",
+    "name": "San Antonio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1042,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Alvarado",
+    "name": "Alvarado"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1043,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Anzo\u00e1tegui",
+    "name": "Anzo\u00e1tegui"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1044,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Cajamarca",
+    "name": "Cajamarca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1045,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Coello",
+    "name": "Coello"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1046,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Espinal",
+    "name": "Espinal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1047,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Flandes",
+    "name": "Flandes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1048,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Ibague",
+    "name": "Ibague"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1049,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Piedras",
+    "name": "Piedras"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1050,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Rovira",
+    "name": "Rovira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1051,
+  "fields": {
+    "department": 30,
+    "abbreviation": "San Luis",
+    "name": "San Luis"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1052,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Valle De San Juan",
+    "name": "Valle De San Juan"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1053,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Alpujarra",
+    "name": "Alpujarra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1054,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Dolores",
+    "name": "Dolores"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1055,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Guamo",
+    "name": "Guamo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1056,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Prado",
+    "name": "Prado"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1057,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Purificaci\u00f3n",
+    "name": "Purificaci\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1058,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Salda\u00f1a",
+    "name": "Salda\u00f1a"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1059,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Su\u00e1rez",
+    "name": "Su\u00e1rez"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1060,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Casabianca",
+    "name": "Casabianca"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1061,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Herveo",
+    "name": "Herveo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1062,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Lerida",
+    "name": "Lerida"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1063,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Libano",
+    "name": "Libano"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1064,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Murillo",
+    "name": "Murillo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1065,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Santa Isabel",
+    "name": "Santa Isabel"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1066,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Venadillo",
+    "name": "Venadillo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1067,
+  "fields": {
+    "department": 30,
+    "abbreviation": "Villahermosa",
+    "name": "Villahermosa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1068,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Andaluc\u00eda",
+    "name": "Andaluc\u00eda"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1069,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Buga",
+    "name": "Buga"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1070,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Bugalagrande",
+    "name": "Bugalagrande"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1071,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Calima",
+    "name": "Calima"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1072,
+  "fields": {
+    "department": 31,
+    "abbreviation": "El Cerrito",
+    "name": "El Cerrito"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1073,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Ginebra",
+    "name": "Ginebra"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1074,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Guacar\u00ed",
+    "name": "Guacar\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1075,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Restrepo",
+    "name": "Restrepo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1076,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Riofrio",
+    "name": "Riofrio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1077,
+  "fields": {
+    "department": 31,
+    "abbreviation": "San Pedro",
+    "name": "San Pedro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1078,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Trujillo",
+    "name": "Trujillo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1079,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Tulu\u00e1",
+    "name": "Tulu\u00e1"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1080,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Yotoco",
+    "name": "Yotoco"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1081,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Alcala",
+    "name": "Alcala"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1082,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Ansermanuevo",
+    "name": "Ansermanuevo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1083,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Argelia",
+    "name": "Argelia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1084,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Bol\u00edvar",
+    "name": "Bol\u00edvar"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1085,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Cartago",
+    "name": "Cartago"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1086,
+  "fields": {
+    "department": 31,
+    "abbreviation": "El \u00c1guila",
+    "name": "El \u00c1guila"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1087,
+  "fields": {
+    "department": 31,
+    "abbreviation": "El Cairo",
+    "name": "El Cairo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1088,
+  "fields": {
+    "department": 31,
+    "abbreviation": "El Dovio",
+    "name": "El Dovio"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1089,
+  "fields": {
+    "department": 31,
+    "abbreviation": "La Uni\u00f3n",
+    "name": "La Uni\u00f3n"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1090,
+  "fields": {
+    "department": 31,
+    "abbreviation": "La Victoria",
+    "name": "La Victoria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1091,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Obando",
+    "name": "Obando"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1092,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Roldanillo",
+    "name": "Roldanillo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1093,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Toro",
+    "name": "Toro"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1094,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Ulloa",
+    "name": "Ulloa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1095,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Versalles",
+    "name": "Versalles"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1096,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Zarzal",
+    "name": "Zarzal"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1097,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Buenaventura",
+    "name": "Buenaventura"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1098,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Caicedonia",
+    "name": "Caicedonia"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1099,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Sevilla",
+    "name": "Sevilla"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1100,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Cali",
+    "name": "Cali"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1101,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Candelaria",
+    "name": "Candelaria"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1102,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Dagua",
+    "name": "Dagua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1103,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Florida",
+    "name": "Florida"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1104,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Jamund\u00ed",
+    "name": "Jamund\u00ed"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1105,
+  "fields": {
+    "department": 31,
+    "abbreviation": "La Cumbre",
+    "name": "La Cumbre"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1106,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Palmira",
+    "name": "Palmira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1107,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Pradera",
+    "name": "Pradera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1108,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Vijes",
+    "name": "Vijes"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1109,
+  "fields": {
+    "department": 31,
+    "abbreviation": "Yumbo",
+    "name": "Yumbo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1110,
+  "fields": {
+    "department": 32,
+    "abbreviation": "Caruru",
+    "name": "Caruru"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1111,
+  "fields": {
+    "department": 32,
+    "abbreviation": "Mit\u00fa",
+    "name": "Mit\u00fa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1112,
+  "fields": {
+    "department": 32,
+    "abbreviation": "Pacoa",
+    "name": "Pacoa"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1113,
+  "fields": {
+    "department": 32,
+    "abbreviation": "Papunahua",
+    "name": "Papunahua"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1114,
+  "fields": {
+    "department": 32,
+    "abbreviation": "Taraira",
+    "name": "Taraira"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1115,
+  "fields": {
+    "department": 32,
+    "abbreviation": "Yavarat\u00e9",
+    "name": "Yavarat\u00e9"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1116,
+  "fields": {
+    "department": 33,
+    "abbreviation": "Cumaribo",
+    "name": "Cumaribo"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1117,
+  "fields": {
+    "department": 33,
+    "abbreviation": "La Primavera",
+    "name": "La Primavera"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1118,
+  "fields": {
+    "department": 33,
+    "abbreviation": "Puerto Carre\u00f1o",
+    "name": "Puerto Carre\u00f1o"
+  }
+},
+{
+  "model": "index.municipality",
+  "pk": 1119,
+  "fields": {
+    "department": 33,
+    "abbreviation": "Santa Rosal\u00eda",
+    "name": "Santa Rosal\u00eda"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 1,
+  "fields": {
+    "abbreviation": "GR",
+    "name": "General"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 2,
+  "fields": {
+    "abbreviation": "MG",
+    "name": "Mayor General"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 3,
+  "fields": {
+    "abbreviation": "BG",
+    "name": "Brigadier General"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 4,
+  "fields": {
+    "abbreviation": "CR",
+    "name": "Coronel"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 5,
+  "fields": {
+    "abbreviation": "TC",
+    "name": "Teniente Coronel"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 6,
+  "fields": {
+    "abbreviation": "MY",
+    "name": "Mayor"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 7,
+  "fields": {
+    "abbreviation": "CT",
+    "name": "Capit\u00e1n"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 8,
+  "fields": {
+    "abbreviation": "TE",
+    "name": "Teniente"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 9,
+  "fields": {
+    "abbreviation": "ST",
+    "name": "Subteniente"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 10,
+  "fields": {
+    "abbreviation": "SMC",
+    "name": "Sargento Mayor de Comando"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 11,
+  "fields": {
+    "abbreviation": "SM",
+    "name": "Sargento Mayor"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 12,
+  "fields": {
+    "abbreviation": "SP",
+    "name": "Sargento Primero"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 13,
+  "fields": {
+    "abbreviation": "SV",
+    "name": "Sargento Viceprimero"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 14,
+  "fields": {
+    "abbreviation": "SS",
+    "name": "Sargento Segundo"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 15,
+  "fields": {
+    "abbreviation": "CP",
+    "name": "Cabo Primero"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 16,
+  "fields": {
+    "abbreviation": "CS",
+    "name": "Cabo Segundo"
+  }
+},
+{
+  "model": "index.rank",
+  "pk": 17,
+  "fields": {
+    "abbreviation": "CT",
+    "name": "Cabo Tercero"
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 1,
+  "fields": {
+    "abbreviation": "CCOES",
+    "name": "Comando Conjunto de Operaciones Especiales",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 2,
+  "fields": {
+    "abbreviation": "FUTCO",
+    "name": "Fuerza de Tarea Conjunta Omega",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 3,
+  "fields": {
+    "abbreviation": "FTCEC",
+    "name": "Fuerza de Tarea Conjunta de Estabilizaci\u00f3n y Consolidaci\u00f3n",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 4,
+  "fields": {
+    "abbreviation": "DIV-I",
+    "name": "Primera Divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 5,
+  "fields": {
+    "abbreviation": "DIV-II",
+    "name": "Segunda Divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 6,
+  "fields": {
+    "abbreviation": "DIV-III",
+    "name": "Tercera divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 7,
+  "fields": {
+    "abbreviation": "DIV-IV",
+    "name": "Cuarta Divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 8,
+  "fields": {
+    "abbreviation": "DIV-V",
+    "name": "Quinta divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 9,
+  "fields": {
+    "abbreviation": "DIV-VI",
+    "name": "Sexta Divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 10,
+  "fields": {
+    "abbreviation": "DIV-VII",
+    "name": "Septima Divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 11,
+  "fields": {
+    "abbreviation": "DIV-VIII",
+    "name": "Octava Divisi\u00f3n",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 12,
+  "fields": {
+    "abbreviation": "DIVFE",
+    "name": "Divisi\u00f3n de Fuerzas Especiales",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 13,
+  "fields": {
+    "abbreviation": "DAVAA",
+    "name": "Divisi\u00f3n de Aviaci\u00f3n Asalto A\u00e9reo",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.majoroperativeunit",
+  "pk": 14,
+  "fields": {
+    "abbreviation": "FUDAT",
+    "name": "Fuerza de Tarea de Amenazas Transnacionales",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 1,
+  "fields": {
+    "major_operative_unit": 1,
+    "abbreviation": "CCON 1",
+    "name": "Comando Conjunto No 1",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 2,
+  "fields": {
+    "major_operative_unit": 1,
+    "abbreviation": "CCON 2",
+    "name": "Comando Conjunto No 2",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 3,
+  "fields": {
+    "major_operative_unit": 1,
+    "abbreviation": "CCON 3",
+    "name": "Comando Conjunto No 3",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 4,
+  "fields": {
+    "major_operative_unit": 1,
+    "abbreviation": "CCON 4",
+    "name": "Comando Conjunto No 4",
+    "is_ejc": false,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 5,
+  "fields": {
+    "major_operative_unit": 4,
+    "abbreviation": "FTCMA",
+    "name": "Fuerza de Tarea Marte",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 6,
+  "fields": {
+    "major_operative_unit": 4,
+    "abbreviation": "FUTAM",
+    "name": "Fuerza de Tarea de Armas Combinadas Mediana",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 7,
+  "fields": {
+    "major_operative_unit": 4,
+    "abbreviation": "BR 02",
+    "name": "Brigada No 2",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 8,
+  "fields": {
+    "major_operative_unit": 4,
+    "abbreviation": "BR 10",
+    "name": "Brigada No 10",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 9,
+  "fields": {
+    "major_operative_unit": 5,
+    "abbreviation": "FUDRA 3",
+    "name": "Fuerza de Despliegue Rapido No. 3",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 10,
+  "fields": {
+    "major_operative_unit": 5,
+    "abbreviation": "FUVUL",
+    "name": "Fuerza de Tarea vulcano",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 11,
+  "fields": {
+    "major_operative_unit": 5,
+    "abbreviation": "COENE",
+    "name": "Comando Especifico del Norte",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 12,
+  "fields": {
+    "major_operative_unit": 5,
+    "abbreviation": "BR 01",
+    "name": "Brigada No. 1",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 13,
+  "fields": {
+    "major_operative_unit": 5,
+    "abbreviation": "BR 05",
+    "name": "Brigada No. 5",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 14,
+  "fields": {
+    "major_operative_unit": 5,
+    "abbreviation": "BR 30",
+    "name": "Brigada No. 30",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 15,
+  "fields": {
+    "major_operative_unit": 6,
+    "abbreviation": "CECAU",
+    "name": "Comando Especifico del Cauca",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 16,
+  "fields": {
+    "major_operative_unit": 6,
+    "abbreviation": "FUDRA 4",
+    "name": "Fuerza de Despliegue Rapido No. 4",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 17,
+  "fields": {
+    "major_operative_unit": 6,
+    "abbreviation": "COAPO",
+    "name": "Comando operativo Apolo",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 20,
+  "fields": {
+    "major_operative_unit": 6,
+    "abbreviation": "BR 03",
+    "name": "Brigada No. 3",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 21,
+  "fields": {
+    "major_operative_unit": 6,
+    "abbreviation": "BR 23",
+    "name": "Brigada No. 23",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 22,
+  "fields": {
+    "major_operative_unit": 6,
+    "abbreviation": "BR 29",
+    "name": "Brigada No. 29",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 23,
+  "fields": {
+    "major_operative_unit": 7,
+    "abbreviation": "BR 07",
+    "name": "Brigada no. 7",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 24,
+  "fields": {
+    "major_operative_unit": 7,
+    "abbreviation": "BR 22",
+    "name": "Brigada No. 22",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 25,
+  "fields": {
+    "major_operative_unit": 7,
+    "abbreviation": "BR 31",
+    "name": "Brigada No 31",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 26,
+  "fields": {
+    "major_operative_unit": 8,
+    "abbreviation": "COZEU",
+    "name": "Comando Operativo Zeuz",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 27,
+  "fields": {
+    "major_operative_unit": 8,
+    "abbreviation": "BR 06",
+    "name": "Brigada No. 6",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 28,
+  "fields": {
+    "major_operative_unit": 8,
+    "abbreviation": "BR 08",
+    "name": "Brigada No. 8",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 29,
+  "fields": {
+    "major_operative_unit": 8,
+    "abbreviation": "BR 09",
+    "name": "Brigada No. 9",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 30,
+  "fields": {
+    "major_operative_unit": 8,
+    "abbreviation": "BR 13",
+    "name": "Brigada No. 13",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 31,
+  "fields": {
+    "major_operative_unit": 9,
+    "abbreviation": "COJUP",
+    "name": "Comando Operativo Jupiter",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 32,
+  "fields": {
+    "major_operative_unit": 9,
+    "abbreviation": "BR 12",
+    "name": "Brigada No. 12",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 33,
+  "fields": {
+    "major_operative_unit": 9,
+    "abbreviation": "BR 26",
+    "name": "Brigada No. 26",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 34,
+  "fields": {
+    "major_operative_unit": 9,
+    "abbreviation": "BR 27",
+    "name": "Brigada No.27",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 35,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "FTCAQ",
+    "name": "Fuerza de Tarea Aquiles",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 36,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "FTCTI",
+    "name": "Fuerza de Tarea Titan",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 37,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "BR 04",
+    "name": "Brigada No. 4",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 38,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "BR 11",
+    "name": "Brigada No. 11",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 39,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "BR 14",
+    "name": "Brigada No. 14",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 40,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "BR 15",
+    "name": "Brigada No. 15",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 41,
+  "fields": {
+    "major_operative_unit": 10,
+    "abbreviation": "BR 17",
+    "name": "Brigada No. 17",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 42,
+  "fields": {
+    "major_operative_unit": 11,
+    "abbreviation": "FURON",
+    "name": "Fuerza de Tarea Quiron",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 43,
+  "fields": {
+    "major_operative_unit": 11,
+    "abbreviation": "BR 16",
+    "name": "Brigada No. 16",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 44,
+  "fields": {
+    "major_operative_unit": 11,
+    "abbreviation": "BR 18",
+    "name": "Brigada No. 18",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 45,
+  "fields": {
+    "major_operative_unit": 11,
+    "abbreviation": "BR 28",
+    "name": "Brigada No. 28",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 46,
+  "fields": {
+    "major_operative_unit": 12,
+    "abbreviation": "REGFE1",
+    "name": "Regimiento de Fuerzas Especiales No. 1",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 47,
+  "fields": {
+    "major_operative_unit": 12,
+    "abbreviation": "REGFE2",
+    "name": "Regimiento de Fuerzas Especiales No. 2",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 48,
+  "fields": {
+    "major_operative_unit": 12,
+    "abbreviation": "REGFE3",
+    "name": "Regimiento de Fuerzas Especiales No. 3",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 49,
+  "fields": {
+    "major_operative_unit": 13,
+    "abbreviation": "BRIAV 25",
+    "name": "Brigada de Aviaci\u00f3n No. 25",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 50,
+  "fields": {
+    "major_operative_unit": 13,
+    "abbreviation": "BRIAV 32",
+    "name": "Brigada de Aviaci\u00f3n No. 32",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 51,
+  "fields": {
+    "major_operative_unit": 13,
+    "abbreviation": "BRIAV 33",
+    "name": "Brigada de Aviaci\u00f3n No. 33",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 52,
+  "fields": {
+    "major_operative_unit": 13,
+    "abbreviation": "BRCNA",
+    "name": "Brigada Contra el Narcotrafico",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.minoroperativeunit",
+  "pk": 53,
+  "fields": {
+    "major_operative_unit": 14,
+    "abbreviation": "BRCMI",
+    "name": "Brigada Contra la Mineria Ilegal",
+    "is_ejc": true,
+    "is_active": true
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$180000$meKu8ziSdZEX$xCicoew7uRukZ1SNOrjkyoubOk2XVcS7MYDNZHoZS5w=",
+    "last_login": "2020-03-02T20:50:55.451Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "brandonnakama@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-03-02T16:50:20.944Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

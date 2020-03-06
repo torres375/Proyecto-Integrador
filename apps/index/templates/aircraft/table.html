@@ -1,0 +1,70 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="col-md-12 col-sm-6">
+        <div class="card">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">today</i>
+                </div>
+                <h4 class="card-title">asd</h4>
+            </div>
+            <div class="card-body">
+                <div class="material-datatables">
+                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0"width="100%" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Matricula</th>
+                                <th>Modelo</th>
+                                <th>Tipo</th>
+                                <th>Municipio</th>
+                                <th>Departamento</th>
+                                <th>Horas Asignadas</th>
+                                <th>Horas Voladas</th>
+                                <th>Total Horas Voladas</th>
+                                <th>Proxima Inspección</th>
+                                <th>Horas Proxima Inspección</th>
+                                <th>Estado</th>
+                                <th class="disabled-sorting text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for aircraft in aircratf_list %}
+                                <tr>
+                                    <td>{{aircraft.enrollment}}</td>
+                                    <td>{{aircraft.air_craft_models.name}}</td>
+                                    <td>{{aircraft.air_craft_type.name}}</td>
+                                    <td>{{aircraft.municipality.name}}</td>
+                                    <td>{{aircraft.municipality.department.name}}</td>
+                                    <td>{{aircraft.assigned_hours}}</td>
+                                    <td>{{aircraft.fly_hours}}</td>
+                                    <td>{{aircraft.total_hours}}</td>
+                                    <td>{{aircraft.next_inspection}}</td>
+                                    <td>{{aircraft.next_inspection_hours}}</td>
+                                    <td>{{aircraft.aircratf_status}}</td>
+                                    <td class="text-right">
+                                        <a href="#"class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
+                                        <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                                        <a onclick="showAlert('#')" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">delete</i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>   
+            </div>
+            
+            <!-- end content-->
+        </div>
+        <!--  end card  -->
+        <div style="text-align: center;">
+            <a href="#">
+                <button class="btn btn-info">Nuevo</button>
+            </a>
+        </div>
+    </div>
+    <!-- end col-md-12 -->
+    </div>
+    <!-- end row -->
+{% endblock content %}
