@@ -25,9 +25,9 @@
                         <p class="d-lg-none d-md-block">Account</p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                        <a class="dropdown-item" href="dashboard.html#">Configuración</a>
-                            <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="dashboard.html#">Cerrar Sesión</a>
+                        <!-- <a class="dropdown-item" href="dashboard.html#">Configuración</a>
+                            <div class="dropdown-divider"></div> -->
+                        <a class="dropdown-item" href="{% url 'index:logout' %}">Cerrar Sesión</a>
                     </div>
                 </li>
             </ul>

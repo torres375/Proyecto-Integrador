@@ -10335,6 +10335,53 @@
   }
 },
 {
+  "model": "index.aircrafttype",
+  "pk": 1,
+  "fields": {
+    "name": "Helicoptero"
+  }
+},
+{
+  "model": "index.aircraftmodel",
+  "pk": 1,
+  "fields": {
+    "air_craft_type": 1,
+    "name": "UH-60"
+  }
+},
+{
+  "model": "index.aircraft",
+  "pk": 2,
+  "fields": {
+    "air_craft_type": 1,
+    "air_craft_models": 1,
+    "municipality": 169,
+    "enrollment": "EJC1564",
+    "assigned_hours": 6.0,
+    "fly_hours": 6.0,
+    "total_hours": 6.0,
+    "next_inspection": 6.0,
+    "next_inspection_hours": 6.0,
+    "aircraft_status": "AVP"
+  }
+},
+{
+  "model": "index.aircraft",
+  "pk": 3,
+  "fields": {
+    "air_craft_type": 1,
+    "air_craft_models": 1,
+    "municipality": 542,
+    "enrollment": "EJC1235",
+    "assigned_hours": 6.0,
+    "fly_hours": 6.0,
+    "total_hours": 6.0,
+    "next_inspection": 6.0,
+    "next_inspection_hours": 6.0,
+    "aircraft_status": "AVP"
+  }
+},
+{
   "model": "index.rank",
   "pk": 1,
   "fields": {
@@ -10474,7 +10521,7 @@
   "model": "index.majoroperativeunit",
   "pk": 1,
   "fields": {
-    "abbreviation": "CCOES",
+    "abbreviation": "Comando Conjunto de Operaciones Especiales",
     "name": "Comando Conjunto de Operaciones Especiales",
     "is_ejc": false,
     "is_active": true
@@ -11172,6 +11219,100 @@
   }
 },
 {
+  "model": "index.tacticunit",
+  "pk": 1,
+  "fields": {
+    "minor_operative_unit": 51,
+    "abbreviation": "BUENAVISTA",
+    "name": "BUENAVISTA",
+    "is_aviation": true,
+    "is_active": true
+  }
+},
+{
+  "model": "index.crew",
+  "pk": 5,
+  "fields": {
+    "rank": 2,
+    "air_craft_type": 1,
+    "air_craft_models": 1,
+    "name": "Tripulante 1",
+    "status": true,
+    "flight_charge": "IV"
+  }
+},
+{
+  "model": "index.majoroperation",
+  "pk": 2,
+  "fields": {
+    "name": "Operaci\u00f3n Mayor",
+    "is_active": true
+  }
+},
+{
+  "model": "index.operation",
+  "pk": 2,
+  "fields": {
+    "major_operations": 2,
+    "name": "Operaci\u00f3n",
+    "is_active": true
+  }
+},
+{
+  "model": "index.flightcondition",
+  "pk": 2,
+  "fields": {
+    "name": "Diurno",
+    "initials": "D",
+    "is_active": true
+  }
+},
+{
+  "model": "index.flightcondition",
+  "pk": 3,
+  "fields": {
+    "name": "Lentes de Visi\u00f3n Nocturna",
+    "initials": "LVN",
+    "is_active": true
+  }
+},
+{
+  "model": "index.flightcondition",
+  "pk": 4,
+  "fields": {
+    "name": "Nocturna",
+    "initials": "N",
+    "is_active": true
+  }
+},
+{
+  "model": "index.flightcondition",
+  "pk": 5,
+  "fields": {
+    "name": "Sistema de Visi\u00f3n Diurna",
+    "initials": "SD",
+    "is_active": true
+  }
+},
+{
+  "model": "index.flightcondition",
+  "pk": 6,
+  "fields": {
+    "name": "Sistema de Visi\u00f3n Nocturna",
+    "initials": "SN",
+    "is_active": true
+  }
+},
+{
+  "model": "index.flightcondition",
+  "pk": 7,
+  "fields": {
+    "name": "Instrumentos",
+    "initials": "IFR",
+    "is_active": true
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -11181,7 +11322,7 @@
     "username": "admin",
     "first_name": "",
     "last_name": "",
-    "email": "brandonnakama@gmail.com",
+    "email": "admin@gmail.com",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2020-03-02T16:50:20.944Z",

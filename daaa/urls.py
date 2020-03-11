@@ -21,5 +21,6 @@ from django.conf.urls.static import static
 urlpatterns = [ 
     path('admin/', admin.site.urls), 
     # Enter the app name in following syntax for this to work 
-    path('', include("apps.index.urls")), 
+    path('', include("apps.index.urls")),
+    path('users/', include("apps.users.urls")), 
 ]

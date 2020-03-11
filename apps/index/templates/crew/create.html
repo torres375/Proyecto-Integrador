@@ -27,7 +27,7 @@
                         <label class="col-sm-2 col-form-label">Nombre</label>
                         <div class="col-sm-7">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" id="id_name" {% if form.name.value %} value="{{form.name.value}}" {% endif %} placeholder="" required>
+                                <input class="text-capitalize" type="text" class="form-control" name="name" id="id_name" {% if form.name.value %} value="{{form.name.value}}" {% endif %} placeholder="" required>
                                 {% if form.name.help_text %}
                                 <p class="help">{{ form.name.help_text|safe }}</p>
                             {% endif %}
@@ -66,21 +66,27 @@
                         </div>
                     </div>
                     <div class="row">
-                        <label class="col-sm-2 col-form-label">Cargo</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                               <input type="text" class="form-control" name="flight_charge" id="id_flight_charge" {% if form.flight_charge.value %} value="{{form.flight_charge.value}}" {% endif %} placeholder="" required>
-                                {% if form.flight_charge.help_text %}
-                                    <p class="help">{{ form.flight_charge.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.flight_charge.erros %}
+                        <label class="col-sm-2 col-form-label">¿Está activo?</label>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="status" id="id_status" type="checkbox"
+                                        {% if form.status.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.status.help_text %}
+                                    <p class="help">{{ form.status.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.status.errors %}
                                     <ul class="errorlist">
-                                        {% for error in form.flight_charge.errors %}
-                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% for error in form.status.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                         {% endfor %}
                                     </ul>
-                                {% endif %}
-                            </div>    
+                                    {% endif %}
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -108,22 +114,22 @@
                         </div>
                     </div> <br>  <br>
                     <div class="row">
-                        <label class="col-sm-2 col-form-label">Estado</label>
+                        <label class="col-sm-2 col-form-label">Cargo de vuelo</label>
                         <div class="col-sm-3">
                             <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Estado" data-size="7" name="status" id="id_status" required>
-                                    {% for x,y in form.fields.status.choices %}
-                                        <option value="{{ x }}" {% if form.status.value == x %} selected{% endif %} >
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Estado" data-size="7" name="flight_charge" id="id_flight_charge" required>
+                                    {% for x,y in form.fields.flight_charge.choices %}
+                                        <option value="{{ x }}" {% if form.flight_charge.value == x %} selected{% endif %} >
                                             {{ y }}
                                         </option>
                                     {% endfor %}
                                 </select>
-                                {% if form.status.help_text %}
-                                    <p class="help">{{ form.status.help_text|safe }}</p>
+                                {% if form.flight_charge.help_text %}
+                                    <p class="help">{{ form.flight_charge.help_text|safe }}</p>
                                 {% endif %}
-                                {% if form.status.errors %}
+                                {% if form.flight_charge.errors %}
                                     <ul class="errorlist">
-                                        {% for error in form.status.errors %}
+                                        {% for error in form.flight_charge.errors %}
                                             <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                         {% endfor %}
                                     </ul>

@@ -1,0 +1,76 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <form method="post"enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-header card-header-rose card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">airline_seat_recline_normal</i>
+                    </div>
+                    <div class="card-text">
+                        <h4 class="card-title">REGISTRAR OPERACIÓN MAYOR</h4>
+                        {% if form.non_field_errors %}
+                    <ul class="errorlist">
+                        {% for error in form.non_field_errors %}
+                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                    </div>
+                </div>  
+                <div class="card-body ">
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" id="id_name" {% if form.name.value %} value="{{form.name.value}}" {% endif %} placeholder="" required>
+                                {% if form.name.help_text %}
+                                <p class="help">{{ form.name.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.name.errors %}
+                                <ul class="errorlist">
+                                    {% for error in form.name.errors %}
+                                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">¿Está activa?</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="is_active" id="id_is_active" type="checkbox"
+                                        {% if form.is_active.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.is_active.help_text %}
+                                    <p class="help">{{ form.is_active.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.is_active.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.is_active.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer ml-auto mr-auto">
+                    <button type="submit" class="btn btn-rose">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock content %}

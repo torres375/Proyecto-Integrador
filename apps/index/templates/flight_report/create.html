@@ -1,0 +1,612 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <form method="post"enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-header card-header-rose card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">&#xE905;</i>
+                    </div>
+                    <div class="card-text">
+                        <h4 class="card-title">CREAR REPORTE DE VUELO</h4>
+                        {% if form.non_field_errors %}
+                    <ul class="errorlist">
+                        {% for error in form.non_field_errors %}
+                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                    </div>
+                    <div class="row">
+                    <div class="col-md-5">
+                        <div class="card ">
+                          <div class="card-header card-header-rose card-header-text">
+                            <div class="card-icon">
+                              <i class="material-icons">library_books</i>
+                            </div>
+                            <h4 class="card-title">Fecha</h4>
+                          </div>
+                          <div class="card-body ">
+                            <div class="form-group">
+                              <input type="date" class="form-control datepicker" name="date"  id="id_date" {% if form.machine_hours.value %} value="{{form.date.value}}"  {% endif %} placeholder="" required>
+                              {% if form.date.help_text %}
+                                <p class="help">{{ form.date.help_text|safe }}</p>
+                              {% endif %}
+                              {% if form.date.erros %}
+                                  <ul class="errorlist">
+                                      {% for error in form.date.errors %}
+                                          <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="card ">
+                          <div class="card-header card-header-rose card-header-text">
+                            <div class="card-icon">
+                              <i class="material-icons">av_timer</i>
+                            </div>
+                            <h4 class="card-title">Hora</h4>
+                          </div>
+                          <div class="card-body ">
+                            <div class="form-group">
+                              <input type="time" class="form-control timepicker" name="time"  id="id_time" {% if form.time.value %} value="{{form.time.value}}"  {% endif %} placeholder="" required>
+                              {% if form.time.help_text %}
+                                <p class="help">{{ form.time.help_text|safe }}</p>
+                              {% endif %}
+                              {% if form.time.erros %}
+                                  <ul class="errorlist">
+                                      {% for error in form.time.errors %}
+                                          <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                      {% endfor %}
+                                  </ul>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>  
+            </div>
+                <div class="card-body ">
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Horas de Maquina</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="machine_hours" id="id_machine_hours" {% if form.machine_hours.value %} value="{{form.machine_hours.value}}" {% endif %} placeholder="" required>
+                                {% if form.machine_hours.help_text %}
+                                    <p class="help">{{ form.machine_hours.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.machine_hours.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.machine_hours.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Horas de Tripulación</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="crew_hours" id="id_crew_hours" {% if form.crew_hours.value %} value="{{form.crew_hours.value}}" {% endif %} placeholder="" required>
+                                {% if form.crew_hours.help_text %}
+                                    <p class="help">{{ form.crew_hours.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.crew_hours.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.crew_hours.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Condiciones de Vuelo</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="flight_conditions" id="id_flight_conditions" {% if form.flight_conditions.value %} value="{{form.flight_conditions.value}}" {% endif %} placeholder="" required>
+                                {% if form.flight_conditions.help_text %}
+                                    <p class="help">{{ form.flight_conditions.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.flight_conditions.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.flight_conditions.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">PAX</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="pax" id="id_pax" {% if form.pax.value %} value="{{form.paxs.value}}" {% endif %} placeholder="" required>
+                                {% if form.pax.help_text %}
+                                    <p class="help">{{ form.pax.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.pax.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.pax.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Evacuaciones Civiles</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="civil_evacuations" id="id_civil_evacuations" {% if form.civil_evacuations.value %} value="{{form.civil_evacuations.value}}" {% endif %} placeholder="" required>
+                                {% if form.civil_evacuations.help_text %}
+                                    <p class="help">{{ form.civil_evacuations.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.civil_evacuations.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.civil_evacuations.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Kilos</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="kilos" id="id_kilos" {% if form.kilos.value %} value="{{form.kilos.value}}" {% endif %} placeholder="" required>
+                                {% if form.kilos.help_text %}
+                                    <p class="help">{{ form.kilos.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.kilos.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.kilos.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Combustible</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="fuel" id="id_fuel" {% if form.fuel.value %} value="{{form.fuel.value}}" {% endif %} placeholder="" required>
+                                {% if form.fuel.help_text %}
+                                    <p class="help">{{ form.fuel.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.fuel.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.fuel.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Observaciones</label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="observations" id="id_observations" {% if form.observations.value %} value="{{form.observations.value}}" {% endif %} placeholder="" required>
+                                    {% if form.observations.help_text %}
+                                        <p class="help">{{ form.observations.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.observations.erros %}
+                                        <ul class="errorlist">
+                                            {% for error in form.observations.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                        <label class="col-sm-2 col-form-label">Heridos PT</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="wounded_pt" id="id_wounded_pt" {% if form.wounded_pt.value %} value="{{form.wounded_pt.value}}" {% endif %} placeholder="" required>
+                                {% if form.wounded_pt.help_text %}
+                                    <p class="help">{{ form.wounded_pt.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.wounded_pt.erros %}
+                                    <ul class="errorlist">
+                                        {% for error in form.wounded_pt.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Enfermos PT</label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="sick_pt" id="id_sick_pt" {% if form.sick_pt.value %}  value="{{form.sick_pt.value}}" {% endif %} placeholder="" required>                        
+                                    {% if form.sick_pt.help_text %}
+                                        <p class="help">{{ form.sick_pt.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.sick_pt.erros %}
+                                        <ul class="errorlist">
+                                            {% for error in form.sick_pt.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Muertos PT</label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="dead_pt" id="id_dead_pt" {% if form.dead_pt.value %}  value="{{form.dead_pt.value}}" {% endif %} placeholder="" required>                        
+                                    {% if form.dead_pt.help_text %}
+                                        <p class="help">{{ form.dead_pt.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.dead_pt.erros %}
+                                        <ul class="errorlist">
+                                            {% for error in form.dead_pt.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Heridos EN</label>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="wounded_en" id="id_wounded_en" {% if form.wounded_en.value %} value="{{form.wounded_en.value}}" {% endif %} placeholder="" required>
+                                    {% if form.wounded_en.help_text %}
+                                        <p class="help">{{ form.wounded_en.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.wounded_en.erros %}
+                                        <ul class="errorlist">
+                                            {% for error in form.wounded_en.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Enfermos EN</label>
+                                <div class="col-sm-7">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="sick_en" id="id_sick_en" {% if form.sick_en.value %}  value="{{form.sick_en.value}}" {% endif %} placeholder="" required>                        
+                                        {% if form.sick_en.help_text %}
+                                            <p class="help">{{ form.sick_en.help_text|safe }}</p>
+                                        {% endif %}
+                                        {% if form.sick_en.erros %}
+                                            <ul class="errorlist">
+                                                {% for error in form.sick_en.errors %}
+                                                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-2 col-form-label">Muertos EN</label>
+                                <div class="col-sm-7">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="dead_en" id="id_dead_en" {% if form.dead_en.value %}  value="{{form.dead_en.value}}" {% endif %} placeholder="" required>                        
+                                        {% if form.dead_en.help_text %}
+                                            <p class="help">{{ form.dead_en.help_text|safe }}</p>
+                                        {% endif %}
+                                        {% if form.dead_en.erros %}
+                                            <ul class="errorlist">
+                                                {% for error in form.dead_en.errors %}
+                                                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </div>    
+                                </div>
+                            </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Tripulación</label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Tripulación" data-size="7" name="crew" id="id_crew">
+                                        {% for x,y in form.fields.crew.choices %}
+                                            <option value="{{ x }}" {% if form.crew.value == x %} selected{% endif %} >
+                                                {{ y }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.crew.help_text %}
+                                        <p class="help">{{ form.crew.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.crew.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.crew.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>    
+                            <label class="col-sm-2 col-form-label">Unidad Tactica</label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="tactic_unit" id="id_tactic_unit">
+                                        {% for x,y in form.tactic_unit.choices %}
+                                        <option value="{{ x }}" {% if form.tactic_unit.value == x %} selected{% endif %}>
+                                            {{ y }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.tactic_unit.help_text %}
+                                        <p class="help">{{ form.tactic_unit.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.tactic_unit.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.tactic_unit.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Operación</label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Operación" data-size="7" name="operation" id="id_operation">
+                                        {% for x,y in form.fields.operation.choices %}
+                                            <option value="{{ x }}" {% if form.operation.value == x %} selected{% endif %} >
+                                                {{ y }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.operation.help_text %}
+                                        <p class="help">{{ form.operation.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.operation.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.operation.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>    
+                            <label class="col-sm-2 col-form-label">Aeronave</label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Aeronave" data-size="7" name="aircraft" id="id_aircraft">
+                                        {% for x,y in form.aircraft.choices %}
+                                        <option value="{{ x }}" {% if form.aircraft.value == x %} selected{% endif %}>
+                                            {{ y }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.aircraft.help_text %}
+                                        <p class="help">{{ form.aircraft.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.aircraft.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.aircraft.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2 col-form-label">Unidad Operativa Menor</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="minor_operative_unit" id="id_minor_operative_unit">
+                                    {% for x,y in form.fields.minor_operative_unit.choices %}
+                                        <option value="{{ x }}" {% if form.minor_operative_unit.value == x %} selected{% endif %} >
+                                            {{ y }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.minor_operative_unit.help_text %}
+                                    <p class="help">{{ form.minor_operative_unit.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.minor_operative_unit.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.minor_operative_unit.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>      
+                            <label class="col-sm-2 col-form-label">Unidad Operativa Mayor</label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="major_operative_unit" id="id_major_operative_unit">
+                                        {% for x,y in form.fields.major_operative_unit.choices %}
+                                            <option value="{{ x }}" {% if form.major_operative_unit.value == x %} selected{% endif %} >
+                                                {{ y }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.major_operative_unit.help_text %}
+                                        <p class="help">{{ form.major_operative_unit.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.major_operative_unit.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.major_operative_unit.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>    
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Convenio</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Convenio" data-size="7" name="agreement" id="id_agreement">
+                                    {% for x,y in form.fields.agreement.choices %}
+                                        <option value="{{ x }}" {% if form.agreement.value == x %} selected{% endif %} >
+                                            {{ y }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.agreement.help_text %}
+                                    <p class="help">{{ form.agreement.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.agreement.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.agreement.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>    
+                        <label class="col-sm-2 col-form-label">Misión de Aviación</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Misión" data-size="7" name="aviation_mission" id="id_aviation_mission">
+                                    {% for x,y in form.aviation_mission.choices %}
+                                    <option value="{{ x }}" {% if form.aviation_mission.value == x %} selected{% endif %}>
+                                        {{ y }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.aviation_mission.help_text %}
+                                    <p class="help">{{ form.aviation_mission.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.aviation_mission.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.aviation_mission.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Evento de Aviación</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Evento" data-size="7" name="aviation_event" id="id_aviation_event">
+                                    {% for x,y in form.fields.aviation_event.choices %}
+                                        <option value="{{ x }}" {% if form.aviation_event.value == x %} selected{% endif %} >
+                                            {{ y }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.aviation_event.help_text %}
+                                    <p class="help">{{ form.aviation_event.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.aviation_event.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.aviation_event.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>    
+                        
+                    </div>
+                </div>
+                <div class="card-footer ml-auto mr-auto">
+                    <button type="submit" class="btn btn-rose">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock content %}
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#id_department").on("change", getMunicipalities);
+    });
+
+    function getMunicipalities() {
+        var departmentId = $("#id_department").val();
+        if (departmentId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_municipality").html("");
+            $("#id_municipality").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_municipalities' %}",
+                data: {
+                    "id_department": departmentId,
+                },
+            });
+            request.done(function(response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_municipality").html(response.municipalities);
+                $("#id_municipality").selectpicker("refresh");
+            });
+        } else {
+            $("#id_municipality").html("<option value='' selected='selected'>---------</option>");
+            $("#id_municipality").selectpicker("refresh");
+        }
+    }    
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#id_major_operative_unit").on("change", getMinorOperativeUnits);
+    });
+
+    function getMinorOperativeUnits() {
+        var major_operative_unitId = $("#id_major_operative_unit").val();
+        if (major_operative_unitId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_minor_operative_unit").html("");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_minor_operative_units' %}",
+                data: {
+                    "id_major_operative_unit": major_operative_unitId,
+                },
+            });
+            request.done(function(response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_minor_operative_unit").html(response.minor_operative_units);
+                $("#id_minor_operative_unit").selectpicker("refresh");
+            });
+        } else {
+            $("#id_minor_operative_unit").html("<option value='' selected='selected'>---------</option>");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+        }
+    }    
+
+</script>
+{% endblock js %}

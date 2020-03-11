@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from decimal import Decimal
 
 # Create your models here.
 class Department (models.Model):
@@ -103,7 +104,7 @@ class MajorOperativeUnit(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return '{} - {}'.format(self.name, self.abbreviation)
+        return '{} ({})'.format(self.name, self.abbreviation)
 
 
 class MinorOperativeUnit(models.Model):
@@ -114,13 +115,14 @@ class MinorOperativeUnit(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return '{} ({})'.format(self.name, self.abbreviation)
 
 
 class TacticUnit(models.Model):
+    minor_operative_unit = models.ForeignKey(MinorOperativeUnit, on_delete=models.CASCADE, related_name="tactic_units")
     abbreviation = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
-    is_tactic_unit = models.BooleanField(default=False)
+    is_aviation = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
@@ -134,7 +136,7 @@ class UserProfile(models.Model):
     tactic_unit = models.ForeignKey(TacticUnit, on_delete=models.CASCADE, related_name="tactic_unit_users")
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 
 class Crew(models.Model):
@@ -142,7 +144,7 @@ class Crew(models.Model):
     air_craft_type = models.ForeignKey(AirCraftType, on_delete=models.CASCADE, related_name="aircrafts_type_crew")
     air_craft_models = models.ForeignKey(AirCraftModel, on_delete=models.CASCADE, related_name="aircrafts_model_crew")    
     name = models.CharField(max_length=50)
-    flight_charge = models.CharField(max_length=50)
+    status = models.BooleanField(default=True)
     PAM = 'PAM'
     PI = 'P'
     IV= 'IV'
@@ -163,8 +165,7 @@ class Crew(models.Model):
     (OMI, 'Operador de Mision'),
     (OVE, 'Operador de vehiculo'),
     )
-    status = models.CharField(
-    max_length=3, choices=STATUS_CHOICES,)
+    flight_charge = models.CharField(max_length=3, choices=STATUS_CHOICES,)
 
     def __str__(self):
         return self.name
@@ -199,10 +200,25 @@ class FlightCondition(models.Model):
 
 
 class AviationEvent(models.Model):
-    name = models.CharField(max_length=50)
-    minicipality = models.ForeignKey(Municipality,  on_delete=models.CASCADE, related_name="aviation_events_municipalities")
+    DB = 'DB'
+    BASH = 'BASH'
+    FOD = 'FOD'
+    CFIT = 'CFIT'
+    CO = 'CO'
+    IP = 'IP'
+    NAME_CHOICES = (
+        (DB, 'Daño de batalla'),
+        (BASH, 'BASH - Bird/wildlife aircraft strike hazzard'),
+        (FOD, 'FOD - Foreign object damage'),
+        (CFIT, 'CFIT - Controlled Flight InTo Terrain'),
+        (CO, 'Colision'),
+        (IP, 'Incursión de pista')
+    )
+    name = models.CharField(max_length=4, choices=NAME_CHOICES,)
+    municipality = models.ForeignKey(Municipality,  on_delete=models.CASCADE, related_name="aviation_events_municipalities")
     is_active = models.BooleanField(default=True)
-    coordinates = models.CharField(max_length=50)
+    latitude = models.DecimalField(max_digits=18, decimal_places=16, default=Decimal('0'))
+    longitude = models.DecimalField(max_digits=19, decimal_places=16, default=Decimal('0'))
 
     def __str__(self):
         return self.name
@@ -229,10 +245,10 @@ class AviationMission(models.Model):
 class Agreement(models.Model):
     abbreviation = models.CharField(max_length=50)
     agreement_name = models.CharField(max_length=50)
-    status = models.CharField(max_length=50)
+    status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return self.agreement_name
 
 
 class Configuration(models.Model):
@@ -247,14 +263,19 @@ class Configuration(models.Model):
 
 class FlightReport(models.Model):
     municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="flight_reports_municipalities")
+
+    agreement = models.ForeignKey(Agreement, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_agreements")
+    major_operative_unit = models.ForeignKey(MajorOperativeUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_major_operative_units")    
+    aviation_mission = models.ForeignKey(AviationMission, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_aviation_missions")
+    configuration = models.ForeignKey(Configuration, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_configurations")
+    
     crew = models.ForeignKey(Crew, on_delete=models.CASCADE, related_name="flight_reports_crew")
+    tactic_unit = models.ForeignKey(TacticUnit, on_delete=models.CASCADE, related_name="flight_reports_tactic_units")
     operation = models.ForeignKey(Operation, on_delete=models.CASCADE, related_name="flight_reports_operations")
-    configuration = models.ForeignKey(Configuration, on_delete=models.CASCADE, related_name="flight_reports_configurations")
-    mission = models.ForeignKey(AviationMission, on_delete=models.CASCADE, related_name="flight_reports_mission")
-    aircraft = models.ForeignKey(AirCraft, on_delete=models.CASCADE, related_name="flight_reports_aircraft")
-    observations = models.CharField(max_length=50)
+    aircraft = models.ForeignKey(AirCraft, on_delete=models.CASCADE, related_name="flight_reports_aircrafts")
     aviation_event = models.ForeignKey(AviationEvent, on_delete=models.CASCADE, related_name="flight_reports_events")
-    coordinates_event = models.CharField(max_length=50)
+    
+    observations = models.CharField(max_length=50)
     fuel = models.FloatField()
     kilos = models.FloatField()
     sick_pt =  models.IntegerField()
@@ -265,7 +286,6 @@ class FlightReport(models.Model):
     dead_en =  models.IntegerField()
     civil_evacuations = models.IntegerField()
     pax = models.IntegerField()
-    coordinates = models.CharField(max_length=50)
     flight_conditions = models.ForeignKey(FlightCondition, on_delete=models.CASCADE, related_name="flight_conditions")
     crew_hours = models.FloatField()
     machine_hours = models.FloatField()
@@ -276,5 +296,5 @@ class AirCrew(models.Model):
     flight_reports = models.ForeignKey(FlightReport,  on_delete=models.CASCADE, related_name="configurations")
     crew = models.ForeignKey(Crew,  on_delete=models.CASCADE, related_name="air_crews")
 
-    def _str_(self):
+    def __str__(self):
         return self.name

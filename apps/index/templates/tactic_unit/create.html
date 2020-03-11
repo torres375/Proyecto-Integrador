@@ -1,0 +1,226 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-md-12">
+        <form method="post"enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-header card-header-rose card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">airline_seat_recline_normal</i>
+                    </div>
+                    <div class="card-text">
+                        <h4 class="card-title">REGISTRAR UNIDAD TÁCTICA</h4>
+                        {% if form.non_field_errors %}
+                    <ul class="errorlist">
+                        {% for error in form.non_field_errors %}
+                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                    </div>
+                </div>  
+                <div class="card-body ">
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Nombre</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" id="id_name" {% if form.name.value %} value="{{form.name.value}}" {% endif %} placeholder="" required>
+                                {% if form.name.help_text %}
+                                <p class="help">{{ form.name.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.name.errors %}
+                                <ul class="errorlist">
+                                    {% for error in form.name.errors %}
+                                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Abreviatura</label>
+                        <div class="col-sm-7">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="abbreviation" id="id_abbreviation" {% if form.abbreviation.value %} value="{{form.abbreviation.value}}" {% endif %} placeholder="" required>
+                                {% if form.abbreviation.help_text %}
+                                <p class="help">{{ form.abbreviation.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.abbreviation.errors %}
+                                <ul class="errorlist">
+                                    {% for error in form.abbreviation.errors %}
+                                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Unidad Operativa Menor</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="minor_operative_unit" id="id_minor_operative_unit">
+                                    {% for x,y in form.fields.minor_operative_unit.choices %}
+                                        <option value="{{ x }}" {% if form.minor_operative_unit.value == x %} selected{% endif %} >
+                                            {{ y }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.minor_operative_unit.help_text %}
+                                    <p class="help">{{ form.minor_operative_unit.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.minor_operative_unit.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.minor_operative_unit.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>      
+                        <label class="col-sm-2 col-form-label">Unidad Operativa Mayor</label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="major_operative_unit" id="id_major_operative_unit">
+                                        {% for x,y in form.fields.major_operative_unit.choices %}
+                                            <option value="{{ x }}" {% if form.major_operative_unit.value == x %} selected{% endif %} >
+                                                {{ y }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.major_operative_unit.help_text %}
+                                        <p class="help">{{ form.major_operative_unit.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.major_operative_unit.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.major_operative_unit.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>      
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">¿Es unidad táctica de aviación?</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="is_aviation" id="id_is_aviation" type="checkbox"
+                                        {% if form.is_aviation.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.is_aviation.help_text %}
+                                    <p class="help">{{ form.is_aviation.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.is_aviation.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.is_aviation.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                        <label class="col-sm-2 col-form-label">¿Está activo?</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="is_active" id="id_is_active" type="checkbox"
+                                        {% if form.is_active.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.is_active.help_text %}
+                                    <p class="help">{{ form.is_active.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.is_active.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.is_active.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer ml-auto mr-auto">
+                    <button type="submit" class="btn btn-rose">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>    
+{% endblock content %}
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#id_department").on("change", getMunicipalities);
+    });
+
+    function getMunicipalities() {
+        var departmentId = $("#id_department").val();
+        if (departmentId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_municipality").html("");
+            $("#id_municipality").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_municipalities' %}",
+                data: {
+                    "id_department": departmentId,
+                },
+            });
+            request.done(function(response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_municipality").html(response.municipalities);
+                $("#id_municipality").selectpicker("refresh");
+            });
+        } else {
+            $("#id_municipality").html("<option value='' selected='selected'>---------</option>");
+            $("#id_municipality").selectpicker("refresh");
+        }
+    }    
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#id_major_operative_unit").on("change", getMinorOperativeUnits);
+    });
+
+    function getMinorOperativeUnits() {
+        var major_operative_unitId = $("#id_major_operative_unit").val();
+        if (major_operative_unitId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_minor_operative_unit").html("");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_minor_operative_units' %}",
+                data: {
+                    "id_major_operative_unit": major_operative_unitId,
+                },
+            });
+            request.done(function(response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_minor_operative_unit").html(response.minor_operative_units);
+                $("#id_minor_operative_unit").selectpicker("refresh");
+            });
+        } else {
+            $("#id_minor_operative_unit").html("<option value='' selected='selected'>---------</option>");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+        }
+    }    
+
+</script>
+{% endblock js %}

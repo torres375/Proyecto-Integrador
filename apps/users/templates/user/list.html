@@ -1,0 +1,65 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="col-md-12 col-sm-6">
+        <div class="card">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">accessibility</i>
+                </div>
+                <h4 class="card-title"> Usuarios</h4>
+            </div>
+            <div class="card-body">
+                <div class="material-datatables">
+                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0"width="100%" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Nombre de Usuario</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Correo</th>
+                                <th>Rango</th>
+                                <th>Tipo de Usuario</th>
+                                <th>Unidad Tactica</th>
+                                <th class="disabled-sorting text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for someuser in user_list %}
+                                <tr>
+                                    <td>{{someuser.username}}</td>
+                                    <td>{{someuser.first_name}}</td>
+                                    <td>{{someuser.last_name}}</td>
+                                    <td>{{someuser.email}}</td>
+                                    <td>{{someuser.profile.rank}}</td>
+                                    <td>{{someuser.profile.user_type}}</td>
+                                    <td>{{someuser.profile.tactic_unit}}</td>
+                                    <td class="text-right">
+                                        <a href="{% url 'users:detail' someuser.pk %}"  class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
+                                        <a href="{% url 'users:update' someuser.pk %}" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                                        <a data-link="{% url 'users:delete' someuser.pk %}"
+                                        onclick="modalDelete(this)" data-toggle ="modal"
+                                        data-target=".bs-example-modal-sm" ><i class="material-icons">delete</i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>   
+            </div>
+            
+            <!-- end content-->
+        </div>
+        <!--  end card  -->
+        <div style="text-align: center;">
+            <a href="{% url 'users:register' %}">
+                <button class="btn btn-info">Nuevo</button>
+            </a>
+        </div>
+    </div>
+    <!-- end col-md-12 -->
+    </div>
+    <!-- end row -->
+{% include 'layouts/dashboard/modal_delete.html' %}
+{% endblock content %}

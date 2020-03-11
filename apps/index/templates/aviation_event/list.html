@@ -1,0 +1,67 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="col-md-12 col-sm-6">
+        <div class="card">
+            <div class="card-header card-header-info card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">airline_seat_recline_normal</i>
+                </div>
+                <h4 class="card-title">Tipos de aeronave</h4>
+            </div>
+            <div class="card-body">
+                <div class="material-datatables">
+                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0"width="100%" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Departamento (Municipio)</th>
+                                <th>Latitud</th>
+                                <th>Longitud</th>
+                                <th>Estado</th>
+                                <th class="disabled-sorting text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for aviation_event in aviation_event_list %}
+                                <tr>
+                                    <td>{{aviation_event.get_name_display}}</td>
+                                    <td>{{aviation_event.municipality.department}} ({{aviation_event.municipality}})</td>
+                                    <td>{{aviation_event.latitude}}</td>
+                                    <td>{{aviation_event.longitude}}</td>
+                                    <td>
+                                        {% if aviation_event.is_active %}
+                                        Activo
+                                        {% else %}
+                                        Inactivo
+                                        {% endif %}
+                                    </td>
+                                    <td class="text-right">
+                                        <a href="{% url 'index:detail_aviation_event' aviation_event.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
+                                        <a href="{% url 'index:update_aviation_event' aviation_event.pk %}" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
+                                        <a data-link="{% url 'index:delete_aviation_event' aviation_event.pk %}"
+                                        onclick="modalDelete(this)" data-toggle ="modal"
+                                        data-target=".bs-example-modal-sm" ><i class="material-icons">delete</i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>   
+            </div>
+            
+            <!-- end content-->
+        </div>
+        <!--  end card  -->
+        <div style="text-align: center;">
+            <a href="{% url 'index:create_aviation_event' %}">
+                <button class="btn btn-info">Nuevo</button>
+            </a>
+        </div>
+    </div>
+    <!-- end col-md-12 -->
+    </div>
+    <!-- end row -->
+{% include 'layouts/dashboard/modal_delete.html' %}
+{% endblock content %}

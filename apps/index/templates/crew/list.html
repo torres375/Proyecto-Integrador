@@ -31,8 +31,14 @@
                                     <td>{{crew.rank}}</td>
                                     <td>{{crew.name}}</td>
                                     <td>{{crew.air_craft_type}}</td>
-                                    <td>{{crew.flight_charge}}</td>
-                                    <td>{{crew.status}}</td>
+                                    <td>{{crew.get_flight_charge_display}}</td>
+                                    <td>
+                                        {% if crew.status %}
+                                        Activo
+                                        {% else %}
+                                        Inactivo
+                                        {% endif %}
+                                    </td>
                                     <td class="text-right">
                                         <a href="{% url 'index:detail_crew' crew.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
                                         <a href="{% url 'index:update_crew' crew.pk %}" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
@@ -51,7 +57,7 @@
         </div>
         <!--  end card  -->
         <div style="text-align: center;">
-            <a href="{% url 'index:crew_form' %}">
+            <a href="{% url 'index:create_crew' %}">
                 <button class="btn btn-info">Nuevo</button>
             </a>
         </div>
