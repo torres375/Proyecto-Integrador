@@ -3,8 +3,9 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy, reverse
 from django.http import JsonResponse
+from apps.index.utilspdf import*
 from apps.index.models import * 
-from apps.index.forms import * 
+from apps.index.forms import *  
 from apps.users.forms import *
 
 
@@ -236,6 +237,8 @@ class CreateTacticUnit(CreateView):
     model = TacticUnit
     form = TacticUnitForm
     fields = '__all__'
+    
+    
 
     def get_success_url(self):
         pk = self.object.pk
@@ -745,6 +748,7 @@ class CreateFlightReport(CreateView):
     model = FlightReport
     form = FlightReportForm
     fields = '__all__'
+    success_url = reverse_lazy('index:list_configuration')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -754,6 +758,50 @@ class CreateFlightReport(CreateView):
    # def get_success_url(self):
      #   pk = self.object.pk
         #return reverse('index:detail_configuration', kwargs={'pk': pk})
+
+
+class EventFlightReport(ListView):
+    template_name = 'flight_report/click_to_get.html'
+    model = AirCraft
+    fields = '__all__'
+    #context_object_name = "configuration_list
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)        
+        context['flight_charge']=Crew.objects.all()
+        context['has_pam'] = Aircraft.objects.all()
+
+        return context
+    
+def eventclick(request, template_name = 'flight_report/click_to_get.html'):
+
+    if request.Get.get('ic-request'):
+        aircraftmodel, created = AirCraftModel.objects.all()
+        aircraftmodel.has_pam = True
+
+
+    raise NotImplementedError
+    
+
+@method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
+class ListPdf(ListView):
+    template_name = "pdf/pdf.html"
+    model = FlightReport
+    context_object_name = "flight_report_list"
+
+
+def gen_pdf(request):
+    ids = request.GET.get('id')
+    cid = request.GET.get('cid')
+    flight_report = FlightReport.objects.all().select_related()                 
+        
+    params = {
+        'flight_report': flight_report,
+        'request': request,
+        #'project':project
+    }
+    print(flight_report)
+    return  render_to_pdf('pdf/pdf.html', params)
 
 
 def get_minor_operative_units(request):

@@ -1,8 +1,9 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from . import views
+from . import views, utils, utilspdf
 from apps.users.views import LoginView, logout_view
 from apps.index.views import *
+
 
 
 app_name = 'index'
@@ -105,5 +106,10 @@ urlpatterns = [
     path('configuration/delete/<int:pk>/', views.DeleteConfiguration.as_view(), name='delete_configuration'),
 
     path('flight_report/create/', views.CreateFlightReport.as_view(), name='delete_configuration'),
+    path('flight_report/events/', views.EventFlightReport.as_view(), name='events'),
     path('ajax/get_minor_operative_units/', views.get_minor_operative_units, name='ajax_minor_operative_units'),
+    path('flight_report/excel/', utils.ReportAircratfExcel.as_view(), name='report_aircratf_excel'),
+    path('flight_report/list/', views.ListPdf.as_view(), name='flight_report_pdf'),
+    path('flight_report/pdf/', views.gen_pdf,name='pdf'),
+    
 ]

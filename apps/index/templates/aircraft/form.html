@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header card-header-rose card-header-icon">
                     <div class="card-icon">
-                        <i class="material-icons">&#xE905;</i>
+                        <i class="material-icons">airplanemode_active</i>
                     </div>
                     <div class="card-text">
                         <h4 class="card-title">REGISTRAR AERONAVE</h4>
@@ -141,7 +141,7 @@
                         <label class="col-sm-2 col-form-label">Siguiente inspecion hora </label>
                         <div class="col-sm-7">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="next_inspection_hours" id="id_next_inspection_hours" {% if form.total_hours.value %} value="{{form.total_hours.value}}" {% endif %} placeholder="" required>
+                                <input type="text" class="form-control" name="next_inspection_hours" id="id_next_inspection_hours" readonly="readonly" value="0" {% if form.total_hours.value %} value="{{form.total_hours.value}}" {% endif %} placeholder="" >
                                 {% if form.next_inspection_hours.help_text %}
                                     <p class="help">{{ form.next_inspection_hours.help_text|safe }}</p>
                                 {% endif %}

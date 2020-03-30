@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header card-header-rose card-header-icon">
                     <div class="card-icon">
-                        <i class="material-icons">airline_seat_recline_normal</i>
+                        <i class="material-icons">airplanemode_active</i>
                     </div>
                     <div class="card-text">
                         <h4 class="card-title">REGISTRAR MODELO DE AERONAVE</h4>
@@ -62,6 +62,222 @@
                                         {% endfor %}
                                     </ul>
                                 {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Piloto al Mando</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_pam" id="id_has_pam" type="checkbox"
+                                        {% if form.has_pam.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_pam.help_text %}
+                                    <p class="help">{{ form.has_pam.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_pam.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_pam.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Piloto</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_pilot" id="id_has_pilot" type="checkbox"
+                                        {% if form.has_pilot.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_pilot.help_text %}
+                                    <p class="help">{{ form.has_pilot.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_pilot.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_pilot.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Ingeniero de Vuelo</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_flight_engineer" id="id_flight_engineer" type="checkbox"
+                                        {% if form.has_flight_engineer.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_flight_engineer.help_text %}
+                                    <p class="help">{{ form.has_flight_engineer.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_flight_engineer.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_flight_engineer.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Jefe de Tripulacion</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_crew_chief" id="id_crew_chief" type="checkbox"
+                                        {% if form.has_crew_chief.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_crew_chief.help_text %}
+                                    <p class="help">{{ form.has_crew_chief.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_crew_chief.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_crew_chief.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Tecnico de Vuelo</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_flight_technician" id="id_flight_technician" type="checkbox"
+                                        {% if form.has_flight_technician.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_flight_technician.help_text %}
+                                    <p class="help">{{ form.has_flight_technician.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_flight_technician.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_flight_technician.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Artillero</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_gunner" id="id_gunner" type="checkbox"
+                                        {% if form.has_gunner.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_gunner.help_text %}
+                                    <p class="help">{{ form.has_gunner.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_gunner.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_gunner.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Comandante</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_commander" id="id_commander" type="checkbox"
+                                        {% if form.has_commander.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.has_commander.help_text %}
+                                    <p class="help">{{ form.has_commander.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.has_commander.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.has_commander.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Operador de Misión</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_mission_operator" id="id_mission_operator" type="checkbox"
+                                        {% if form.mission_operator.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.mission_operator.help_text %}
+                                    <p class="help">{{ form.mission_operator.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.mission_operator.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.mission_operator.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-2 col-form-label">Operador de Vehiculo</label>
+                        <div class="col-sm-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" name="has_Vehicle_operator" id="id_Vehicle_operator" type="checkbox"
+                                        {% if form.Vehicle_operator.value %} checked {% endif %}>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    {% if form.Vehicle_operator.help_text %}
+                                    <p class="help">{{ form.Vehicle_operator.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.Vehicle_operator.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.Vehicle_operator.errors %}
+                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+                                </label>
                             </div>
                         </div>
                     </div>

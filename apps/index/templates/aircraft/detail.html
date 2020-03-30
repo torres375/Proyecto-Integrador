@@ -64,7 +64,7 @@
                         </tr>
                         <tr>
                             <td><b>Horas Proxima Inspección</b></td>
-                            <td class="text-right">{{object.next_inspection}}</td>
+                            <td class="text-right">{{object.next_inspection_hours}}</td>
                         </tr>
                         <tr>
                             <td><b>Estado de aeronave</b></td>
@@ -75,12 +75,12 @@
                 
                 <div class="row">
                     <div class="create-btn-div col-sm-6" style="text-align:center">
-                        <a href="{% url 'index:update_aircraft' object.pk %}"><button type="button" class="btn btn-rose">Editar</button></a>
+                       <!--  <a href="{% url 'index:update_aircraft' object.pk %}"><button type="button" class="btn btn-rose">Editar</button></a>
                     </div>
                     <div class="create-btn-div col-sm-6" style="text-align:center">
                         <a href="{% url 'index:list_aircraft' %}"><button type="button" class="btn btn-info">Volver</button></a>
                     </div>    
                 </div>
         </div>
-    </div>
+    </div>-->
 {% endblock content %} 

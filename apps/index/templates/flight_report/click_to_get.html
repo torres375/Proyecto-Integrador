@@ -1,0 +1,29 @@
+{% if has_pam %}
+<div class="row">
+                            <label class="col-sm-2 col-form-label">esta pendejada </label>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Tripulación" data-size="7" name="flight_charge" id="id_flight_charge">
+                                        {% for x,y in form.fields.flight_charge.choices %}
+                                            <option value="{{ x }}" {% if form.flight_charge.value == x %} selected{% endif %} >
+                                                {{ y }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% if form.flight_charge.help_text %}
+                                        <p class="help">{{ form.flight_charge.help_text|safe }}</p>
+                                    {% endif %}
+                                    {% if form.flight_charge.errors %}
+                                        <ul class="errorlist">
+                                            {% for error in form.flight_charge.errors %}
+                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>    
+
+
+
+{% endif %}
