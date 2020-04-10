@@ -1,6 +1,7 @@
 {% load static %}
 
-<div class="sidebar" data-color="rose" data-background-color="black" data-image="{% static 'materialDashboardPro/assets/img/sidebar-1.jpg' %}">
+<!-- <div class="sidebar" data-color="rose" data-background-color="black" data-image="{% static 'materialDashboardPro/assets/img/sidebar-1.jpg' %}"> -->
+<div class="sidebar" data-color="rose" data-background-color="black">
     <div class="logo text-center">
         <a href="#" class="simple-text logo-normal">SICMA</a>
     </div>
@@ -13,14 +14,14 @@
                 <a data-toggle="collapse" href="#collapseExample" class="username">
                     <span>{{user.username}}<b class="caret"></b></span>
                 </a>
-            <div class="collapse" id="collapseExample">
-                <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index:logout' %}">
-                        <span class="sidebar-normal"> Cerrar sesión </span>
-                    </a>
-                </li>
-                <!-- <li class="nav-item">
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'index:logout' %}">
+                                <span class="sidebar-normal"> Cerrar sesión </span>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-item">
                     <a class="nav-link" href="#">
                         <span class="sidebar-normal"> Mi Perfil </span>
                     </a>
@@ -35,167 +36,179 @@
                     <span class="sidebar-normal"> Configuración </span>
                     </a>
                 </li> -->
-                </ul>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <ul class="nav">
-        <li class="nav-item active ">
-        <a class="nav-link" href="#">
-            <i class="material-icons">home</i>
-            <p> Inicio </p>
-        </a>
-        </li>
-        <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#aircraftCollapse">
-            <i class="material-icons">airplanemode_active</i>
-            <p> Aeronaves
-            <b class="caret"></b>
-            </p>
-        </a>
-        <div class="collapse" id="aircraftCollapse">
-            <ul class="nav">
-            <li class="nav-item ">
-                <a class="nav-link" href = "{% url 'index:list_aircraft_type' %}">
-                <span class="sidebar-mini"> T </span>
-                <span class="sidebar-normal" >  Tipos de aeronave </span>
+        <ul class="nav">
+            <li class="nav-item active ">
+                <a class="nav-link" href="#">
+                    <i class="material-icons">home</i>
+                    <p> Inicio </p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href = "{% url 'index:list_aircraft_model' %}">
-                <span class="sidebar-mini"> M </span>
-                <span class="sidebar-normal" >  Modelos de aeronave </span>
+                <a class="nav-link" data-toggle="collapse" href="#aircraftCollapse">
+                    <i class="material-icons">airplanemode_active</i>
+                    <p> Aeronaves
+                        <b class="caret"></b>
+                    </p>
                 </a>
+                <div class="collapse" id="aircraftCollapse">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_aircraft_type' %}">
+                                <span class="sidebar-mini"> T </span>
+                                <span class="sidebar-normal"> Tipos de aeronave </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_aircraft_model' %}">
+                                <span class="sidebar-mini"> M </span>
+                                <span class="sidebar-normal"> Modelos de aeronave </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_aircraft' %}">
+                                <span class="sidebar-mini"> A </span>
+                                <span class="sidebar-normal"> Aeronaves </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href = "{% url 'index:list_aircraft' %}">
-                <span class="sidebar-mini"> A </span>
-                <span class="sidebar-normal" > Aeronaves </span>
+                <a class="nav-link" data-toggle="collapse" href="#unitsCollapse">
+                    <i class="material-icons">flag</i>
+                    <p> Unidades
+                        <b class="caret"></b>
+                    </p>
                 </a>
-            </li>    
-            </ul>
-        </div>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" data-toggle="collapse" href="#unitsCollapse">
-                <i class="material-icons">flag</i>
-                <p> Unidades
-                <b class="caret"></b>
-                </p>
-            </a>
-            <div class="collapse" id="unitsCollapse">
-                <ul class="nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href = "{% url 'index:list_uoma' %}">
-                    <span class="sidebar-mini"> UOMA </span>
-                    <span class="sidebar-normal" >  Unidades Operativas Mayores </span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href = "{% url 'index:list_uome' %}">
-                    <span class="sidebar-mini"> UOME </span>
-                    <span class="sidebar-normal" >  Unidades Operativas Menores </span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href = "{% url 'index:list_tactic_unit' %}">
-                    <span class="sidebar-mini"> UT </span>
-                    <span class="sidebar-normal" > Unidades tácticas </span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href = "{% url 'index:list_agreement' %}">
-                    <span class="sidebar-mini"> C </span>
-                    <span class="sidebar-normal" > Convenios </span>
-                    </a>
-                </li>    
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" data-toggle="collapse" href="#operationsCollapse">
-                <i class="material-icons">security</i>
-                <p> Operación
-                <b class="caret"></b>
-                </p>
-            </a>
-            <div class="collapse" id="operationsCollapse">
-                <ul class="nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href = "{% url 'index:list_major_operation' %}">
-                    <span class="sidebar-mini"> OM </span>
-                    <span class="sidebar-normal" >  Operaciones Mayores </span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href = "{% url 'index:list_operation' %}">
-                    <span class="sidebar-mini"> OP </span>
-                    <span class="sidebar-normal" >  Operaciones </span>
-                    </a>
-                </li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item ">
-        <a class="nav-link" data-toggle="collapse" href="#flightsExamples">
-            <i class="material-icons">storage</i>
-            <p> Reporte de misiones
-            <b class="caret"></b>
-            </p>
-        </a>
-        <div class="collapse" id="flightsExamples">
-            <ul class="nav">
-            <li class="nav-item ">
-                <a class="nav-link" href="{% url 'index:list_crew' %}">
-                <span class="sidebar-mini"> T </span>
-                <span class="sidebar-normal"> Tripulantes  </span>
-                </a>
+                <div class="collapse" id="unitsCollapse">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_uoma' %}">
+                                <span class="sidebar-mini"> UOMA </span>
+                                <span class="sidebar-normal"> Unidades Operativas Mayores </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_uome' %}">
+                                <span class="sidebar-mini"> UOME </span>
+                                <span class="sidebar-normal"> Unidades Operativas Menores </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_tactic_unit' %}">
+                                <span class="sidebar-mini"> UT </span>
+                                <span class="sidebar-normal"> Unidades tácticas </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_agreement' %}">
+                                <span class="sidebar-mini"> C </span>
+                                <span class="sidebar-normal"> Convenios </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="{% url 'index:list_aviation_event' %}">
-                <span class="sidebar-mini"> EA </span>
-                <span class="sidebar-normal"> Eventos de aviación </span>
+                <a class="nav-link" data-toggle="collapse" href="#operationsCollapse">
+                    <i class="material-icons">security</i>
+                    <p> Operación
+                        <b class="caret"></b>
+                    </p>
                 </a>
+                <div class="collapse" id="operationsCollapse">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_major_operation' %}">
+                                <span class="sidebar-mini"> OM </span>
+                                <span class="sidebar-normal"> Operaciones Mayores </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_operation' %}">
+                                <span class="sidebar-mini"> OP </span>
+                                <span class="sidebar-normal"> Operaciones </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="{% url 'index:list_flight_condition' %}">
-                <span class="sidebar-mini"> CV </span>
-                <span class="sidebar-normal"> Condiciones de vuelo </span>
+                <a class="nav-link" data-toggle="collapse" href="#flightsExamples">
+                    <i class="material-icons">storage</i>
+                    <p> Reporte de misiones
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="flightsExamples">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_flight_report' %}">
+                                <span class="sidebar-mini"> RV </span>
+                                <span class="sidebar-normal"> Reportes de vuelo </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_crew' %}">
+                                <span class="sidebar-mini"> T </span>
+                                <span class="sidebar-normal"> Tripulantes </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_aviation_event' %}">
+                                <span class="sidebar-mini"> EA </span>
+                                <span class="sidebar-normal"> Eventos de aviación </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_flight_condition' %}">
+                                <span class="sidebar-mini"> CV </span>
+                                <span class="sidebar-normal"> Condiciones de vuelo </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" data-toggle="collapse" href="#missionExamples">
+                    <i class="material-icons">flight_takeoff</i>
+                    <p> Misiones de aviación
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="missionExamples">
+                    <ul class="nav">
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_mission_type' %}">
+                                <span class="sidebar-mini"> TM </span>
+                                <span class="sidebar-normal"> Tipo de misión </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_configuration' %}">
+                                <span class="sidebar-mini"> CO </span>
+                                <span class="sidebar-normal"> Configuraciones </span>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'index:list_aviation_mission' %}">
+                                <span class="sidebar-mini"> CV </span>
+                                <span class="sidebar-normal"> Misiones </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{% url 'users:list' %}">
+                    <i class="material-icons">face</i>
+                    <p> Usuarios </p>
                 </a>
             </li>
-            </ul>
-        </div>
-        </li>
-        <li class="nav-item ">
-            <a class="nav-link" data-toggle="collapse" href="#missionExamples">
-                <i class="material-icons">flight_takeoff</i>
-                <p> Misiones de aviación
-                <b class="caret"></b>
-                </p>
-            </a>
-            <div class="collapse" id="missionExamples">
-                <ul class="nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'index:list_mission_type' %}">
-                    <span class="sidebar-mini"> TM </span>
-                    <span class="sidebar-normal"> Tipo de misión  </span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'index:list_configuration' %}">
-                    <span class="sidebar-mini"> CO </span>
-                    <span class="sidebar-normal"> Configuraciones </span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'index:list_aviation_mission' %}">
-                    <span class="sidebar-mini"> CV </span>
-                    <span class="sidebar-normal"> Misiones </span>
-                    </a>
-                </li>
-                </ul>
-            </div>
-            </li>
-    </ul>
+        </ul>
     </div>
 </div>

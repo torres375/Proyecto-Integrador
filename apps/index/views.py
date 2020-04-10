@@ -1,9 +1,12 @@
 from django.views.generic import TemplateView,ListView,DetailView,CreateView,DeleteView,UpdateView 
 from django.contrib.auth.decorators import user_passes_test, login_required
+from django.shortcuts import get_object_or_404, render
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 from django.http import JsonResponse
-from apps.index.utilspdf import*
+from django.utils import timezone
+from apps.index.utilspdf import *
 from apps.index.models import * 
 from apps.index.forms import *  
 from apps.users.forms import *
@@ -742,46 +745,233 @@ class ListConfiguration(ListView):
 
 
 #Javi
+def get_aircraft_models(request):
+    id_aircraft_type = request.GET.get('id_aircraft_type')
+    aircraft_models = AirCraftModel.objects.none()
+    options = '<option value="" selected="selected">---------</option>'
+    if id_aircraft_type:
+        aircraft_models = AirCraftModel.objects.filter(air_craft_type__pk=id_aircraft_type)   
+    for aircraft_model in aircraft_models:
+        options += '<option value="%s">%s</option>' % (
+            aircraft_model.pk,
+            aircraft_model.name
+        )
+    response = {}
+    response['aircraft_models'] = options
+    return JsonResponse(response)
+
+
+def get_aircrafts(request):
+    id_aircraft_model= request.GET.get('id_aircraft_model')
+    aircrafts = AirCraft.objects.none()
+    options = '<option value="" selected="selected">---------</option>'
+    if id_aircraft_model:
+        aircrafts= AirCraft.objects.filter(air_craft_models__pk=id_aircraft_model)   
+    for aircraft in aircrafts:
+        options += '<option value="%s">%s</option>' % (
+            aircraft.pk,
+            aircraft.enrollment
+        )
+    response = {}
+    response['aircrafts'] = options
+    return JsonResponse(response)
+
+
+def get_aviation_missions(request):
+    id_mission_type= request.GET.get('id_mission_type')
+    aviation_missions = AviationMission.objects.none()
+    options = '<option value="" selected="selected">---------</option>'
+    if id_mission_type:
+        aviation_missions = AviationMission.objects.filter(mission_type__pk=id_mission_type)   
+    for aviation_mission in aviation_missions:
+        options += '<option value="%s">%s %s</option>' % (
+            aviation_mission.pk,
+            aviation_mission.abbreviation,
+            aviation_mission.name
+        )
+    response = {}
+    response['aviation_missions'] = options
+    return JsonResponse(response)
+
+
+def get_operations(request):
+    id_major_operation= request.GET.get('id_major_operation')
+    operations = Operation.objects.none()
+    options = '<option value="" selected="selected">---------</option>'
+    if id_major_operation:
+        operations = Operation.objects.filter(major_operations__pk=id_major_operation)   
+    for operation in operations:
+        options += '<option value="%s">%s</option>' % (
+            operation.pk,
+            operation.name
+        )
+    response = {}
+    response['operations'] = options
+    return JsonResponse(response)
+
+
+@method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
+class ListFlightReport(ListView):
+    template_name = "flight_report/list.html"
+    model = FlightReport
+    context_object_name = "flight_report_list"
+
+
+@method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
+class DetailFlightReport(DetailView): 
+    template_name = "flight_report/detail.html"
+    model = FlightReport
+
+
 @method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
 class CreateFlightReport(CreateView):
     template_name = 'flight_report/create.html'
     model = FlightReport
     form = FlightReportForm
     fields = '__all__'
-    success_url = reverse_lazy('index:list_configuration')
+    success_url = reverse_lazy('index:list_flight_report')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'].fields['municipality'].queryset = Municipality.objects.none()
         context['departments'] = Department.objects.all()
+        context['aircraft_types'] = AirCraftType.objects.all()
+        context['mission_types'] = MissionType.objects.all()
+        context['major_operations'] = MajorOperation.objects.all()
+        now = timezone.localtime(timezone.now())
+        context['current_date'] = now.strftime('%Y-%m-%d')
+        context['aviation_unit'] = self.request.user.profile.tactic_unit
         return context
+    
+    def post(self, request, *args, **kwargs):
+        self.object = None
+        form = FlightReportForm(request.POST)
+        aircraft = get_object_or_404(AirCraft, pk=request.POST.get('aircraft'))
+        aircraft_model = aircraft.air_craft_models
+        crew_list = []
+        valid_crew = True
+        pam_crew = request.POST.get('pam_crew', None)
+        if pam_crew is not None:
+            pam_crew = get_object_or_404(Crew, pk=pam_crew)
+            crew_list.append(pam_crew)
+            if not aircraft_model.has_pam:
+                valid_crew = False
+        elif aircraft_model.has_pam:
+            valid_crew = False
+        p_crew = request.POST.get('p_crew', None)
+        if p_crew is not None:
+            p_crew = get_object_or_404(Crew, pk=p_crew)
+            crew_list.append(p_crew)
+            if not aircraft_model.has_pilot:
+                valid_crew = False
+        elif aircraft_model.has_pilot:
+            valid_crew = False
+        iv_crew = request.POST.get('iv_crew', None)
+        if iv_crew is not None:
+            iv_crew = get_object_or_404(Crew, pk=iv_crew)
+            crew_list.append(iv_crew)
+            if not aircraft_model.has_flight_engineer:
+                valid_crew = False
+        elif aircraft_model.has_flight_engineer:
+            valid_crew = False
+        jt_crew = request.POST.get('jt_crew', None)
+        if jt_crew is not None:
+            jt_crew = get_object_or_404(Crew, pk=jt_crew)
+            crew_list.append(jt_crew)
+            if not aircraft_model.has_crew_chief:
+                valid_crew = False
+        elif aircraft_model.has_crew_chief:
+            valid_crew = False
+        tv_crew = request.POST.get('tv_crew', None)
+        if tv_crew is not None:
+            tv_crew = get_object_or_404(Crew, pk=tv_crew)
+            crew_list.append(tv_crew)
+            if not aircraft_model.has_flight_technician:
+                valid_crew = False
+        elif aircraft_model.has_flight_technician:
+            valid_crew = False
+        art_crew = request.POST.get('art_crew', None)
+        if art_crew is not None:
+            art_crew = get_object_or_404(Crew, pk=art_crew)
+            crew_list.append(art_crew)
+            if not aircraft_model.has_gunner:
+                valid_crew = False
+        elif aircraft_model.has_gunner:
+            valid_crew = False
+        cma_crew = request.POST.get('cma_crew', None)
+        if cma_crew is not None:
+            cma_crew = get_object_or_404(Crew, pk=cma_crew)
+            crew_list.append(cma_crew)
+            if not aircraft_model.has_commander:
+                valid_crew = False
+        elif aircraft_model.has_commander:
+            valid_crew = False
+        omi_crew = request.POST.get('omi_crew', None)
+        if omi_crew is not None:
+            omi_crew = get_object_or_404(Crew, pk=omi_crew)
+            crew_list.append(omi_crew)
+            if not aircraft_model.has_mission_operator:
+                valid_crew = False
+        elif aircraft_model.has_mission_operator:
+            valid_crew = False
+        ove_crew = request.POST.get('ove_crew', None)
+        if ove_crew is not None:
+            ove_crew = get_object_or_404(Crew, pk=ove_crew)
+            crew_list.append(ove_crew)
+            if not aircraft_model.has_vehicle_operator:
+                valid_crew = False
+        elif aircraft_model.has_vehicle_operator:
+            valid_crew = False
+        now = timezone.localtime(timezone.now())
+        form.instance.date = now.date()
+        if form.is_valid() and valid_crew:
+            flight_report = form.save()
+            flight_report.save()
+            for crew in crew_list:
+                AirCrew.objects.create(flight_reports=flight_report, crew=crew)
+            return HttpResponseRedirect(self.success_url)
+        print(form.errors)
+        context = super().get_context_data()
+        errors = []
+        if not valid_crew:
+            errors.append('Hay un error con la tripulación seleccionada.')
+        context['errors'] = errors
+        context['form'] = form
+        return render(request, self.template_name, context)
+    
    # def get_success_url(self):
      #   pk = self.object.pk
         #return reverse('index:detail_configuration', kwargs={'pk': pk})
 
 
-class EventFlightReport(ListView):
-    template_name = 'flight_report/click_to_get.html'
-    model = AirCraft
-    fields = '__all__'
-    #context_object_name = "configuration_list
+class CrewFormView(TemplateView):
+    template_name = 'flight_report/form_crew.html'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)        
-        context['flight_charge']=Crew.objects.all()
-        context['has_pam'] = Aircraft.objects.all()
-
+        context = super().get_context_data(**kwargs)
+        aircraft_id = self.request.GET.get('aircraft_id')
+        aircraft = get_object_or_404(AirCraft, pk=aircraft_id)
+        aircraft_model = aircraft.air_craft_models
+        context['aircraft_model'] = aircraft_model
+        if aircraft_model.has_pam:
+            context['pam_crew'] = Crew.objects.filter(flight_charge=Crew.PAM)
+        if aircraft_model.has_pilot:
+            context['p_crew'] = Crew.objects.filter(flight_charge=Crew.PI)
+        if aircraft_model.has_flight_engineer:
+            context['iv_crew'] = Crew.objects.filter(flight_charge=Crew.IV)
+        if aircraft_model.has_crew_chief:
+            context['jt_crew'] = Crew.objects.filter(flight_charge=Crew.JT)
+        if aircraft_model.has_flight_technician:
+            context['tv_crew'] = Crew.objects.filter(flight_charge=Crew.TV)
+        if aircraft_model.has_gunner:
+            context['art_crew'] = Crew.objects.filter(flight_charge=Crew.ART)
+        if aircraft_model.has_commander:
+            context['cma_crew'] = Crew.objects.filter(flight_charge=Crew.CMA)
+        if aircraft_model.has_mission_operator:
+            context['omi_crew'] = Crew.objects.filter(flight_charge=Crew.OMI)
+        if aircraft_model.has_vehicle_operator:
+            context['ove_crew'] = Crew.objects.filter(flight_charge=Crew.OVE)
         return context
-    
-def eventclick(request, template_name = 'flight_report/click_to_get.html'):
-
-    if request.Get.get('ic-request'):
-        aircraftmodel, created = AirCraftModel.objects.all()
-        aircraftmodel.has_pam = True
-
-
-    raise NotImplementedError
-    
 
 @method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
 class ListPdf(ListView):

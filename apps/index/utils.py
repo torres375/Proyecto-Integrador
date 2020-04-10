@@ -69,7 +69,7 @@ class ReportAircratfExcel(TemplateView):
                 '    FECHA    ',
                 '   HORA   ',
                 '   UNIDAD DE AVIACION   ',
-                '   DIVISION   ',
+                'DIVISION/CONVENIO/FUERZA DE TAREA A QUIEN VAN CARGADAS LAS HORAS',
                 '      UNIDAD OPERATIVA MENOR APOYADA      ',
                 '   MATRICULA   ',
                 '          TIPO MISIÓN          ',
@@ -104,10 +104,14 @@ class ReportAircratfExcel(TemplateView):
                 '    ',
                 '   ART   ',
                 '   ',
+                '   CMA   ',
+                '   ',
+                '   OMI  ',
+                '   ',
+                '   OVE  ',
+                '   ',
                 '   ORDEN DE VUELO   ',
-                '   ',
                 '   EVENTO DE AVIACIÓN  ',
-                '   ',
                 '   OBSERVACIONES  ',
             ]
 
@@ -139,6 +143,7 @@ class ReportAircratfExcel(TemplateView):
             ws.merge_cells('AK1:AL1')
             ws.merge_cells('AM1:AN1')
             ws.merge_cells('AO1:AP1')
+            ws.merge_cells('AQ1:AR1')
 
             cont = 2
             for flightReport in flightreport:      
@@ -148,11 +153,19 @@ class ReportAircratfExcel(TemplateView):
 
                 cell =  ws.cell(row=cont,column=2)
                 cell.alignment = centered_alignment
-                ws.cell(row=cont,column=2).value = flightReport.time     
+                ws.cell(row=cont,column=2).value = flightReport.time
+
+                cell =  ws.cell(row=cont,column=3)
+                cell.alignment = centered_alignment
+                ws.cell(row=cont,column=3).value = flightReport.aviation_unit.abbreviation
+
+                cell =  ws.cell(row=cont,column=4)
+                cell.alignment = centered_alignment
+                ws.cell(row=cont,column=4).value = flightReport.charged_unit.abbreviation
 
                 cell =  ws.cell(row=cont,column=5)
                 cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=5).value = flightReport.tactic_unit.minor_operative_unit.name
+                ws.cell(row=cont,column=5).value = flightReport.tactic_unit.minor_operative_unit.abbreviation
 
                 cell =  ws.cell(row=cont,column=6)
                 cell.alignment = centered_alignment  
@@ -164,11 +177,11 @@ class ReportAircratfExcel(TemplateView):
 
                 cell =  ws.cell(row=cont,column=8)
                 cell.alignment = centered_alignment
-                ws.cell(row=cont,column=8).value = flightReport.configuration.name
+                ws.cell(row=cont,column=8).value = flightReport.configuration.abbreviation
 
                 cell =  ws.cell(row=cont,column=9)
                 cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=9).value = flightReport.risk_classification
+                ws.cell(row=cont,column=9).value = flightReport.get_risk_classification_display()
 
                 cell =  ws.cell(row=cont,column=10)
                 cell.alignment = centered_alignment  
@@ -238,21 +251,121 @@ class ReportAircratfExcel(TemplateView):
                 cell.alignment = centered_alignment  
                 ws.cell(row=cont,column=26).value = flightReport.fuel
 
-                cell =  ws.cell(row=cont,column=39)
-                cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=39).value = flightReport.flight_order_id
+                crew = flightReport.crew_flight_report.all()
+                print(crew)
 
-                cell =  ws.cell(row=cont,column=41)
-                cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=41).value = flightReport.aviation_event.name
+                pam = crew.filter(crew__flight_charge=Crew.PAM)
+                print(pam)
+                if pam.count() > 0:
+                    pam = pam.first()
+                    cell =  ws.cell(row=cont,column=27)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=27).value = pam.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=28)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=28).value = pam.crew.name
+                
+                p = crew.filter(crew__flight_charge=Crew.PI)
+                if p.count() > 0:
+                    p = p.first()
+                    cell =  ws.cell(row=cont,column=29)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=29).value = p.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=30)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=30).value = p.crew.name
+                
+                iv = crew.filter(crew__flight_charge=Crew.IV)
+                if iv.count() > 0:
+                    iv = iv.first()
+                    cell =  ws.cell(row=cont,column=31)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=31).value = iv.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=32)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=32).value = iv.crew.name
+                
+                jt = crew.filter(crew__flight_charge=Crew.JT)
+                if jt.count() > 0:
+                    jt = jt.first()
+                    cell =  ws.cell(row=cont,column=33)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=33).value = jt.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=34)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=34).value = jt.crew.name
+                
+                tv = crew.filter(crew__flight_charge=Crew.TV)
+                if tv.count() > 0:
+                    tv = tv.first()
+                    cell =  ws.cell(row=cont,column=35)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=35).value = tv.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=36)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=36).value = tv.crew.name
+                
+                art = crew.filter(crew__flight_charge=Crew.ART)
+                if art.count() > 0:
+                    art = art.first()
+                    cell =  ws.cell(row=cont,column=37)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=37).value = art.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=38)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=38).value = art.crew.name
+                
+                cma = crew.filter(crew__flight_charge=Crew.CMA)
+                if cma.count() > 0:
+                    cma = cma.first()
+                    cell =  ws.cell(row=cont,column=39)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=39).value = cma.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=40)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=40).value = cma.crew.name
+                
+                omi = crew.filter(crew__flight_charge=Crew.OMI)
+                if omi.count() > 0:
+                    omi = omi.first()
+                    cell =  ws.cell(row=cont,column=41)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=41).value = omi.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=42)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=42).value = omi.crew.name
+                
+                ove = crew.filter(crew__flight_charge=Crew.OVE)
+                if ove.count() > 0:
+                    ove = ove.first()
+                    cell =  ws.cell(row=cont,column=43)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=43).value = ove.crew.rank.abbreviation
+                    cell =  ws.cell(row=cont,column=44)
+                    cell.alignment = centered_alignment  
+                    ws.cell(row=cont,column=44).value = ove.crew.name
 
-                cell =  ws.cell(row=cont,column=43)
+                cell =  ws.cell(row=cont,column=45)
                 cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=43).value = flightReport.observations
+                ws.cell(row=cont,column=45).value = flightReport.flight_order_id
 
+                cell =  ws.cell(row=cont,column=46)
+                cell.alignment = centered_alignment  
+                ws.cell(row=cont,column=46).value = flightReport.aviation_event.name
+
+                cell =  ws.cell(row=cont,column=47)
+                cell.alignment = centered_alignment  
+                ws.cell(row=cont,column=47).value = flightReport.observations
+
+                for col_num, column_title in enumerate(columns,1):
+                    cell = ws.cell(row=cont,column=col_num)
+                    column_letter = get_column_letter(col_num)
+                    if column_letter not in column_widths:
+                        column_widths[column_letter] = 0
+                    if len(str(cell.value)) >= column_widths[column_letter]:
+                        column_widths[column_letter] = len(str(cell.value)) + 1            
+                
                 cont = cont + 1
-            
-
 
             for col_num, column_title in enumerate(columns, 1):
                 column_letter = get_column_letter(col_num)
@@ -260,8 +373,8 @@ class ReportAircratfExcel(TemplateView):
                 column_dimensions.width = column_widths[column_letter]
 
         ws.merge_cells(
-            start_row=row_num+1, start_column=1, end_row=row_num+2, end_column=len(columns))
-        cell = ws.cell(row=row_num+1, column=1)
+            start_row=cont+1, start_column=1, end_row=cont+2, end_column=len(columns))
+        cell = ws.cell(row=cont+1, column=1)
         #cell.value = footer_usuarios
         cell.alignment = wrapped_alignment
 

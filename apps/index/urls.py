@@ -19,6 +19,10 @@ urlpatterns = [
     path('aircraft/update/<int:pk>/', views.UpdateAircraft.as_view(), name='update_aircraft'),
     path('aircraft/delete/<int:pk>/', views.DeleteAircraft.as_view(), name='delete_aircraft'),
     path('ajax/get_municipalities/', views.get_municipalities, name='ajax_municipalities'),
+    path('ajax/get_aircraft_models/', views.get_aircraft_models, name='ajax_aircraft_models'),
+    path('ajax/get_aircrafts/', views.get_aircrafts, name='ajax_aircrafts'),
+    path('ajax/get_aviation_missions/', views.get_aviation_missions, name='ajax_aviation_missions'),
+    path('ajax/get_operations/', views.get_operations, name='ajax_operations'),
 
     # path('crew_example/',views.CrewView.as_view(), name='crew_example'),
     path('crew/list/',views.ListCrew.as_view(), name='list_crew'),
@@ -105,11 +109,13 @@ urlpatterns = [
     path('configuration/update/<int:pk>/', views.UpdateConfiguration.as_view(), name='update_configuration'),
     path('configuration/delete/<int:pk>/', views.DeleteConfiguration.as_view(), name='delete_configuration'),
 
-    path('flight_report/create/', views.CreateFlightReport.as_view(), name='delete_configuration'),
-    path('flight_report/events/', views.EventFlightReport.as_view(), name='events'),
+    path('flight_report/list/', views.ListFlightReport.as_view(), name='list_flight_report'),
+    path('flight_report/detail/<int:pk>/', views.DetailFlightReport.as_view(), name='detail_flight_report'),
+    path('flight_report/create/', views.CreateFlightReport.as_view(), name='create_flight_report'),
+    path('flight_report/get_crew/', views.CrewFormView.as_view(), name='get_crew'),
     path('ajax/get_minor_operative_units/', views.get_minor_operative_units, name='ajax_minor_operative_units'),
-    path('flight_report/excel/', utils.ReportAircratfExcel.as_view(), name='report_aircratf_excel'),
-    path('flight_report/list/', views.ListPdf.as_view(), name='flight_report_pdf'),
+    path('flight_report/excel/', utils.ReportAircratfExcel.as_view(), name='report_aircraft_excel'),
+    path('flight_report/list/', views.ListPdf.as_view(), name='report_aircraft_pdf'),
     path('flight_report/pdf/', views.gen_pdf,name='pdf'),
     
 ]

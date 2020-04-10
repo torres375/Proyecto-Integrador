@@ -52,7 +52,8 @@ class RegisterForm(UserCreationForm):
         password1 = self.cleaned_data['password1']
 
         if commit:
-            instance.set_password(password1) 
+            instance.set_password(password1)
+            instance.is_staff = True 
             instance.save() 
             UserProfile.objects.create(user=instance, rank=rank, user_type=user_type, tactic_unit=tactic_unit, ) 
         return instance

@@ -113,33 +113,14 @@ class ConfigurationForm(forms.ModelForm):
 
 
 class FlightReportForm(forms.ModelForm):
-    municipality = forms.ModelChoiceField(queryset=Municipality.objects.none())
-    major_operative_unit = forms.CharField(max_length=255, required=False)
-    agreement = forms.CharField( max_length= 255, required=False)
-    date = forms.DateField( input_formats=['%d/%m/%Y'])
-    time = forms.TimeField( input_formats=['%I:%M %p'])
+    date = forms.DateField( input_formats=['%Y-%m-%d'])
+    time = forms.TimeField( input_formats=['%H:%M'])
     class Meta:
         model = FlightReport 
         fields = ('__all__')
         
     def __init__(self, *args, **kwargs):
         super(FlightReportForm,self).__init__(*args, **kwargs)
-        self.fields['municipality'].queryset = Municipality.objects.none()
-
-    
-    def clean(self):
-        cleaned_data = super(FlightReportForm, self).clean(*args, **kwargs)
-        minor_operative_unit = self.cleaned_data['minor_operative_unit']
-        agreement = self.cleaned_data['agreement']    
-        error_messages = ""
-        
-        if major_operative_unit and agreement is None:
-            error_messages = 'Span must be less than or equal to Maximum Span'
-            self._errors["span"] = "Please enter a valid span"
-        raise forms.ValidationError(' & '.join(error_messages))
-
-        return self.error_messages
-
 
 
 

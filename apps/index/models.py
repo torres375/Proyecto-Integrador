@@ -53,7 +53,7 @@ class AirCraft (models.Model):
     fly_hours = models.FloatField()
     total_hours = models.FloatField()
     next_inspection = models.FloatField()
-    next_inspection_hours = models.FloatField(default=0)
+    next_inspection_hours = models.FloatField(default=0, blank=True)
     ACL= 'ACL'
     LRM= 'LRM'
     LRA= 'LRA'
@@ -183,7 +183,7 @@ class Crew(models.Model):
     flight_charge = models.CharField(max_length=3, choices=STATUS_CHOICES,)
 
     def __str__(self):
-        return self.name
+        return "{} ({})".format(self.name, self.rank)
 
 
 class MajorOperation(models.Model):
@@ -252,7 +252,7 @@ class AviationMission(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return "{} {} ({})".format(self.mission_type, self.name, self.abbreviation)
 
 
 class Agreement(models.Model):
@@ -277,12 +277,14 @@ class Configuration(models.Model):
 class FlightReport(models.Model):
     flight_order_id = models.CharField(primary_key=True ,max_length=100)    
     agreement = models.ForeignKey(Agreement, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_agreements")
-    major_operative_unit = models.ForeignKey(MajorOperativeUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_major_operative_units")    
+    major_operative_unit = models.ForeignKey(MajorOperativeUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_major_operative_units")
+    minor_operative_unit = models.ForeignKey(MinorOperativeUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_minor_operative_units")    
     aviation_mission = models.ForeignKey(AviationMission, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_aviation_missions")
     configuration = models.ForeignKey(Configuration, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_configurations")
     aviation_event = models.ForeignKey(AviationEvent, on_delete=models.CASCADE,null=True, blank=True, related_name="flight_reports_events") 
     municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="flight_reports_municipalities")
-    tactic_unit = models.ForeignKey(TacticUnit, on_delete=models.CASCADE, related_name="flight_reports_tactic_units")
+    aviation_unit = models.ForeignKey(TacticUnit, on_delete=models.CASCADE, related_name="flight_reports_aviation_units")
+    tactic_unit = models.ForeignKey(TacticUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="flight_reports_tactic_units")
     operation = models.ForeignKey(Operation, on_delete=models.CASCADE, related_name="flight_reports_operations")
     aircraft = models.ForeignKey(AirCraft, on_delete=models.CASCADE, related_name="flight_reports_aircrafts")
     flight_conditions = models.ForeignKey(FlightCondition, on_delete=models.CASCADE, related_name="flight_conditions")   
@@ -295,8 +297,8 @@ class FlightReport(models.Model):
         (LOW, 'RIESGO BAJO'),        
     )
     risk_classification = models.CharField(max_length=4, choices=RISK_CHOICES, default=LOW)
-    route = models.CharField(max_length=50) 
-    observations = models.CharField(max_length=50)
+    route = models.CharField(max_length=1000) 
+    observations = models.CharField(max_length=1000)
     fuel = models.FloatField()
     kilos = models.FloatField()
     sick_pt =  models.IntegerField()
@@ -311,11 +313,23 @@ class FlightReport(models.Model):
     machine_hours = models.FloatField()
     time = models.TimeField() 
     date = models.DateField()
-   
+
+    def __str__(self):
+        return self.flight_order_id
+    
+    def get_charged_unit(self):
+        if self.agreement is not None:
+            return self.agreement
+        if self.minor_operative_unit is not None:
+            return self.minor_operative_unit
+        if self.major_operative_unit is not None:
+            return self.major_operative_unit
+
+    charged_unit = property(get_charged_unit)
     
 class AirCrew(models.Model):
-    flight_reports = models.ForeignKey(FlightReport,  on_delete=models.CASCADE, related_name="configurations")
+    flight_reports = models.ForeignKey(FlightReport,  on_delete=models.CASCADE, related_name="crew_flight_report")
     crew = models.ForeignKey(Crew,  on_delete=models.CASCADE, related_name="air_crews")
 
     def __str__(self):
-        return self.flight_reports
+        return str(self.flight_reports)

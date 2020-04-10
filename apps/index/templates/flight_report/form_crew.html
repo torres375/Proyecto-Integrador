@@ -1,0 +1,137 @@
+<div class="row">
+    {% if aircraft_model.has_pam %}
+    <label class="col-sm-3 col-form-label">Piloto al mando</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Piloto al mando" data-size="7"
+                name="pam_crew" id="id_pam_crew" required>
+                {% for crew in pam_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_pilot %}
+    <label class="col-sm-3 col-form-label">Piloto</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Piloto" data-size="7"
+                name="p_crew" id="id_p_crew" required>
+                {% for crew in p_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_flight_engineer %}
+    <label class="col-sm-3 col-form-label">Ingeniero de vuelo</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Ingeniero de vuelo" data-size="7"
+                name="iv_crew" id="id_iv_crew" required>
+                {% for crew in iv_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_crew_chief %}
+    <label class="col-sm-3 col-form-label">Jefe de tripulación</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Jefe de tripulación" data-size="7"
+                name="jt_crew" id="id_jt_crew" required>
+                {% for crew in jt_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_flight_technician %}
+    <label class="col-sm-3 col-form-label">Tecnico de vuelo</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Tecnico de vuelo" data-size="7"
+                name="tv_crew" id="id_tv_crew" required>
+                {% for crew in tv_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_gunner %}
+    <label class="col-sm-3 col-form-label">Artillero</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Artillero" data-size="7"
+                name="art_crew" id="id_art_crew" required>
+                {% for crew in art_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_commander %}
+    <label class="col-sm-3 col-form-label">Comandante de misión aérea</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Comandante de misión aérea" data-size="7"
+                name="cma_crew" id="id_cma_crew" required>
+                {% for crew in cma_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_mission_operator %}
+    <label class="col-sm-3 col-form-label">Operador de Misión</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Operador de Misión" data-size="7"
+                name="omi_crew" id="id_omi_crew" required>
+                {% for crew in omi_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    {% if aircraft_model.has_vehicle_operator %}
+    <label class="col-sm-3 col-form-label">Operador de vehiculo</label>
+    <div class="col-sm-3">
+        <div class="form-group">
+            <select class="selectpicker" data-style="select-with-transition" title="Elegir Operador de vehiculo" data-size="7"
+                name="ove_crew" id="id_ove_crew" required>
+                {% for crew in ove_crew %}
+                <option value="{{ crew.pk }}" {% if crew.pk == department_id %} selected{% endif %}>
+                    {{ crew }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% endif %}
+</div>

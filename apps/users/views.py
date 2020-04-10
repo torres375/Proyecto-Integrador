@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
@@ -74,17 +74,23 @@ class UserRegister(CreateView):
     form_class = RegisterForm
     success_url = reverse_lazy('index:dashboard')
 
+    def get_success_url(self):
+        pk = self.object.pk
+        return reverse('users:detail', kwargs={'pk': pk})
+
 class UserDetail(DetailView):
     model = User
     template_name = "user/detail.html"
-    success_url = reverse_lazy('index:dashboard')
 
 
 class UserUpdate(UpdateView):
     model = User
     template_name = "user/user.html"
     form_class = RegisterForm
-    success_url = reverse_lazy('index:dashboard')
+    
+    def get_success_url(self):
+        pk = self.object.pk
+        return reverse('users:detail', kwargs={'pk': pk})
 
 
 class UserDelete(DeleteView):

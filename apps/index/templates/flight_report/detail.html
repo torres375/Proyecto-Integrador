@@ -1,0 +1,199 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-banner padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="text-uppercase"> Reportes de vuelo </h3>
+                <br>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="">
+            <h4 class="text-uppercase bottom20 justify-content-center">VUELO</h4>
+            <table class="table table-striped table-responsive">
+                <tbody>
+                    <tr>
+                        <td><b>Fecha y hora</b></td>
+                        <td class="text-right">{{object.date}} - {{object.time}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>HORAS CONSUMIDAS</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Horas de Maquina</b></td>
+                        <td class="text-right">{{object.machine_hours}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Horas de Tripulación</b></td>
+                        <td class="text-right">{{object.crew_hours}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>UBICACIÓN</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Departamento</b></td>
+                        <td class="text-right">{{object.municipality.department}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Municipio</b></td>
+                        <td class="text-right">{{object.municipality}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Ruta</b></td>
+                        <td class="text-right">{{object.route}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>CARGA DE LA AERONAVE</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>PAX</b></td>
+                        <td class="text-right">{{object.pax}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Evacuaciones Civiles</b></td>
+                        <td class="text-right">{{object.civil_evacuations}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Kilos</b></td>
+                        <td class="text-right">{{object.kilos}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Combustible</b></td>
+                        <td class="text-right">{{object.fuel}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>PROPIAS TROPAS</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Heridos</b></td>
+                        <td class="text-right">{{object.wounded_pt}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Enfermos</b></td>
+                        <td class="text-right">{{object.sick_pt}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Muertos</b></td>
+                        <td class="text-right">{{object.dead_pt}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>ENEMIGO</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Heridos</b></td>
+                        <td class="text-right">{{object.wounded_en}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Enfermos</b></td>
+                        <td class="text-right">{{object.sick_en}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Muertos</b></td>
+                        <td class="text-right">{{object.dead_en}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="">
+            <h4 class="text-uppercase bottom20 justify-content-center">UNIDADES</h4>
+            <table class="table table-striped table-responsive">
+                <tbody>
+                    <tr>
+                        <td><b>Unidad de aviación</b></td>
+                        <td class="text-right">{{object.aviation_unit}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Unidad apoyada</b></td>
+                        <td class="text-right">{{object.charged_unit}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 class="text-uppercase bottom20 justify-content-center">CONFIGURACIÓN</h4>
+            <table class="table table-striped table-responsive">
+                <tbody>
+                    <tr>
+                        <td><b>Aeronave</b></td>
+                        <td class="text-right">{{object.aircraft.air_craft_models.air_craft_type}} - {{object.aircraft.air_craft_models}} - {{object.aircraft.enrollment}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>MISIONES DE AVIACIÓN</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Mision de aviación</b></td>
+                        <td class="text-right">{{object.aviation_mission}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Configuración</b></td>
+                        <td class="text-right">{{object.configuration}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Condiciones de vuelo</b></td>
+                        <td class="text-right">{{object.flight_conditions}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>OPERACIONES</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Operación Mayor</b></td>
+                        <td class="text-right">{{object.operation.major_operations}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Operación</b></td>
+                        <td class="text-right">{{object.operation}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>TRIPULACIÓN</b></td>
+                        <td class="text-right"></td>
+                    </tr>
+                    {% for crew in object.crew_flight_report.all %}
+                    <tr>
+                        <td><b>{{crew.crew.get_flight_charge_display}}</b></td>
+                        <td class="text-right">{{crew.crew}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h4 class="text-uppercase bottom20 justify-content-center">INFORMACIÓN ADICIONAL</h4>
+            <table class="table table-striped table-responsive">
+                <tbody>
+                    <tr>
+                        <td><b>Evento de aviación</b></td>
+                        <td class="text-right">{{object.aviation_event}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Clasificación de riesgo</b></td>
+                        <td class="text-right">{{object.get_risk_classification_display}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Observaciones</b></td>
+                        <td class="text-right">{{object.observations.help_text|safe}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="justify-content-center">
+            <div class="create-btn-div col-sm-12" style="text-align:center">
+                <a href="{% url 'index:list_flight_report' %}"><button type="button"
+                        class="btn btn-info">Volver</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
