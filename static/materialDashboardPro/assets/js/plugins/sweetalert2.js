@@ -3072,7 +3072,7 @@ if (typeof window !== 'undefined' && window.Sweetalert2){  window.swal = window.
 "      width: 15px;\n" +
 "      height: 15px;\n" +
 "      margin-left: 5px;\n" +
-"      border: 3px solid #999999;\n" +
+"      border: 3px solid rgb(124,8,8)999;\n" +
 "      border-radius: 50%;\n" +
 "      border-right-color: transparent;\n" +
 "      box-shadow: 1px 1px 1px #fff;\n" +
