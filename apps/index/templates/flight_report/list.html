@@ -17,10 +17,9 @@
                             <tr>
                                 <th>Unidad de aviación que ejecuta</th>
                                 <th>Fecha y hora</th>
-                                <th>División/Convenio/Fuerza a la que van cargadas las horas</th>
+                                <th>División/Convenio/Fuerza</th>
                                 <th>Matricula Aeronave</th>
                                 <th>Tipo de misión</th>
-                                <th>Configuración</th>
                                 <th class="disabled-sorting text-right">Acciones</th>
                             </tr>
                         </thead>
@@ -32,7 +31,6 @@
                                     <td>{{flight_report.charged_unit}}</td>
                                     <td>{{flight_report.aircraft.enrollment}}</td>
                                     <td>{{flight_report.aviation_mission.mission_type}}</td>
-                                    <td>{{flight_report.configuration}}</td>
                                     <td class="text-right">
                                         <a href="{% url 'index:detail_flight_report' flight_report.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
                                     </td>

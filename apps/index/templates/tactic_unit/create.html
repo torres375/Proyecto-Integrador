@@ -24,6 +24,52 @@
                 </div>  
                 <div class="card-body ">
                     <div class="row">
+                        <label class="col-sm-2 col-form-label">Unidad Operativa Menor</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="minor_operative_unit" id="id_minor_operative_unit">
+                                    {% for x,y in form.fields.minor_operative_unit.choices %}
+                                        <option value="{{ x }}" {% if form.minor_operative_unit.value == x %} selected{% endif %} >
+                                            {{ y }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.minor_operative_unit.help_text %}
+                                    <p class="help">{{ form.minor_operative_unit.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.minor_operative_unit.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.minor_operative_unit.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>      
+                        <label class="col-sm-2 col-form-label">Unidad Operativa Mayor</label>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="major_operative_unit" id="id_major_operative_unit">
+                                    {% for x,y in form.fields.major_operative_unit.choices %}
+                                        <option value="{{ x }}" {% if form.major_operative_unit.value == x %} selected{% endif %} >
+                                            {{ y }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% if form.major_operative_unit.help_text %}
+                                    <p class="help">{{ form.major_operative_unit.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.major_operative_unit.errors %}
+                                    <ul class="errorlist">
+                                        {% for error in form.major_operative_unit.errors %}
+                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>      
+                    </div>
+                    <div class="row">
                         <label class="col-sm-2 col-form-label">Nombre</label>
                         <div class="col-sm-7">
                             <div class="form-group">
@@ -58,52 +104,6 @@
                             {% endif %}
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Unidad Operativa Menor</label>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="minor_operative_unit" id="id_minor_operative_unit">
-                                    {% for x,y in form.fields.minor_operative_unit.choices %}
-                                        <option value="{{ x }}" {% if form.minor_operative_unit.value == x %} selected{% endif %} >
-                                            {{ y }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.minor_operative_unit.help_text %}
-                                    <p class="help">{{ form.minor_operative_unit.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.minor_operative_unit.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.minor_operative_unit.errors %}
-                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                        </div>      
-                        <label class="col-sm-2 col-form-label">Unidad Operativa Mayor</label>
-                            <div class="col-sm-3">
-                                <div class="form-group">
-                                    <select class="selectpicker" data-style="select-with-transition" title="Elegir Unidad" data-size="7" name="major_operative_unit" id="id_major_operative_unit">
-                                        {% for x,y in form.fields.major_operative_unit.choices %}
-                                            <option value="{{ x }}" {% if form.major_operative_unit.value == x %} selected{% endif %} >
-                                                {{ y }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                    {% if form.major_operative_unit.help_text %}
-                                        <p class="help">{{ form.major_operative_unit.help_text|safe }}</p>
-                                    {% endif %}
-                                    {% if form.major_operative_unit.errors %}
-                                        <ul class="errorlist">
-                                            {% for error in form.major_operative_unit.errors %}
-                                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
-                                </div>
-                            </div>      
                     </div>
                     <div class="row">
                         <label class="col-sm-2 col-form-label">¿Es unidad táctica de aviación?</label>

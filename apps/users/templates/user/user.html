@@ -27,7 +27,7 @@
                     <label class="col-sm-2 col-form-label">Nombre de Usuario</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" name="username" id="id_username" {% if form.username.value %} value="{{form.username.value}}" {% endif %} placeholder="" required>
+                            <input type="text" class="form-control" name="username" id="id_username" {% if form.username.value %} value="{{form.username.value}}" {% endif %} placeholder="" required>
                             {% if form.username.help_text %}
                             <p class="help">{{ form.username.help_text|safe }}</p>
                         {% endif %}

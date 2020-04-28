@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class="col-md-12 col-sm-6">
+<div class="col">
     <div class="card">
         <div class="card-header card-header-info card-header-icon">
             <div class="card-icon">
@@ -21,11 +21,9 @@
                             <th>Tipo</th>
                             <th>Municipio</th>
                             <th>Departamento</th>
-                            <th>Horas Asignadas</th>
-                            <th>Horas Voladas</th>
+                            <th>Horas Asignadas</th>                            
                             <th>Total Horas Voladas</th>
                             <th>Proxima Inspección</th>
-                            <th>Horas Proxima Inspección</th>
                             <th>Estado</th>
                             <th class="disabled-sorting text-right">Acciones</th>
                         </tr>
@@ -39,10 +37,8 @@
                                 <td>{{aircraft.municipality.name}}</td>
                                 <td>{{aircraft.municipality.department.name}}</td>
                                 <td>{{aircraft.assigned_hours}}</td>
-                                <td>{{aircraft.fly_hours}}</td>
                                 <td>{{aircraft.total_hours}}</td>
-                                <td>{{aircraft.next_inspection}}</td>
-                                <td>{{aircraft.next_inspection_hours}}</td>
+                                <td>{{aircraft.next_inspection}}</td> 
                                 <td>{{aircraft.aircraft_status}}</td>
                                 <td class="text-right">
                                     <a href="{% url 'index:detail_aircraft' aircraft.pk %}"class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>

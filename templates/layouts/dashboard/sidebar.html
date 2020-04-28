@@ -3,43 +3,11 @@
 <!-- <div class="sidebar" data-color="rose" data-background-color="black" data-image="{% static 'materialDashboardPro/assets/img/sidebar-1.jpg' %}"> -->
 <div class="sidebar" data-color="rose" data-background-color="black">
     <div class="logo text-center">
-        <a href="#" class="simple-text logo-normal">SICMA</a>
+        <div class="navbar-wrapper">             
+            <a class="navbar-brand" href="{% url 'index:login' %}"><img src="{% static 'images/logo.png' %}" alt="" style="width: 180px; height: 50px;"></a>         
+        </div>
     </div>
     <div class="sidebar-wrapper">
-        <div class="user">
-            <!-- <div class="photo">
-                <img src="{% static 'materialDashboardPro/assets/img/faces/avatar.jpg' %}" />
-            </div> -->
-            <div class="user-info">
-                <a data-toggle="collapse" href="#collapseExample" class="username">
-                    <span>{{user.username}}<b class="caret"></b></span>
-                </a>
-                <div class="collapse" id="collapseExample">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index:logout' %}">
-                                <span class="sidebar-normal"> Cerrar sesión </span>
-                            </a>
-                        </li>
-                        <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span class="sidebar-normal"> Mi Perfil </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span class="sidebar-normal"> Editar información </span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                    <span class="sidebar-normal"> Configuración </span>
-                    </a>
-                </li> -->
-                    </ul>
-                </div>
-            </div>
-        </div>
         <ul class="nav">
             <li class="nav-item active ">
                 <a class="nav-link" href="#">

@@ -1007,4 +1007,20 @@ def get_minor_operative_units(request):
         )
     response = {}
     response['minor_operative_units'] = options
-    return JsonResponse(response)        
+    return JsonResponse(response)
+
+def get_tacti_units(request):
+    id_minor_operative_unit = request.GET.get('id_minor_operative_unit')
+    tacti_unit = TacticUnit.objects.none()
+    options = '<option value="" selected="selected">---------</option>'
+    if id_minor_operative_unit:
+        tacti_unit = TacticUnit.objects.filter(minor_operative_unit__pk=id_minor_operative_unit)   
+    for tacti_unit in tacti_unit:              
+        options += '<option value="%s">%s</option>' % (
+            tacti_unit.pk,
+            tacti_unit.name
+        )
+    response = {}
+    response['tacti_unit'] = options
+    print(options+"soy options")
+    return JsonResponse(response)

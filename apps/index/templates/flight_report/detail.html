@@ -1,6 +1,7 @@
 {% extends 'layouts/dashboard/base.html' %}
 {% load static %}
 
+
 {% block content %}
 
 <section class="page-banner padding">
@@ -14,20 +15,18 @@
         </div>
     </div>
 </section>
-
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="">
-            <h4 class="text-uppercase bottom20 justify-content-center">VUELO</h4>
-            <table class="table table-striped table-responsive">
+    <div class="row">
+        <div class="col-12">
+            <h4 class="text-uppercase justify-content-center"><b>VUELO</b></h4>
+            <table class="table table-hover">
                 <tbody>
                     <tr>
                         <td><b>Fecha y hora</b></td>
                         <td class="text-right">{{object.date}} - {{object.time}}</td>
                     </tr>
                     <tr>
-                        <td><b>HORAS CONSUMIDAS</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b>Horas consumidas</b></th>
                     </tr>
                     <tr>
                         <td><b>Horas de Maquina</b></td>
@@ -38,8 +37,7 @@
                         <td class="text-right">{{object.crew_hours}}</td>
                     </tr>
                     <tr>
-                        <td><b>UBICACIÓN</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b>Ubicación</b></th>
                     </tr>
                     <tr>
                         <td><b>Departamento</b></td>
@@ -54,8 +52,7 @@
                         <td class="text-right">{{object.route}}</td>
                     </tr>
                     <tr>
-                        <td><b>CARGA DE LA AERONAVE</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b>Carga de la aeronave</b></th>
                     </tr>
                     <tr>
                         <td><b>PAX</b></td>
@@ -74,8 +71,7 @@
                         <td class="text-right">{{object.fuel}}</td>
                     </tr>
                     <tr>
-                        <td><b>PROPIAS TROPAS</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b>Propias Tropas</b></th>
                     </tr>
                     <tr>
                         <td><b>Heridos</b></td>
@@ -90,8 +86,7 @@
                         <td class="text-right">{{object.dead_pt}}</td>
                     </tr>
                     <tr>
-                        <td><b>ENEMIGO</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b></b>Enemigo</th>
                     </tr>
                     <tr>
                         <td><b>Heridos</b></td>
@@ -107,10 +102,11 @@
                     </tr>
                 </tbody>
             </table>
+            <br>
         </div>
-        <div class="">
-            <h4 class="text-uppercase bottom20 justify-content-center">UNIDADES</h4>
-            <table class="table table-striped table-responsive">
+        <div class="col-12">
+            <h4 class="text-uppercase justify-content-center"><b>UNIDADES</b></h4>
+            <table class="table table-hover">
                 <tbody>
                     <tr>
                         <td><b>Unidad de aviación</b></td>
@@ -122,16 +118,18 @@
                     </tr>
                 </tbody>
             </table>
-            <h4 class="text-uppercase bottom20 justify-content-center">CONFIGURACIÓN</h4>
-            <table class="table table-striped table-responsive">
+            <br>
+        </div>
+        <div class="col-12">
+            <h4 class="text-uppercase justify-content-center"><b>CONFIGURACIÓN</b></h4>
+            <table class="table table-hover">
                 <tbody>
                     <tr>
                         <td><b>Aeronave</b></td>
                         <td class="text-right">{{object.aircraft.air_craft_models.air_craft_type}} - {{object.aircraft.air_craft_models}} - {{object.aircraft.enrollment}}</td>
                     </tr>
                     <tr>
-                        <td><b>MISIONES DE AVIACIÓN</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b></b>Misiones de aviación</th>
                     </tr>
                     <tr>
                         <td><b>Mision de aviación</b></td>
@@ -146,8 +144,7 @@
                         <td class="text-right">{{object.flight_conditions}}</td>
                     </tr>
                     <tr>
-                        <td><b>OPERACIONES</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b></b>Operaciones</th>
                     </tr>
                     <tr>
                         <td><b>Operación Mayor</b></td>
@@ -158,8 +155,7 @@
                         <td class="text-right">{{object.operation}}</td>
                     </tr>
                     <tr>
-                        <td><b>TRIPULACIÓN</b></td>
-                        <td class="text-right"></td>
+                        <th class="table-active" colspan="2"><b></b>Tripulacion</th>
                     </tr>
                     {% for crew in object.crew_flight_report.all %}
                     <tr>
@@ -169,8 +165,11 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <h4 class="text-uppercase bottom20 justify-content-center">INFORMACIÓN ADICIONAL</h4>
-            <table class="table table-striped table-responsive">
+            <br>
+        </div>
+        <div class="col-12">
+            <h4 class="text-uppercase justify-content-center"><b>INFORMACIÓN ADICIONAL</b></h4>
+            <table class="table table-hover">
                 <tbody>
                     <tr>
                         <td><b>Evento de aviación</b></td>
@@ -186,6 +185,7 @@
                     </tr>
                 </tbody>
             </table>
+            <br>
         </div>
     </div>
     <div class="justify-content-center">

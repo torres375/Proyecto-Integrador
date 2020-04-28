@@ -17,40 +17,40 @@
 <body class="off-canvas-sidebar">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white">
-        <div class="container">
-        <div class="navbar-wrapper">
-            <a class="navbar-brand" href="{% url 'index:login' %}">SICMA</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end">
-            <!-- <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="{% url 'index:list_aircraft' %}" class="nav-link">
-                    <i class="material-icons">dashboard</i> Dashboard
-                    </a>
-                </li>
-                <li class="nav-item  active ">
-                    <a href="{% url 'index:login' %}" class="nav-link">
-                    <i class="material-icons">fingerprint</i> Iniciar sesión
-                    </a>
-                </li>
-            </ul> -->
-        </div>
+    
+            <div class="navbar-wrapper">
+                <img src="{% static 'images/logo.png' %}" alt="">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end">
+                <!-- <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{% url 'index:list_aircraft' %}" class="nav-link">
+                        <i class="material-icons">dashboard</i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item  active ">
+                        <a href="{% url 'index:login' %}" class="nav-link">
+                        <i class="material-icons">fingerprint</i> Iniciar sesión
+                        </a>
+                    </li>
+                </ul> -->
+            </div>
         </div>
     </nav>
     <!-- End Navbar -->
 <div class="wrapper wrapper-full-page">
     <!-- <div class="page-header login-page header-filter" filter-color="black" style="background-image: url('{% static 'materialDashboardPro/assets/img/login.jpg' %} '); background-size: cover; background-position: top center;"> -->
-    <div class="page-header login-page header-filter" filter-color="black" style="background-color: #696969; background-size: cover; background-position: top center;">
+    <div class="page-header login-page header-filter" filter-color="black" style="background-image: url('{% static 'images/login.jpg' %} '); ">
         <div class="container">
             <div class="row">
-                <img src="{% static 'images/escudo_ejercito.png' %}" style="width: 350px; height: 450px;" alt="">
-                <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
+                <!--<img src="{% static 'images/escudo_ejercito.png' %}" style="width: 350px; height: 450px;" alt="">-->
+                <div class="col-8 ml-auto mr-auto">
                     <form class="form" method="post" enctype="multipart/form-data" >
                     {% csrf_token %}
                         <div class="card card-login card-hidden">

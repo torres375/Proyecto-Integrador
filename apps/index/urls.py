@@ -114,6 +114,7 @@ urlpatterns = [
     path('flight_report/create/', views.CreateFlightReport.as_view(), name='create_flight_report'),
     path('flight_report/get_crew/', views.CrewFormView.as_view(), name='get_crew'),
     path('ajax/get_minor_operative_units/', views.get_minor_operative_units, name='ajax_minor_operative_units'),
+    path('ajax/get_tacti_units/', views.get_tacti_units, name='ajax_get_tacti_units'),
     path('flight_report/excel/', utils.ReportAircratfExcel.as_view(), name='report_aircraft_excel'),
     path('flight_report/list/', views.ListPdf.as_view(), name='report_aircraft_pdf'),
     path('flight_report/pdf/', views.gen_pdf,name='pdf'),
