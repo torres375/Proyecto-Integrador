@@ -1,0 +1,28 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Total horas del mes'
+        },
+        xAxis: {
+            categories: ['HORAS VOLADAS','HORAS ASIGNADAS']
+        },
+        series: [{
+            name: 'horas voladas',
+            data: [{{ fly_hours_total }}],
+            color: 'green'
+        }, {
+            name: 'horas asignadas',
+            data: [{{ assigned_hours_total }}],
+            color: 'red'
+        }]
+    });
+  </script>
+  {% endblock content %}

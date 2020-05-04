@@ -3,31 +3,31 @@ from django.db import models
 from decimal import Decimal
 
 # Create your models here.
-class Department (models.Model):
-    abbreviation = models.CharField( max_length=50)
-    name = models.CharField( max_length=50)
+class Department(models.Model):
+    abbreviation = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
 
 
-class Municipality (models.Model):
+class Municipality(models.Model):
     department = models.ForeignKey(Department,  on_delete=models.CASCADE, related_name="municipalities")
-    abbreviation = models.CharField( max_length=50)
-    name = models.CharField( max_length=50)
+    abbreviation = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
 
 
-class AirCraftType (models.Model):
-    name = models.CharField( max_length=50)
+class AirCraftType(models.Model):
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
 
 
-class AirCraftModel (models.Model):
+class AirCraftModel(models.Model):
     air_craft_type = models.ForeignKey(AirCraftType, on_delete=models.CASCADE, related_name="aircraftmodels")    
     name = models.CharField( max_length=50)
     has_pam = models.BooleanField(default=False)
@@ -44,16 +44,20 @@ class AirCraftModel (models.Model):
         return self.name
 
 
-class AirCraft (models.Model):   
-    air_craft_type = models.ForeignKey(AirCraftType, on_delete=models.CASCADE, related_name="aircraft_types")
-    air_craft_models = models.ForeignKey(AirCraftModel, on_delete=models.CASCADE, related_name="aircraft_models")
-    municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="aircraft_municipalities")
-    enrollment = models.CharField( max_length=50,  default= None)
-    assigned_hours = models.FloatField()
+class AirCraft(models.Model):   
+    air_craft_type=models.ForeignKey(AirCraftType, on_delete=models.CASCADE, related_name="aircraft_types")
+    air_craft_models=models.ForeignKey(AirCraftModel, on_delete=models.CASCADE, related_name="aircraft_models")
+    municipality=models.ForeignKey(Municipality, on_delete=models.CASCADE, related_name="aircraft_municipalities")
+    enrollment=models.CharField(max_length=50,default=None)
+    assigned_hours=models.FloatField()
+    re_asign=models.FloatField(default=0)
+    merger_hours=models.FloatField(default=0) 
+    hours_available= models.FloatField(default=0)    
     fly_hours = models.FloatField()
     total_hours = models.FloatField()
-    next_inspection = models.FloatField()
+    next_inspection = models.FloatField()    
     next_inspection_hours = models.FloatField(default=0, blank=True)
+    type_inspection = models.CharField(max_length=50, null=True)
     ACL= 'ACL'
     LRM= 'LRM'
     LRA= 'LRA'
@@ -91,8 +95,9 @@ class AirCraft (models.Model):
     
     def save(self):
         self.next_inspection_hours = self.total_hours - self.fly_hours        
+        self.hours_available  = self.assigned_hours + self.re_asign - self.fly_hours - self.merger_hours
         super (AirCraft, self).save()
-   
+           
     def __str__(self):
         return  "{} ({})".format(self.enrollment, self.air_craft_models) 
 
@@ -107,6 +112,7 @@ class Rank(models.Model):
 
 class UserType(models.Model):
     user_type = models.CharField(max_length=100)
+    code = models.IntegerField(default=1, unique=True, error_messages={'unique': "Ya existe este usuario."})
 
     def __str__(self):
         return self.user_type
@@ -123,7 +129,7 @@ class MajorOperativeUnit(models.Model):
 
 
 class MinorOperativeUnit(models.Model):
-    major_operative_unit = models.ForeignKey(MajorOperativeUnit, on_delete=models.CASCADE, related_name="minor_operative_units")
+    major_operative_unit = models.ForeignKey(MajorOperativeUnit, on_delete=models.CASCADE, related_name="major_operative_units")
     abbreviation = models.CharField(max_length=50)
     name = models.CharField(max_length=100)
     is_ejc = models.BooleanField(default=False)

@@ -1,118 +1,96 @@
 {% load static %}
 {% block content %}
-    <h1 style="text-align: center;">REPORTES DE VUELO</h1> <br> <br> <br> <br>
-    <a class="navbar-brand"><img src="{% static 'images/logo.png' %}" alt="" style="width: 180px; height: 50px;"></a>
-    <div>
-        <table border="1" cellspacing="10" cellpadding="10">
-            <thead>
+
+<div>
+    <table style="width:100%;">
+        <tr>
+            <th><img src="{{image}}" alt="" style="width:50px;height:60px;"></th>
+            <th style="width:50%;" >MINISTERIO DEFENSA NACIONAL<br>
+                COMANDO  GENERAL FUERZAS MILITARES DE COLOMBIA<br>
+                EJERCITO NACIONAL<br>
+                BRIGADA DE AVIACION No. 33 MOVILIDAD Y MANIOBRA</th>
+            <th><img src="{{image2}}" alt="" style="width:60px;height:60px;"></th>
+        </tr>
+    </table>
+    <br><br>
+</div>
+
+<h1 style="text-align: center;">PARTE DE AERONAVES ASIGNADAS AL DISPOSITIVO OPERACIONAL</h1> 
+<br>
+<div>
+    <table style="vertical-align:middle" border='1px' cellpadding="2">
+        <thead >
+            <tr>
+                <th style="text-align: center;" width="10%" rowspan="2">UNIDAD TACTICA</th>
+                <th style="text-align: center;" width="11%" rowspan="2">UNIDAD APOYADA</th>
+                <th style="text-align: center;" width="13%" rowspan="2">MATRICULA</th>
+                <th style="text-align: center;" width="10%" rowspan="2">ESTADO AERONA.</th>
+                <th style="text-align: center;" width=""    colspan="6">HORAS DE MANTENIMIENTO</th>
+                <th style="text-align: center;" width="13%" rowspan="2">UBICACIÓN</th>
+                <th style="text-align: center;" width="18%" rowspan="2">OBSERVACIONES</th>
+            </tr>
+            <tr>
+                <td style="text-align: center;" width="10%">PROX INS</td>
+                <td style="text-align: center;" width="10%">TIPO INSP</td>
+                <td style="text-align: center;" width="10%">ASIG</td>
+                <td style="text-align: center;" width="10%">REASIG</td>
+                <td style="text-align: center;" width="10%">VOL</td>
+                <td style="text-align: center;" width="10%">DISP</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flightreports  in flight_report  %}
                 <tr>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Fecha</th>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Hora</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Unidad Operativa Menor Apoyada</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Matricula</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Tipo Misión</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Configuración</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Clasificacion de Riesgo</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for flightreports  in flight_report  %}
-                    <tr>
-                        <td style="text-align: center;">{{flightreports.date}}</td>
-                        <td style="text-align: center;">{{flightreports.time}}</td>
-                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit.name}}</td>
-                        <td style="text-align: center;">{{flightreports.aircraft.enrollment}}</td>
-                        <td style="text-align: center;">{{flightreports.aviation_mission.mission_type.name}}</td>
-                        <td style="text-align: center;">{{flightreports.configuration.name}}</td>
-                        <td style="text-align: center;">{{flightreports.risk_classification}}</td>
-                    </tr> 
-                {% endfor %}                                      
-            </tbody>
-        </table>
-    </div> 
-        </table> <br> <br> <br> <br> <br>
-    <div>
-        <table border="1" cellspacing="0" cellpadding="10">
-            <thead>
-                <tr>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Horas Maquina</th>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Horas Tripulación</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Operación Mayor</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Nombre de la Operación</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Departamento</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Municipio</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Ruta</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for flightreports  in flight_report  %}
-                    <tr>
-                        <td style="text-align: center;">{{flightreports.machine_hours}}</td>
-                        <td style="text-align: center;">{{flightreports.crew_hours}}</td>
-                        <td style="text-align: center;">{{flightreports.operation.major_operations.name}}</td>
-                        <td style="text-align: center;">{{flightreports.operation.name}}</td>
-                        <td style="text-align: center;">{{flightreports.municipality.department.name}}</td>
-                        <td style="text-align: center;">{{flightreports.municipality.name}}</td>
-                        <td style="text-align: center;">{{flightreports.route}}</td>
-                    </tr> 
-                {% endfor %}                                      
-            </tbody>
-        </table>     <br> <br>  <br> <br> <br> <br>   
-    </div>
-    <div>
-        <table border="1" cellspacing="0" cellpadding="10">
-            <thead>
-                <tr>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Pax</th>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Enfermos Propias Tropas</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Heridos Propias Tropas</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Muertos Propias Tropas</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Enfermos Enemigo</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Heridos Enemigo</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Muertos Enemigo</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for flightreports  in flight_report  %}
-                    <tr>
-                        <td style="text-align: center;">{{flightreports.pax}}</td>
-                        <td style="text-align: center;">{{flightreports.sick_pt}}</td>
-                        <td style="text-align: center;">{{flightreports.wounded_pt}}</td>
-                        <td style="text-align: center;">{{flightreports.dead_pt}}</td>
-                        <td style="text-align: center;">{{flightreports.sick_en}}</td>
-                        <td style="text-align: center;">{{flightreports.wounded_en}}</td>
-                        <td style="text-align: center;">{{flightreports.dead_en}}</td>
-                    </tr> 
-                {% endfor %}                                      
-            </tbody>
-        </table>        <br> <br>  
-    </div>
-    <div>
-        <table border="1" cellspacing="0" cellpadding="10">
-            <thead>
-                <tr>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Evacuacion Civiles</th>
-                    <th style="text-align: center;" cellspacing="0"width="10%">Kilos</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Combustible</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Orden de Vuelo</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Evento de Aviación</th>
-                    <th style="text-align: center;" cellspacing="0"width="15%">Observaciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for flightreports  in flight_report  %}
-                    <tr>
-                        <td style="text-align: center;">{{flightreports.civil_evacuations}}</td>
-                        <td style="text-align: center;">{{flightreports.kilos}}</td>
-                        <td style="text-align: center;">{{flightreports.fuel}}</td>
-                        <td style="text-align: center;">{{flightreports.flight_order_id}}</td>
-                        <td style="text-align: center;">{{flightreports.aviation_event.name}}</td>
-                        <td style="text-align: center;">{{flightreports.observations}}</td>
-                    </tr> 
-                {% endfor %}                                      
-            </tbody>
-        </table>          
-    </div>    
+                    
+                    <td style="text-align: center;">{{flightreports.tactic_unit.abbreviation}}</td>
+
+                    <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit.abbreviation}}</td>
+                    <td style="text-align: center;">{{flightreports.aircraft.enrollment}}</td>
+
+                    {% if flightreports.aircraft.aircraft_status == 'ACL' %}
+                        <td style="background-color: forestgreen; text-align: center;">
+                            {{flightreports.aircraft.aircraft_status}}</td>
+                    {% elif flightreports.aircraft.aircraft_status == 'LRM' or 'LRA' or 'NLA' or 'MMP' or 'AMO' or 'AMR' or 'ACC' %}
+                        <td style="background-color: rgb(250, 243, 47); text-align: center;">
+                            {{flightreports.aircraft.aircraft_status}}</td>
+                    {% elif flightreports.aircraft.aircraft_status == 'AMI' or 'AMP' or 'AVP' %}
+                        <td style="background-color: rgb(241, 49, 49); text-align: center;">
+                            {{flightreports.aircraft.aircraft_status}}</td>
+                    {% elif flightreports.aircraft.aircraft_status == 'EVA' or 'PAR' or 'ABP' or 'APA' %}
+                        <td style="background-color: rgb(54, 111, 253); text-align: center;">
+                            {{flightreports.aircraft.aircraft_status}}</td>
+                    {% else %}
+                        <td style="text-align: center;">{{flightreports.aircraft.aircraft_status}}</td>
+                    {% endif %}
+
+                    <td style="text-align: center;">{{flightreports.aircraft.next_inspection_hours}}</td>
+                    <td style="text-align: center;">{{flightreports.aircraft.type_inspection}}</td>
+                    <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                    <td style="text-align: center;">{{flightreports.aircraft.re_asign}}</td>
+                    <td style="text-align: center;">{{flightreports.aircraft.total_hours}}</td>
+
+                    {% if flightreports.aircraft.hours_available <= 4 %}
+                        <td style="text-align: center;">
+                            <img src="{{image3}}" alt=""> &nbsp;&nbsp;
+                            {{flightreports.aircraft.hours_available}}</td>
+                    {% elif flightreports.aircraft.hours_available <= 9 %}
+                        <td style="text-align: center;">
+                            <img src="{{image4}}" alt=""> &nbsp;&nbsp;
+                            {{flightreports.aircraft.hours_available}}</td>
+                    {% else %}
+                        <td style="text-align: center;">
+                            <img src="{{image5}}" alt=""> &nbsp;&nbsp;
+                            {{flightreports.aircraft.hours_available}}</td>
+                    {% endif %}
+
+                    <td style="text-align: center;">{{flightreports.municipality.name}}</td>
+                    <td style="text-align: center;">{{flightreports.observations}}</td>
+                </tr> 
+            {% endfor %}                                      
+        </tbody>
+    </table>
+</div>
+
 {% endblock content %}
 
 

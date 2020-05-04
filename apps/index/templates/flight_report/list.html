@@ -32,7 +32,7 @@
                                     <td>{{flight_report.aircraft.enrollment}}</td>
                                     <td>{{flight_report.aviation_mission.mission_type}}</td>
                                     <td class="text-right">
-                                        <a href="{% url 'index:detail_flight_report' flight_report.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
+                                    <a href="{% url 'index:detail_flight_report' flight_report.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -53,6 +53,9 @@
             </a>
             <a href="/flight_report/pdf/" download>
                 <button class="btn btn-info">Descargar reportes PDF</button>
+            </a>
+            <a href="/flight_report/pdf2/" download>
+                <button class="btn btn-info">Descargar reportes PDF2</button>
             </a>
         </div>
     </div>

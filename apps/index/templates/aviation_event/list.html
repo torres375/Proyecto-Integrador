@@ -39,10 +39,12 @@
                                     </td>
                                     <td class="text-right">
                                         <a href="{% url 'index:detail_aviation_event' aviation_event.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
+                                        {% if can_write %}
                                         <a href="{% url 'index:update_aviation_event' aviation_event.pk %}" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">create</i></a>
                                         <a data-link="{% url 'index:delete_aviation_event' aviation_event.pk %}"
                                         onclick="modalDelete(this)" data-toggle ="modal"
                                         data-target=".bs-example-modal-sm" ><i class="material-icons">delete</i></a>
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -55,9 +57,11 @@
         </div>
         <!--  end card  -->
         <div style="text-align: center;">
+            {% if can_write %}
             <a href="{% url 'index:create_aviation_event' %}">
                 <button class="btn btn-info">Nuevo</button>
             </a>
+            {% endif %}
         </div>
     </div>
     <!-- end col-md-12 -->

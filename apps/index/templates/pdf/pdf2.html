@@ -1,0 +1,127 @@
+{% load static %}
+{% block content %}
+    <h1 style="text-align: center;">HORAS ASIGNADAS A LAS UNIDADES DEL EJERCITO</h5> <br> <br>
+    <style>
+        @page {
+          vertical-align:center;  
+          size: a2 portrait;
+          @frame content_frame {
+              
+              left: 50pt;
+              width: 1000pt;
+              top: 50pt;
+              height: 692pt;
+                 
+          }
+      }
+  </style>
+    <div>
+        <table style="width:100%" border='1px' cellpadding="2">
+            <thead>
+                <tr>
+                    <th style="text-align: center;" width="10%" rowspan="2">UNIDAD AVIACION</th>
+                    <th style="text-align: center;" width="11%" rowspan="2">UNIDAD APOYADA</th>
+                    {% for data in name %}
+                    <th style="text-align: center;" width="%"   colspan="3">{{data}}</th>
+                    {% endfor %}
+                    <th style="text-align: center;" width="%"   colspan="3">HORAS RENTADOS</th>
+                </tr>
+                <tr>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+                    <td style="text-align: center;" width="10%">ASIG</td>
+                    <td style="text-align: center;" width="10%">VOL</td>
+                    <td style="text-align: center;" width="10%">DISP</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for flightreports  in flight_report  %}
+                    <tr>
+                        <td style="text-align: center;">{{flightreports.aviation_unit.abbreviation}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit.abbreviation}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aviation_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                        <td style="text-align: center;">{{flightreports.aircraft.fly_hours}}</td>
+                    </tr> 
+                {% endfor %}                                      
+            </tbody>
+        </table>
+    </div> 
+{% endblock content %} 

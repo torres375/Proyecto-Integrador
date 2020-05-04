@@ -26,3 +26,19 @@ src: local('Trebuchet MS Italic'), url('Trebuchet-MS-Italic.woff') format('woff'
     url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
     url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
+
+
+<style>
+      @page {
+        vertical-align:center;  
+        size: a2 portrait;
+        @frame content_frame {
+            
+            left: 50pt;
+            width: 700pt;
+            top: 50pt;
+            height: 692pt;
+               
+        }
+    }
+</style>

@@ -401,10 +401,18 @@
                         <div class="form-group">
                             <select class="selectpicker" data-style="select-with-transition"
                                 title="Elegir Unidad de aviación" data-size="7" name="aviation_unit"
-                                id="id_aviation_unit" required readonly>
+                                id="id_aviation_unit" required {% if aviation_unit %} readonly {% endif %}>
+                                {% if aviation_unit %}
                                 <option value="{{aviation_unit.pk}}" selected>
                                     {{aviation_unit.abbreviation}} - {{aviation_unit.name}}
                                 </option>
+                                {% else %}
+                                {% for avunit in aviation_units %}
+                                <option value="{{ avunit.pk }}">
+                                    {{ avunit.abbreviation }} - {{avunit.name}}
+                                </option>
+                                {% endfor %}
+                                {% endif %}
                             </select>
                         </div>
                     </div>
@@ -812,7 +820,8 @@
         $("#id_aircraft_model").on("change", getAircrafts);
         $("#id_mission_type").on("change", getAviationMissions);
         $("#id_major_operation").on("change", getOperations);
-        $("#id_minor_operative_unit").on("change", getTatics);
+        $("#id_minor_operative_unit").on("change", getTactic);
+        
 
 
         $("#flight_report_form").submit(function (e) {
@@ -859,27 +868,24 @@
             $("#id_municipality").selectpicker("refresh");
         }
     }
-    function getTatics() {
-        var operativeMinorId = $("#id_minor_operative_unit").val();
-        if (operativeMinorId) {
+    
+    function getTactic() {
+        var minor_operative_unitId = $("#id_minor_operative_unit").val();
+        if (minor_operative_unitId) {
             // Eliminamos las opciones anteriores del select
             $("#id_tactic_unit").html("");
             $("#id_tactic_unit").selectpicker("refresh");
-                      
             var request = $.ajax({
                 type: "GET",
-                url: "{% url 'index:ajax_get_tacti_units' %}",
+                url: "{% url 'index:ajax_get_tactic_units' %}",
                 data: {
-                    
-                    "id_minor_operative_unit": operativeMinorId,
+                    "id_minor_operative_unit": minor_operative_unitId,
                 },
-                 
             });
-            console.log(request+"soy data "); 
             request.done(function (response) {
                 console.log(response);
                 // Agregamos los resultados al select
-                $("#id_tactic_unit").html(response.tactics);
+                $("#id_tactic_unit").html(response.tactic_units);
                 $("#id_tactic_unit").selectpicker("refresh");
             });
         } else {
@@ -887,6 +893,7 @@
             $("#id_tactic_unit").selectpicker("refresh");
         }
     }
+
     function getAircraftModels() {
         var aircraftTypeId = $("#id_aircraft_type").val();
         if (aircraftTypeId) {

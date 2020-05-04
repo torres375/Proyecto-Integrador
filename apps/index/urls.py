@@ -110,13 +110,17 @@ urlpatterns = [
     path('configuration/delete/<int:pk>/', views.DeleteConfiguration.as_view(), name='delete_configuration'),
 
     path('flight_report/list/', views.ListFlightReport.as_view(), name='list_flight_report'),
-    path('flight_report/detail/<int:pk>/', views.DetailFlightReport.as_view(), name='detail_flight_report'),
+    path('flight_report/detail/<pk>/', views.DetailFlightReport.as_view(), name='detail_flight_report'),
     path('flight_report/create/', views.CreateFlightReport.as_view(), name='create_flight_report'),
     path('flight_report/get_crew/', views.CrewFormView.as_view(), name='get_crew'),
     path('ajax/get_minor_operative_units/', views.get_minor_operative_units, name='ajax_minor_operative_units'),
-    path('ajax/get_tacti_units/', views.get_tacti_units, name='ajax_get_tacti_units'),
+    path('ajax/get_tactic_units/', views.get_tactic_unit, name='ajax_get_tactic_units'),
+    path('ajax/get_aviation_tactic_units/', views.get_tactic_unit_aviation, name='ajax_get_aviation_tactic_units'),
     path('flight_report/excel/', utils.ReportAircratfExcel.as_view(), name='report_aircraft_excel'),
     path('flight_report/list/', views.ListPdf.as_view(), name='report_aircraft_pdf'),
     path('flight_report/pdf/', views.gen_pdf,name='pdf'),
-    
+    path('flight_report/pdf2/', views.gen_pdf2,name='pdf2'),
+# graph
+    path('graph/graph_bar/', views.graphic_bar,name='graph_bar'),
+
 ]

@@ -171,12 +171,14 @@
                     </ul>
                 </div>
             </li>
+            {% if is_administrator %}
             <li class="nav-item ">
                 <a class="nav-link" href="{% url 'users:list' %}">
                     <i class="material-icons">face</i>
                     <p> Usuarios </p>
                 </a>
             </li>
+            {% endif %}
         </ul>
     </div>
 </div>

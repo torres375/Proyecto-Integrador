@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="col-md-12">
-    <form method="post"enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="card">
             <div class="card-header card-header-rose card-header-icon">
@@ -14,30 +14,32 @@
                 <div class="card-text">
                     <h4 class="card-title">REGISTRAR USUARIO</h4>
                     {% if form.non_field_errors %}
-                <ul class="errorlist">
-                    {% for error in form.non_field_errors %}
+                    <ul class="errorlist">
+                        {% for error in form.non_field_errors %}
                         <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
                 </div>
-            </div>  
+            </div>
             <div class="card-body ">
                 <div class="row">
                     <label class="col-sm-2 col-form-label">Nombre de Usuario</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" id="id_username" {% if form.username.value %} value="{{form.username.value}}" {% endif %} placeholder="" required>
+                            <input type="text" class="form-control" name="username" id="id_username"
+                                {% if form.username.value %} value="{{form.username.value}}" {% endif %} placeholder=""
+                                required>
                             {% if form.username.help_text %}
                             <p class="help">{{ form.username.help_text|safe }}</p>
-                        {% endif %}
-                        {% if form.username.errors %}
+                            {% endif %}
+                            {% if form.username.errors %}
                             <ul class="errorlist">
                                 {% for error in form.username.errors %}
                                 <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                 {% endfor %}
                             </ul>
-                        {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -45,9 +47,11 @@
                     <label class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" name="first_name" id="first_name" {% if form.first_name.value %} value="{{form.first_name.value}}" {% endif %} placeholder="" required>
+                            <input type="text" class="form-control text-capitalize" name="first_name" id="first_name"
+                                {% if form.first_name.value %} value="{{form.first_name.value}}" {% endif %}
+                                placeholder="" required>
                             {% if form.first_name.help_text %}
-                                <p class="help">{{ form.first_name.help_text|safe }}</p>
+                            <p class="help">{{ form.first_name.help_text|safe }}</p>
                             {% endif %}
                             {% if form.first_name.errors %}
                             <ul class="errorlist">
@@ -55,7 +59,7 @@
                                 <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                 {% endfor %}
                             </ul>
-                        {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -63,17 +67,19 @@
                     <label class="col-sm-2 col-form-label">Apellido</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" name="last_name" id="id_last_name" {% if form.last_name.value %} value="{{form.last_name.value}}" {% endif %} placeholder="" required>
+                            <input type="text" class="form-control text-capitalize" name="last_name" id="id_last_name"
+                                {% if form.last_name.value %} value="{{form.last_name.value}}" {% endif %}
+                                placeholder="" required>
                             {% if form.last_name.help_text %}
                             <p class="help">{{ form.last_name.help_text|safe }}</p>
-                        {% endif %}
-                        {% if form.last_name.errors %}
+                            {% endif %}
+                            {% if form.last_name.errors %}
                             <ul class="errorlist">
                                 {% for error in form.last_name.errors %}
                                 <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                 {% endfor %}
                             </ul>
-                        {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -81,106 +87,164 @@
                     <label class="col-sm-2 col-form-label">Correo</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" id="id_email" {% if form.email.value %} value="{{form.email.value}}" {% endif %} placeholder="" required>
+                            <input type="text" class="form-control" name="email" id="id_email" {% if form.email.value %}
+                                value="{{form.email.value}}" {% endif %} placeholder="" required>
                             {% if form.email.help_text %}
                             <p class="help">{{ form.email.help_text|safe }}</p>
-                        {% endif %}
-                        {% if form.email.errors %}
+                            {% endif %}
+                            {% if form.email.errors %}
                             <ul class="errorlist">
                                 {% for error in form.email.errors %}
                                 <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                 {% endfor %}
                             </ul>
-                        {% endif %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                        <label class="col-sm-2 col-form-label">Rango</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" name="rank" id="id_rank" required>
-                                    {% for x,y in form.fields.rank.choices %}
-                                    <option value="{{ x }}"{% if form.rank.value == x %} selected{% endif %} >
+                    <label class="col-sm-2 col-form-label">Rango</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" name="rank" id="id_rank"
+                                required>
+                                {% for x,y in form.fields.rank.choices %}
+                                <option value="{{ x }}" {% if form.rank.value == x %} selected{% endif %}>
                                     {{ y }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.rank.help_text %}
-                                    <p class="help">{{ form.rank.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.rank.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.rank.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.rank.help_text %}
+                            <p class="help">{{ form.rank.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.rank.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.rank.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
+                    </div>
                 </div>
                 <div class="row">
-                        <label class="col-sm-2 col-form-label">Tipo de usuario</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" name="user_type" id="id_user_type" required>
-                                    {% for x,y in form.fields.user_type.choices %}
-                                    <option value="{{ x }}"{% if form.user_type.value == x %} selected{% endif %} >
+                    <label class="col-sm-2 col-form-label">Tipo de usuario</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" name="user_type"
+                                id="id_user_type" required>
+                                {% for x,y in form.fields.user_type.choices %}
+                                <option value="{{ x }}" {% if form.user_type.value == x %} selected{% endif %}>
                                     {{ y }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.user_type.help_text %}
-                                    <p class="help">{{ form.user_type.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.user_type.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.user_type.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.user_type.help_text %}
+                            <p class="help">{{ form.user_type.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.user_type.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.user_type.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
+                    </div>
                 </div>
                 <div class="row">
-                        <label class="col-sm-2 col-form-label">Unidad tactica</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" name="tactic_unit" id="id_tactic_unit" required>
-                                    {% for x,y in form.fields.tactic_unit.choices %}
-                                    <option value="{{ x }}"{% if form.tactic_unit.value == x %} selected{% endif %} >
+                    <label class="col-sm-2 col-form-label">Unidad operativa mayor</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" name="major_operative_unit"
+                                id="id_major_operative_unit" required>
+                                {% for x,y in form.fields.major_operative_unit.choices %}
+                                <option value="{{ x }}" {% if form.major_operative_unit.value == x %}
+                                    selected{% endif %}>
                                     {{ y }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.tactic_unit.help_text %}
-                                    <p class="help">{{ form.tactic_unit.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.tactic_unit.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.tactic_unit.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.major_operative_unit.help_text %}
+                            <p class="help">{{ form.major_operative_unit.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.major_operative_unit.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.major_operative_unit.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Unidad operativa menor</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" name="minor_operative_unit"
+                                id="id_minor_operative_unit" required>
+                                {% for x,y in form.fields.minor_operative_unit.choices %}
+                                <option value="{{ x }}" {% if form.minor_operative_unit.value == x %}
+                                    selected{% endif %}>
+                                    {{ y }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.minor_operative_unit.help_text %}
+                            <p class="help">{{ form.minor_operative_unit.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.minor_operative_unit.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.minor_operative_unit.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Unidad tactica</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" name="tactic_unit"
+                                id="id_tactic_unit" required>
+                                {% for x,y in form.fields.tactic_unit.choices %}
+                                <option value="{{ x }}" {% if form.tactic_unit.value == x %} selected{% endif %}>
+                                    {{ y }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.tactic_unit.help_text %}
+                            <p class="help">{{ form.tactic_unit.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.tactic_unit.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.tactic_unit.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <label class="col-sm-2 col-form-label">Contraseña</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password1" id="id_password1" {% if form.password1.value %}  value="{{form.password1.value}}" {% endif %} placeholder="" required>                        
+                            <input type="password" class="form-control" name="password1" id="id_password1"
+                                {% if form.password1.value %} value="{{form.password1.value}}" {% endif %}
+                                placeholder="" required>
                             {% if form.password1.help_text %}
-                                <p class="help">{{ form.password1.help_text|safe }}</p>
+                            <p class="help">{{ form.password1.help_text|safe }}</p>
                             {% endif %}
                             {% if form.password1.errors %}
-                                <ul class="errorlist">
-                                    {% for error in form.password1.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                    {% endfor %}
-                                </ul>
+                            <ul class="errorlist">
+                                {% for error in form.password1.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
                             {% endif %}
                         </div>
                     </div>
@@ -189,29 +253,93 @@
                     <label class="col-sm-2 col-form-label">Confirmar Contraseña</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password2" id="id_password2" {% if form.password2.value %}  value="{{form.password2.value}}" {% endif %} placeholder="" required>                        
+                            <input type="password" class="form-control" name="password2" id="id_password2"
+                                {% if form.password2.value %} value="{{form.password2.value}}" {% endif %}
+                                placeholder="" required>
                             {% if form.password2.help_text %}
-                                <p class="help">{{ form.password2.help_text|safe }}</p>
+                            <p class="help">{{ form.password2.help_text|safe }}</p>
                             {% endif %}
                             {% if form.password2.erros %}
-                                <ul class="errorlist">
-                                    {% for error in form.password2.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                    {% endfor %}
-                                </ul>
+                            <ul class="errorlist">
+                                {% for error in form.password2.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
                             {% endif %}
-                        </div> 
+                        </div>
                         <div class="card-footer ml-auto mr-auto">
                             <button type="submit" class="btn btn-rose">Guardar</button>
-                        </div>   
+                        </div>
                     </div>
                 </div>
-                </div>
             </div>
-            
         </div>
-    </form>
+
 </div>
-</div>    
+</form>
+</div>
+</div>
 
 {% endblock content %}
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#id_major_operative_unit").on("change", getMinorOperativeUnits);
+        $("#id_minor_operative_unit").on("change", getTactic);
+    });
+
+    function getMinorOperativeUnits() {
+        var major_operative_unitId = $("#id_major_operative_unit").val();
+        $("#id_tactic_unit").html("<option value='' selected='selected'>---------</option>");
+        $("#id_tactic_unit").selectpicker("refresh");
+        if (major_operative_unitId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_minor_operative_unit").html("");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_minor_operative_units' %}",
+                data: {
+                    "id_major_operative_unit": major_operative_unitId,
+                },
+            });
+            request.done(function (response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_minor_operative_unit").html(response.minor_operative_units);
+                $("#id_minor_operative_unit").selectpicker("refresh");
+            });
+        } else {
+            $("#id_minor_operative_unit").html("<option value='' selected='selected'>---------</option>");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+        }
+    }
+
+    function getTactic() {
+        var minor_operative_unitId = $("#id_minor_operative_unit").val();
+        if (minor_operative_unitId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_tactic_unit").html("");
+            $("#id_tactic_unit").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_get_aviation_tactic_units' %}",
+                data: {
+                    "id_minor_operative_unit": minor_operative_unitId,
+                },
+            });
+            request.done(function (response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_tactic_unit").html(response.tactic_units);
+                $("#id_tactic_unit").selectpicker("refresh");
+            });
+        } else {
+            $("#id_tactic_unit").html("<option value='' selected='selected'>---------</option>");
+            $("#id_tactic_unit").selectpicker("refresh");
+        }
+    }
+
+</script>
+{% endblock js %}

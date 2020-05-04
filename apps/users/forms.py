@@ -39,6 +39,8 @@ class LoginForm(forms.Form):
 class RegisterForm(UserCreationForm):
     rank = forms.ModelChoiceField(queryset=Rank.objects.all())     
     user_type = forms.ModelChoiceField(queryset=UserType.objects.all())
+    major_operative_unit = forms.ModelChoiceField(queryset=MajorOperativeUnit.objects.all())
+    minor_operative_unit = forms.ModelChoiceField(queryset=MinorOperativeUnit.objects.all())
     tactic_unit = forms.ModelChoiceField(queryset=TacticUnit.objects.all())
     class Meta:
         model = User
@@ -53,7 +55,6 @@ class RegisterForm(UserCreationForm):
 
         if commit:
             instance.set_password(password1)
-            instance.is_staff = True 
             instance.save() 
             UserProfile.objects.create(user=instance, rank=rank, user_type=user_type, tactic_unit=tactic_unit, ) 
         return instance

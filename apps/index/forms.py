@@ -37,10 +37,11 @@ class MinorOperativeUnitForm(forms.ModelForm):
 
 
 class TacticUnitForm(forms.ModelForm):
+    major_operative_unit = forms.ModelChoiceField(queryset=MajorOperativeUnit.objects.all())
     
     class Meta:
         model = TacticUnit 
-        fields = ('__all__')
+        fields = ('minor_operative_unit', 'abbreviation', 'name', 'is_aviation', 'is_active', 'major_operative_unit')
    
 
 

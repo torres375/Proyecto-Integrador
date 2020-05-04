@@ -89,10 +89,30 @@
                     </div>
                 </div>
                 <div class="row">
+                    <label class="col-sm-2 col-form-label">Horas Reasignadas</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="re_asign" id="id_re_asign"
+                                {% if form.re_asign.value %} value="{{form.re_asign.value|unlocalize}}" {% endif %}
+                                placeholder="" required>
+                            {% if form.re_asign.help_text %}
+                            <p class="help">{{ form.re_asign.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.re_asign.erros %}
+                            <ul class="errorlist">
+                                {% for error in form.re_asign.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <label class="col-sm-2 col-form-label">Horas Voladas</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="fly_hours" id="id_fly_hours"
+                            <input type="number" class="form-control" name="fly_hours" id="id_fly_hours"
                                 {% if form.fly_hours.value %} value="{{form.fly_hours.value|unlocalize}}" {% endif %}
                                 placeholder="" required>
                             {% if form.fly_hours.help_text %}
@@ -109,12 +129,54 @@
                     </div>
                 </div>
                 <div class="row">
+                    <label class="col-sm-2 col-form-label">Horas Cuadre</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="merger_hours" id="id_merger_hours"
+                                {% if form.merger_hours.value %} value="{{form.merger_hours.value|unlocalize}}" {% endif %}
+                                placeholder="" required>
+                            {% if form.merger_hours.help_text %}
+                            <p class="help">{{ form.merger_hours.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.merger_hours.erros %}
+                            <ul class="errorlist">
+                                {% for error in form.merger_hours.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Horas Disponibles</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="number" class="form-control" name="hours_available"
+                                id="id_hours_available" readonly="readonly" value="0"
+                                {% if form.hours_available.value %} value="{{form.hours_available.value|unlocalize}}"
+                                {% endif %} placeholder="">
+                            {% if form.hours_available.help_text %}
+                            <p class="help">{{ form.hours_available.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.hours_available.erros %}
+                            <ul class="errorlist">
+                                {% for error in form.hours_available.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
                     <label class="col-sm-2 col-form-label">Total Horas Voladas</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="number" class="form-control" name="total_hours" id="id_total_hours"
-                                {% if form.total_hours.value %} value="{{form.total_hours.value|unlocalize}}" {% endif %}
-                                placeholder="" required>
+                            <input type="number" class="form-control" name="total_hours"
+                                id="id_total_hours" readonly="readonly" value="0"
+                                {% if form.total_hours.value %} value="{{form.total_hours.value|unlocalize}}"
+                                {% endif %} placeholder="">
                             {% if form.total_hours.help_text %}
                             <p class="help">{{ form.total_hours.help_text|safe }}</p>
                             {% endif %}
@@ -162,6 +224,26 @@
                             {% if form.next_inspection_hours.erros %}
                             <ul class="errorlist">
                                 {% for error in form.next_inspection_hours.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Tipo de Inspección</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="type_inspection" id="type_inspection"
+                                {% if form.type_inspection.value %} value="{{form.type_inspection.value|unlocalize}}" {% endif %}
+                                placeholder="" required>
+                            {% if form.type_inspection.help_text %}
+                            <p class="help">{{ form.type_inspection.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.type_inspection.erros %}
+                            <ul class="errorlist">
+                                {% for error in form.type_inspection.errors %}
                                 <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                 {% endfor %}
                             </ul>
