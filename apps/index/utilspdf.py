@@ -4,8 +4,8 @@ from django.template import Context
 from django.conf import settings
 from xhtml2pdf import pisa
 from io import BytesIO
-import os
 from .models import *
+import os
 
 def link_callback(uri, rel):
     """

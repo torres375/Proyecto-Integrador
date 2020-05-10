@@ -28,43 +28,22 @@
 
 <div class="btn-group btn-group-md btn-block">
     <a href=" {% url 'index:graph_bar' %} ">
-        <button type="button" class="btn btn-dark" disabled>Por año</button>
+        <button type="button" class="btn btn-dark">Por año</button>
     </a>
     <a href=" {% url 'index:graph_bar_battalion' %} ">
-        <button type="button" class="btn btn-dark">Por batallon</button>
+        <button type="button" class="btn btn-dark" disabled>Por Batallon</button>
     </a>
     <a href=" {% url 'index:graph_bar_aircraft_model_hours' %} ">
         <button type="button" class="btn btn-dark">Por equipo</button>
     </a>
 </div>
 
-<div class="btn-group">
-    <button type="button" class="btn btn-dark btn-md dropdown-toggle" data-toggle="dropdown">Años</button>
-    <div class="dropdown-menu">
-        {% for year in years %}
-            <a id='{{year}}' class="dropdown-item">{{year}}</a>
-        {% endfor %}
-    </div>
-</div>
-
-<!-- <div class='buttons'>
-    {% for year in years %}
-    <button id='{{year}}'>
-        {{year}}
-    </button>
-    {% endfor %}
-</div> -->
 <div id="container"></div>
 <script>
-
 
     const data = JSON.parse('{{data}}');
     // console.log(data);
 
-    function getData(data, year) {
-        var clonedData = { ...data };
-        return clonedData[year];
-    }
 
     var chart = Highcharts.chart('container', {
 
@@ -75,7 +54,7 @@
             text: 'HORAS DE AERONAVE DEL EJERCITO NACIONAL DE COLOMBIA'
         },
         subtitle: {
-            text: 'Comparación de horas voladas y horas asignadas del ejercito - Año ' + {{ first_year }}
+            text: 'Comparación de horas voladas y horas asignadas del ejercito'
         },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
@@ -92,20 +71,7 @@
             }
         },
         xAxis: {
-            categories: [
-                'Ene',
-                'Feb',
-                'Mar',
-                'Abr',
-                'May',
-                'Jun',
-                'Jul',
-                'Ago',
-                'Sep',
-                'Oct',
-                'Nov',
-                'Dic'
-            ],
+            categories: JSON.parse('{{battalions}}'),
             crosshair: true
         },
         yAxis: {
@@ -114,38 +80,11 @@
                 text: 'Horas (hrs)'
             }
         },
-        series: getData(data, {{ first_year }}),
+        series: data,
         exporting: {
             allowHTML: false
         }
     });
-    // console.log(data);
-
-    var years = {{ years }};
-
-    years.forEach(function (year) {
-        var btn = document.getElementById(year);
-
-        btn.addEventListener('click', function () {
-            const data = JSON.parse('{{data}}');
-            // document.querySelectorAll('.buttons button.active').forEach(function (active) {
-            //     active.className = '';
-            // });
-            // btn.className = 'active';
-
-            chart.update({
-                title: {
-                    text: 'HORAS DE AERONAVE DEL EJERCITO NACIONAL DE COLOMBIA'
-                },
-                subtitle: {
-                    text: 'Comparación de horas voladas y horas asignadas del ejercito - Año ' + year
-                },
-                series: getData(data, year),
-            }, true, false, {
-                duration: 800
-            });
-        });
-    });
-
+    
 </script>
 {% endblock content %}

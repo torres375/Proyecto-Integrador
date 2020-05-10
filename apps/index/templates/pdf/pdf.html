@@ -18,6 +18,11 @@
 <h1 style="text-align: center;">PARTE DE AERONAVES ASIGNADAS AL DISPOSITIVO OPERACIONAL</h1> 
 <br>
 <div>
+    <p style="text-align: right; ">{{format}}</p>
+</div>
+<div>
+    {% for aircraft_model_name, flight_reports  in aircraft_models_dict.items %}
+    <h2>{{aircraft_model_name}}</h2>
     <table style="vertical-align:middle" border='1px' cellpadding="2">
         <thead >
             <tr>
@@ -39,56 +44,58 @@
             </tr>
         </thead>
         <tbody>
-            {% for flightreports  in flight_report  %}
+            {% for flightreport in flight_reports  %}
                 <tr>
                     
-                    <td style="text-align: center;">{{flightreports.tactic_unit.abbreviation}}</td>
+                    <td style="text-align: center;">{{flightreport.tactic_unit.abbreviation}}</td>
 
-                    <td style="text-align: center;">{{flightreports.tactic_unit.minor_operative_unit.abbreviation}}</td>
-                    <td style="text-align: center;">{{flightreports.aircraft.enrollment}}</td>
+                    <td style="text-align: center;">{{flightreport.tactic_unit.minor_operative_unit.abbreviation}}</td>
 
-                    {% if flightreports.aircraft.aircraft_status == 'ACL' %}
+                    <td style="text-align: center;">{{flightreport.aircraft.enrollment}}</td>
+
+                    {% if flightreport.aircraft.aircraft_status == 'ACL' %}
                         <td style="background-color: forestgreen; text-align: center;">
-                            {{flightreports.aircraft.aircraft_status}}</td>
-                    {% elif flightreports.aircraft.aircraft_status == 'LRM' or 'LRA' or 'NLA' or 'MMP' or 'AMO' or 'AMR' or 'ACC' %}
+                            {{flightreport.aircraft.aircraft_status}}</td>
+                    {% elif flightreport.aircraft.aircraft_status == 'LRM' or 'LRA' or 'NLA' or 'MMP' or 'AMO' or 'AMR' or 'ACC' %}
                         <td style="background-color: rgb(250, 243, 47); text-align: center;">
-                            {{flightreports.aircraft.aircraft_status}}</td>
-                    {% elif flightreports.aircraft.aircraft_status == 'AMI' or 'AMP' or 'AVP' %}
+                            {{flightreport.aircraft.aircraft_status}}</td>
+                    {% elif flightreport.aircraft.aircraft_status == 'AMI' or 'AMP' or 'AVP' %}
                         <td style="background-color: rgb(241, 49, 49); text-align: center;">
-                            {{flightreports.aircraft.aircraft_status}}</td>
-                    {% elif flightreports.aircraft.aircraft_status == 'EVA' or 'PAR' or 'ABP' or 'APA' %}
+                            {{flightreport.aircraft.aircraft_status}}</td>
+                    {% elif flightreport.aircraft.aircraft_status == 'EVA' or 'PAR' or 'ABP' or 'APA' %}
                         <td style="background-color: rgb(54, 111, 253); text-align: center;">
-                            {{flightreports.aircraft.aircraft_status}}</td>
+                            {{flightreport.aircraft.aircraft_status}}</td>
                     {% else %}
-                        <td style="text-align: center;">{{flightreports.aircraft.aircraft_status}}</td>
+                        <td style="text-align: center;">{{flightreport.aircraft.aircraft_status}}</td>
                     {% endif %}
 
-                    <td style="text-align: center;">{{flightreports.aircraft.next_inspection_hours}}</td>
-                    <td style="text-align: center;">{{flightreports.aircraft.type_inspection}}</td>
-                    <td style="text-align: center;">{{flightreports.aircraft.assigned_hours}}</td>
-                    <td style="text-align: center;">{{flightreports.aircraft.re_asign}}</td>
-                    <td style="text-align: center;">{{flightreports.aircraft.total_hours}}</td>
+                    <td style="text-align: center;">{{flightreport.aircraft.next_inspection_hours}}</td>
+                    <td style="text-align: center;">{{flightreport.aircraft.type_inspection}}</td>
+                    <td style="text-align: center;">{{flightreport.aircraft.assigned_hours}}</td>
+                    <td style="text-align: center;">{{flightreport.aircraft.re_asign}}</td>
+                    <td style="text-align: center;">{{flightreport.aircraft.total_hours}}</td>
 
-                    {% if flightreports.aircraft.hours_available <= 4 %}
+                    {% if flightreport.aircraft.hours_available <= 4 %}
                         <td style="text-align: center;">
                             <img src="{{image3}}" alt=""> &nbsp;&nbsp;
-                            {{flightreports.aircraft.hours_available}}</td>
-                    {% elif flightreports.aircraft.hours_available <= 9 %}
+                            {{flightreport.aircraft.hours_available}}</td>
+                    {% elif flightreport.aircraft.hours_available <= 9 %}
                         <td style="text-align: center;">
                             <img src="{{image4}}" alt=""> &nbsp;&nbsp;
-                            {{flightreports.aircraft.hours_available}}</td>
+                            {{flightreport.aircraft.hours_available}}</td>
                     {% else %}
                         <td style="text-align: center;">
                             <img src="{{image5}}" alt=""> &nbsp;&nbsp;
-                            {{flightreports.aircraft.hours_available}}</td>
+                            {{flightreport.aircraft.hours_available}}</td>
                     {% endif %}
 
-                    <td style="text-align: center;">{{flightreports.municipality.name}}</td>
-                    <td style="text-align: center;">{{flightreports.observations}}</td>
+                    <td style="text-align: center;">{{flightreport.municipality.name}}</td>
+                    <td style="text-align: center;">{{flightreport.observations}}</td>
                 </tr> 
             {% endfor %}                                      
         </tbody>
     </table>
+    {% endfor %} 
 </div>
 
 {% endblock content %}

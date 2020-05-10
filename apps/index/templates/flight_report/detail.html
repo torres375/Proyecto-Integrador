@@ -173,7 +173,7 @@
                 <tbody>
                     <tr>
                         <td><b>Evento de aviación</b></td>
-                        <td class="text-right">{{object.aviation_event}}</td>
+                        <td class="text-right">{% if object.aviation_event %} {{object.aviation_event}} {% else %} --- {% endif %}</td>
                     </tr>
                     <tr>
                         <td><b>Clasificación de riesgo</b></td>
@@ -181,7 +181,7 @@
                     </tr>
                     <tr>
                         <td><b>Observaciones</b></td>
-                        <td class="text-right">{{object.observations.help_text|safe}}</td>
+                        <td class="text-right"> {% if object.observations %} {{object.observations.help_text|safe}} {% else %} --- {% endif %}</td>
                     </tr>
                 </tbody>
             </table>

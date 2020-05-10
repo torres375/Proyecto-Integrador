@@ -1,11 +1,13 @@
+from openpyxl.styles import Color, PatternFill, Font, Border, Alignment, Side
 from django.http.response import HttpResponse
 from django.views.generic import TemplateView
-from apps.index.models import * 
-from openpyxl.styles import Color, PatternFill, Font, Border, Alignment, Side    
-from openpyxl.styles import colors
-from openpyxl.cell import Cell
 from openpyxl.utils import get_column_letter
+from openpyxl.styles import colors
+from django.db.models import Sum
+from apps.index.models import * 
+from openpyxl.cell import Cell
 from openpyxl import Workbook
+
 
 def get_or_none(classmodel, **kwargs):
     try:
@@ -163,9 +165,9 @@ class ReportAircratfExcel(TemplateView):
                 cell.alignment = centered_alignment
                 ws.cell(row=cont,column=4).value = flightReport.charged_unit.abbreviation
 
-                cell =  ws.cell(row=cont,column=5)
-                cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=5).value = flightReport.tactic_unit.minor_operative_unit.abbreviation
+                #cell =  ws.cell(row=cont,column=5)
+                #cell.alignment = centered_alignment  
+                #ws.cell(row=cont,column=5).value = flightReport.tactic_unit.minor_operative_unit.abbreviation
 
                 cell =  ws.cell(row=cont,column=6)
                 cell.alignment = centered_alignment  
@@ -351,7 +353,10 @@ class ReportAircratfExcel(TemplateView):
 
                 cell =  ws.cell(row=cont,column=46)
                 cell.alignment = centered_alignment  
-                ws.cell(row=cont,column=46).value = flightReport.aviation_event.name
+                aviation_event = '---'
+                if flightReport.aviation_event is not None:
+                    aviation_event = flightReport.aviation_event.name
+                ws.cell(row=cont,column=46).value = aviation_event
 
                 cell =  ws.cell(row=cont,column=47)
                 cell.alignment = centered_alignment  
@@ -379,7 +384,7 @@ class ReportAircratfExcel(TemplateView):
         cell.alignment = wrapped_alignment
 
 
-        filename ="ReporteDeAeronaveExcel.xlsx"
+        filename ="ReporteDeAeronavesExcel.xlsx"
         response = HttpResponse(content_type="application/ms-excel")
         content = "attachment; filename={0}".format(filename)
         response["Content-Disposition"]= content
@@ -387,3 +392,261 @@ class ReportAircratfExcel(TemplateView):
         
         wb.save(response)       
         return response 
+
+
+def get_assisted_unit(data):
+    result = {}
+    if data['agreement'] is not None:
+        result['assisted_unit'] = data['agreement']
+        result['assisted_unit__name'] = data['agreement__agreement_name']
+        result['assisted_unit__abbreviation'] = data['agreement__abbreviation']
+    elif data['tactic_unit'] is not None:
+        result['assisted_unit'] = data['tactic_unit']
+        result['assisted_unit__name'] = data['tactic_unit__name']
+        result['assisted_unit__abbreviation'] = data['tactic_unit__abbreviation']
+    elif data['minor_operative_unit'] is not None:
+        result['assisted_unit'] = data['minor_operative_unit']
+        result['assisted_unit__name'] = data['minor_operative_unit__name']
+        result['assisted_unit__abbreviation'] = data['minor_operative_unit__abbreviation']
+    elif data['major_operative_unit'] is not None:
+        result['assisted_unit'] = data['major_operative_unit']
+        result['assisted_unit__name'] = data['major_operative_unit__name']
+        result['assisted_unit__abbreviation'] = data['major_operative_unit__abbreviation']
+    return result
+
+
+def get_default_hours(aircraft_models):
+    default_hours_model = {}
+    for aircraft_model in aircraft_models:
+        hours_result = {}
+        hours_result['aircraft__assigned_hours__sum'] = 0
+        hours_result['aircraft__fly_hours__sum'] = 0
+        hours_result['aircraft__hours_available__sum'] = 0
+        default_hours_model[aircraft_model.pk] = hours_result
+    return default_hours_model
+
+
+class ExcelHoursAircraft(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        aircraft_models_dict = {}
+        aviation_units = TacticUnit.objects.filter(
+            is_aviation=True).order_by('pk')
+        count_aviation = {}
+        real_query = {}
+        total_hours = get_default_hours(aircraft_models)
+        for aviation_unit in aviation_units:
+            count_aviation[aviation_unit.pk] = 0
+        for aircraft_model in aircraft_models:
+            flight_reports = FlightReport.objects.filter(
+                aircraft__air_craft_models=aircraft_model).select_related().order_by('tactic_unit')
+            queryset = flight_reports.values('aviation_unit', 'aviation_unit__name', 'aviation_unit__abbreviation', 'agreement', 'agreement__abbreviation', 'agreement__agreement_name', 'major_operative_unit', 'major_operative_unit__name', 'major_operative_unit__abbreviation',
+                                             'minor_operative_unit', 'minor_operative_unit__name', 'minor_operative_unit__abbreviation', 'tactic_unit', 'tactic_unit__name', 'tactic_unit__abbreviation').order_by('aviation_unit').annotate(aircraft__assigned_hours__sum=Sum('aircraft__assigned_hours'), aircraft__fly_hours__sum=Sum('aircraft__fly_hours'), aircraft__hours_available__sum=Sum('aircraft__hours_available'))
+            list_result = []
+            # print(queryset.count())
+            results_aviation = {}
+            count_aviation = {}
+            for aviation_unit in aviation_units:
+                results_aviation[aviation_unit.pk] = []
+                count_aviation[aviation_unit.pk] = 0
+            for data in queryset:
+                result = get_assisted_unit(data)
+                result['aviation_unit'] = data['aviation_unit']
+                result['aviation_unit__abbreviation'] = data['aviation_unit__abbreviation']
+                result['aviation_unit__name'] = data['aviation_unit__name']
+                hours_result = {}
+                hours_result['aircraft__assigned_hours__sum'] = data['aircraft__assigned_hours__sum']
+                hours_result['aircraft__fly_hours__sum'] = data['aircraft__fly_hours__sum']
+                hours_result['aircraft__hours_available__sum'] = data['aircraft__hours_available__sum']
+                key_query = str(result['aviation_unit']) + \
+                    '_' + result['assisted_unit__abbreviation']
+                if key_query in real_query:
+                    real_query[key_query]['aicraft_models'][aircraft_model.pk]['aircraft__assigned_hours__sum'] += hours_result[
+                        'aircraft__assigned_hours__sum']
+                    real_query[key_query]['aicraft_models'][aircraft_model.pk]['aircraft__fly_hours__sum'] += hours_result[
+                        'aircraft__fly_hours__sum']
+                    real_query[key_query]['aicraft_models'][aircraft_model.pk]['aircraft__hours_available__sum'] += hours_result[
+                        'aircraft__hours_available__sum']
+                else:
+                    result['aicraft_models'] = get_default_hours(
+                        aircraft_models)
+                    result['aicraft_models'][aircraft_model.pk] = hours_result
+                    real_query[key_query] = result
+                total_hours[aircraft_model.pk]['aircraft__assigned_hours__sum'] += hours_result['aircraft__assigned_hours__sum']
+                total_hours[aircraft_model.pk]['aircraft__fly_hours__sum'] += hours_result['aircraft__fly_hours__sum']
+                total_hours[aircraft_model.pk]['aircraft__hours_available__sum'] += hours_result['aircraft__hours_available__sum']
+        # full_aviation_units = []
+        # for aviation_unit in aviation_units:
+        #     for count in range(count_aviation[aviation_unit.pk]+1):
+        #         full_aviation_units.append(aviation_unit)
+        real_query = dict(sorted(real_query.items()))
+        wb = Workbook()
+        #name = aircratf.name
+        ws = wb.active
+        ws.title = "Horas Unidades"
+        ws.row_dimensions[1].height = 50
+        centered_alignment = Alignment(horizontal='center')
+        border_bottom = Border(left=Side(border_style='medium',
+                                         color='00000000'),
+                               right=Side(border_style='medium',
+                                          color='00000000'),
+                               top=Side(border_style='medium',
+                                        color='00000000'),
+                               bottom=Side(border_style='medium',
+                                           color='00000000'),
+                               vertical=Side(border_style='medium',
+                                             color='00000000'),
+                               horizontal=Side(border_style='medium',
+                                               color='00000000'),
+                               )
+        wrapped_alignment = Alignment(
+            horizontal='general',
+            vertical='center',
+            wrap_text=True,
+            shrink_to_fit=True
+        )
+        redFill = PatternFill(start_color='ff0000',
+                              end_color='ff0000',
+                              fill_type='solid')
+
+        bluefill = PatternFill(start_color='8db3e2',
+                               end_color='8db3e2',
+                               fill_type='solid')
+        columns = [
+            '    UNIDAD DE AVIACIÓN ',
+            '    UNIDAD APOYADA',
+        ]
+
+        second_columns = [
+            '    UNIDAD DE AVIACIÓN ',
+            '    UNIDAD APOYADA',
+        ]
+
+        columns_count = 3
+
+        for aircraft_model in aircraft_models:
+            columns.append(aircraft_model.name)
+            columns.append('')
+            columns.append('')
+            # Second columns
+            second_columns.append('ASIG')
+            second_columns.append('VOL')
+            second_columns.append('DISP')
+
+        column_widths = {}
+        cont = 1
+        for col_num, column_title in enumerate(columns, 1):
+            cell = ws.cell(row=cont, column=col_num)
+            cell.value = column_title
+            cell.border = border_bottom
+            cell.alignment = centered_alignment
+            cell.alignment = wrapped_alignment
+            cell.fill = bluefill
+            column_letter = get_column_letter(col_num)
+            if column_letter not in column_widths:
+                column_widths[column_letter] = 0
+            if len(str(column_title)) >= column_widths[column_letter]:
+                column_widths[column_letter] = len(str(column_title)) + 1
+            # Second columns
+            cell = ws.cell(row=cont+1, column=col_num)
+            cell.value = second_columns[col_num-1]
+            cell.border = border_bottom
+            cell.alignment = centered_alignment
+            cell.alignment = wrapped_alignment
+            cell.fill = bluefill
+            column_letter = get_column_letter(col_num)
+            if column_letter not in column_widths:
+                column_widths[column_letter] = 0
+            if len(str(second_columns[col_num-1])) >= column_widths[column_letter]:
+                column_widths[column_letter] = len(
+                    str(second_columns[col_num-1])) + 1
+        cont += 1
+        # ws.merge_cells(start_row=1, start_column=1, end_row=2, end_column=1)
+        # ws.merge_cells(start_row=1, start_column=2, end_row=2, end_column=2)
+
+        columns_count = 2
+        for aircraft_model in aircraft_models:
+            columns_count += 1
+            ws.merge_cells(start_row=1, start_column=columns_count,
+                           end_row=1, end_column=columns_count+2)
+            columns_count += 2
+
+        # Table Rows
+        for key, row_table in real_query.items():
+            cont += 1
+            row = [
+                row_table['aviation_unit__abbreviation'],
+                row_table['assisted_unit__abbreviation'],
+            ]
+
+            for air_key, aircraft_model in row_table['aicraft_models'].items():
+                row.append(aircraft_model['aircraft__assigned_hours__sum'])
+                row.append(aircraft_model['aircraft__fly_hours__sum'])
+                row.append(aircraft_model['aircraft__hours_available__sum'])
+
+            for col_num, column_title in enumerate(row, 1):
+                cell = ws.cell(row=cont, column=col_num)
+                cell.value = column_title
+                cell.alignment = wrapped_alignment
+                if col_num <= 2:
+                    cell.fill = bluefill
+                cell.border = border_bottom
+                column_letter = get_column_letter(col_num)
+                if column_letter not in column_widths:
+                    column_widths[column_letter] = 0
+                if len(str(column_title)) >= column_widths[column_letter]:
+                    column_widths[column_letter] = len(str(column_title)) + 1
+
+        cont += 1
+        # Total Row
+        row = [
+            '  TOTAL  ',
+            '  TOTAL  ',
+        ]
+
+        for total_key, total in total_hours.items():
+            row.append(total['aircraft__assigned_hours__sum'])
+            row.append(total['aircraft__fly_hours__sum'])
+            row.append(total['aircraft__hours_available__sum'])
+
+        for col_num, column_title in enumerate(row, 1):
+            cell = ws.cell(row=cont, column=col_num)
+            cell.value = column_title
+            cell.alignment = wrapped_alignment
+            cell.fill = bluefill
+            cell.border = border_bottom
+            column_letter = get_column_letter(col_num)
+            if column_letter not in column_widths:
+                column_widths[column_letter] = 0
+            if len(str(column_title)) >= column_widths[column_letter]:
+                column_widths[column_letter] = len(str(column_title)) + 1
+
+        ws.merge_cells(start_row=cont, start_column=1,
+                       end_row=cont, end_column=2)
+
+        # merge columns 1 and 2
+        for col_num in range(2):
+            col_num += 1
+            cell = ws.cell(row=1, column=col_num)
+            cell_value = cell.value
+            cell_row = 1
+            for row_count in range(len(real_query)+1):
+                row_count += 2
+                cell = ws.cell(row=row_count, column=col_num)
+                current_cell_value = cell.value
+                if current_cell_value != cell_value:
+                    cell_value = current_cell_value
+                    ws.merge_cells(start_row=cell_row, start_column=col_num,
+                                   end_row=row_count-1, end_column=col_num)
+                    cell_row = row_count
+            ws.merge_cells(start_row=cell_row, start_column=col_num,
+                           end_row=row_count, end_column=col_num)
+
+        filename = "ReporteDeAeronaveExcel.xlsx"
+        response = HttpResponse(content_type="application/ms-excel")
+        content = "attachment; filename={0}".format(filename)
+        response["Content-Disposition"] = content
+
+        wb.save(response)
+        return response

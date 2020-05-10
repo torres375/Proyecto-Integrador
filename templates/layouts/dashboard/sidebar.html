@@ -57,13 +57,13 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{% url 'index:list_uoma' %}">
                                 <span class="sidebar-mini"> UOMA </span>
-                                <span class="sidebar-normal"> Unidades Operativas Mayores </span>
+                                <span class="sidebar-normal"> Unidades operativas mayores </span>
                             </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="{% url 'index:list_uome' %}">
                                 <span class="sidebar-mini"> UOME </span>
-                                <span class="sidebar-normal"> Unidades Operativas Menores </span>
+                                <span class="sidebar-normal"> Unidades operativas menores </span>
                             </a>
                         </li>
                         <li class="nav-item ">
@@ -93,7 +93,7 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{% url 'index:list_major_operation' %}">
                                 <span class="sidebar-mini"> OM </span>
-                                <span class="sidebar-normal"> Operaciones Mayores </span>
+                                <span class="sidebar-normal"> Operaciones mayores </span>
                             </a>
                         </li>
                         <li class="nav-item ">
@@ -170,6 +170,12 @@
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{% url 'index:graph_bar' %}">
+                    <i class="material-icons">panorama</i>
+                    <p> Estadisticas </p>
+                </a>
             </li>
             {% if is_administrator %}
             <li class="nav-item ">

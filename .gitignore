@@ -111,3 +111,5 @@ media/*
 .DS_Store
 
 blukastor_back/settings\.py
+Pipfile.lock
+Pipfile

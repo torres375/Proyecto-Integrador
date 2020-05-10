@@ -48,14 +48,17 @@
             <a href="{% url 'index:create_flight_report' %}">
                 <button class="btn btn-info">Nuevo</button>
             </a>
+        </div>
+        <hr>
+        <div style="text-align: center;">
             <a href="{% url 'index:report_aircraft_excel' %}" download>
-                <button class="btn btn-info">Descargar reportes Excel</button>
+                <button class="btn btn-info">Descargar reportes de aeronaves Excel</button>
             </a>
             <a href="/flight_report/pdf/" download>
-                <button class="btn btn-info">Descargar reportes PDF</button>
+                <button class="btn btn-info">Descargar PARTE DE AERONAVES ASIGNADAS AL DISPOSITIVO OPERACIONAL PDF</button>
             </a>
-            <a href="/flight_report/pdf2/" download>
-                <button class="btn btn-info">Descargar reportes PDF2</button>
+            <a href="{% url 'index:report_aircraft_excel' %}" download>
+                <button class="btn btn-info">Descargar reportes de unidades Excel</button>
             </a>
         </div>
     </div>

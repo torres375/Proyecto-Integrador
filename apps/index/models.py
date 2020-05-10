@@ -147,7 +147,7 @@ class TacticUnit(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return '{} ({})'.format(self.name, self.pk)
 
 
 class UserProfile(models.Model):
@@ -326,6 +326,8 @@ class FlightReport(models.Model):
     def get_charged_unit(self):
         if self.agreement is not None:
             return self.agreement
+        if self.tactic_unit is not None:
+            return self.tactic_unit
         if self.minor_operative_unit is not None:
             return self.minor_operative_unit
         if self.major_operative_unit is not None:

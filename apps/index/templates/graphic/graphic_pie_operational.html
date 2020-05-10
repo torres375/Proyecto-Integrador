@@ -1,0 +1,73 @@
+{% extends 'layouts/dashboard/base.html' %}
+{% load static %}
+{% block content %}
+<link href="{% static 'css/styles2.css' %}" rel="stylesheet" />
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<div class="row">
+    <div class="btn-group btn-group-lg btn-block">
+        <a href=" {% url 'index:graph_bar' %} ">
+            <button type="button" class="btn btn-dark">Horas aeronaves</button>
+        </a>
+        <a href="">
+            <button type="button" class="btn btn-dark">Equipo</button>
+        </a>
+        <a href=" {% url 'index:graphic_pie_operational' %} ">
+            <button type="button" class="btn btn-dark" disabled>Misiones operacionales</button>
+        </a>
+        <a href=" {% url 'index:graphic_pie_no_operational' %} ">
+            <button type="button" class="btn btn-dark">Misiones no operacionales</button>
+        </a>
+    </div>
+</div>
+
+<hr>
+
+<figure>
+    <div id="container"></div>
+</figure>
+
+<script>
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+            text: 'HORAS DE AERONAVE DEL EJERCITO NACIONAL DE COLOMBIA'
+        },
+        subtitle: {
+            text: 'Porcentaje de misiones operacionales'
+        },
+    
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'Operacionales',
+        colorByPoint: true,
+        data: JSON.parse('{{data}}')
+    }]
+});
+</script>
+{% endblock content %}
