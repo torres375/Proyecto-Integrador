@@ -47,9 +47,9 @@
             {% for flightreport in flight_reports  %}
                 <tr>
                     
-                    <td style="text-align: center;">{{flightreport.tactic_unit.abbreviation}}</td>
+                    <td style="text-align: center;">{{flightreport.aviation_unit.abbreviation}}</td>
 
-                    <td style="text-align: center;">{{flightreport.tactic_unit.minor_operative_unit.abbreviation}}</td>
+                    <td style="text-align: center;">{{flightreport.supported_unit.abbreviation}}</td>
 
                     <td style="text-align: center;">{{flightreport.aircraft.enrollment}}</td>
 
@@ -70,7 +70,7 @@
                     {% endif %}
 
                     <td style="text-align: center;">{{flightreport.aircraft.next_inspection_hours}}</td>
-                    <td style="text-align: center;">{{flightreport.aircraft.type_inspection}}</td>
+                    <td style="text-align: center;">{% if flightreport.aircraft.type_inspection %}{{flightreport.aircraft.type_inspection}}{% else %}---{% endif %}</td>
                     <td style="text-align: center;">{{flightreport.aircraft.assigned_hours}}</td>
                     <td style="text-align: center;">{{flightreport.aircraft.re_asign}}</td>
                     <td style="text-align: center;">{{flightreport.aircraft.total_hours}}</td>
@@ -90,7 +90,7 @@
                     {% endif %}
 
                     <td style="text-align: center;">{{flightreport.municipality.name}}</td>
-                    <td style="text-align: center;">{{flightreport.observations}}</td>
+                    <td style="text-align: center;">{% if flightreport.observations %}{{flightreport.observations}}{% else %}---{% endif %}</td>
                 </tr> 
             {% endfor %}                                      
         </tbody>

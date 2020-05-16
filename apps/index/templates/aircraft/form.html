@@ -73,8 +73,8 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="number" class="form-control" name="assigned_hours" id="id_assigned_hours"
-                                {% if form.assigned_hours.value %} value="{{form.assigned_hours.value|unlocalize}}" {% endif %}
-                                placeholder="" required>
+                                {% if form.assigned_hours.value %} value="{{form.assigned_hours.value|unlocalize}}"
+                                {% endif %} placeholder="" required>
                             {% if form.assigned_hours.help_text %}
                             <p class="help">{{ form.assigned_hours.help_text|safe }}</p>
                             {% endif %}
@@ -93,7 +93,8 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="number" class="form-control" name="re_asign" id="id_re_asign"
-                                {% if form.re_asign.value %} value="{{form.re_asign.value|unlocalize}}" {% endif %}
+                                readonly="readonly" {% if form.re_asign.value %}
+                                value="{{form.re_asign.value|unlocalize}}" {% else %} value="0" {% endif %}
                                 placeholder="" required>
                             {% if form.re_asign.help_text %}
                             <p class="help">{{ form.re_asign.help_text|safe }}</p>
@@ -113,7 +114,8 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="number" class="form-control" name="fly_hours" id="id_fly_hours"
-                                {% if form.fly_hours.value %} value="{{form.fly_hours.value|unlocalize}}" {% endif %}
+                                readonly="readonly" {% if form.fly_hours.value %}
+                                value="{{form.fly_hours.value|unlocalize}}" {% else %} value="0" {% endif %}
                                 placeholder="" required>
                             {% if form.fly_hours.help_text %}
                             <p class="help">{{ form.fly_hours.help_text|safe }}</p>
@@ -133,8 +135,8 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="number" class="form-control" name="merger_hours" id="id_merger_hours"
-                                {% if form.merger_hours.value %} value="{{form.merger_hours.value|unlocalize}}" {% endif %}
-                                placeholder="" required>
+                                {% if form.merger_hours.value %} value="{{form.merger_hours.value|unlocalize}}"
+                                {% endif %} placeholder="" required>
                             {% if form.merger_hours.help_text %}
                             <p class="help">{{ form.merger_hours.help_text|safe }}</p>
                             {% endif %}
@@ -152,10 +154,10 @@
                     <label class="col-sm-2 col-form-label">Horas Disponibles</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="number" class="form-control" name="hours_available"
-                                id="id_hours_available" readonly="readonly" value="0"
-                                {% if form.hours_available.value %} value="{{form.hours_available.value|unlocalize}}"
-                                {% endif %} placeholder="">
+                            <input type="number" class="form-control" name="hours_available" id="id_hours_available"
+                                readonly="readonly" {% if form.hours_available.value %}
+                                value="{{form.hours_available.value|unlocalize}}" {% else %} value="0" {% endif %}
+                                placeholder="">
                             {% if form.hours_available.help_text %}
                             <p class="help">{{ form.hours_available.help_text|safe }}</p>
                             {% endif %}
@@ -173,10 +175,10 @@
                     <label class="col-sm-2 col-form-label">Total Horas Voladas</label>
                     <div class="col-sm-7">
                         <div class="form-group">
-                            <input type="number" class="form-control" name="total_hours"
-                                id="id_total_hours" readonly="readonly" value="0"
-                                {% if form.total_hours.value %} value="{{form.total_hours.value|unlocalize}}"
-                                {% endif %} placeholder="">
+                            <input type="number" class="form-control" name="total_hours" id="id_total_hours"
+                                readonly="readonly" {% if form.total_hours.value %}
+                                value="{{form.total_hours.value|unlocalize}}" {% else %} value="0" {% endif %}
+                                placeholder="">
                             {% if form.total_hours.help_text %}
                             <p class="help">{{ form.total_hours.help_text|safe }}</p>
                             {% endif %}
@@ -191,12 +193,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="col-sm-2 col-form-label">Siguiente inspecion </label>
+                    <label class="col-sm-2 col-form-label">Siguiente inspección </label>
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="number" class="form-control" name="next_inspection" id="next_inspection"
-                                {% if form.next_inspection.value %} value="{{form.next_inspection.value|unlocalize}}" {% endif %}
-                                placeholder="" required>
+                                {% if form.next_inspection.value %} value="{{form.next_inspection.value|unlocalize}}"
+                                {% endif %} placeholder="" required>
                             {% if form.next_inspection.help_text %}
                             <p class="help">{{ form.next_inspection.help_text|safe }}</p>
                             {% endif %}
@@ -215,9 +217,10 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="number" class="form-control" name="next_inspection_hours"
-                                id="id_next_inspection_hours" readonly="readonly" value="0"
-                                {% if form.next_inspection_hours.value %} value="{{form.next_inspection_hours.value|unlocalize}}"
-                                {% endif %} placeholder="">
+                                id="id_next_inspection_hours" readonly="readonly"
+                                {% if form.next_inspection_hours.value %}
+                                value="{{form.next_inspection_hours.value|unlocalize}}" {% else %} value="0" {% endif %}
+                                placeholder="">
                             {% if form.next_inspection_hours.help_text %}
                             <p class="help">{{ form.next_inspection_hours.help_text|safe }}</p>
                             {% endif %}
@@ -236,8 +239,8 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <input type="text" class="form-control" name="type_inspection" id="type_inspection"
-                                {% if form.type_inspection.value %} value="{{form.type_inspection.value|unlocalize}}" {% endif %}
-                                placeholder="" required>
+                                {% if form.type_inspection.value %} value="{{form.type_inspection.value|unlocalize}}"
+                                {% endif %} placeholder="" required>
                             {% if form.type_inspection.help_text %}
                             <p class="help">{{ form.type_inspection.help_text|safe }}</p>
                             {% endif %}
@@ -345,6 +348,28 @@
                                 {% endfor %}
                             </ul>
                             {% endif %}
+                        </div>
+                    </div>
+                    <label class="col-sm-2 col-form-label">¿Está activo?</label>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" name="is_active" id="id_is_active" type="checkbox"
+                                    {% if form.is_active.value %} checked {% endif %}>
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                                {% if form.is_active.help_text %}
+                                <p class="help">{{ form.is_active.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.is_active.errors %}
+                                <ul class="errorlist">
+                                    {% for error in form.is_active.errors %}
+                                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                    {% endfor %}
+                                </ul>
+                                {% endif %}
+                            </label>
                         </div>
                     </div>
                 </div>

@@ -2,68 +2,111 @@
 {% load static %}
 
 {% block content %}
-    <div class="col-md-12 col-sm-6">
-        <div class="card">
-            <div class="card-header card-header-info card-header-icon">
-                <div class="card-icon">
-                    <i class="material-icons">&#xE905;</i>
+<div class="col-md-12 col-sm-6">
+    <div class="card">
+        <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+                <i class="material-icons">&#xE905;</i>
+            </div>
+            <h4 class="card-title">Reportes de vuelo</h4>
+        </div>
+        <div class="card-body">
+            <div class="material-datatables">
+                <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0"
+                    width="100%" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Unidad de aviación que ejecuta</th>
+                            <th>Fecha y hora</th>
+                            <th>División/Convenio/Fuerza</th>
+                            <th>Matricula Aeronave</th>
+                            <th>Tipo de misión</th>
+                            <th class="disabled-sorting text-right">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for flight_report in flight_report_list %}
+                        <tr>
+                            <td>{{flight_report.aviation_unit}} </td>
+                            <td>{{flight_report.date}} - {{flight_report.time}}</td>
+                            <td>{{flight_report.charged_unit}}</td>
+                            <td>{{flight_report.aircraft.enrollment}}</td>
+                            <td>{{flight_report.aviation_mission.mission_type}}</td>
+                            <td class="text-right">
+                                <a href="{% url 'index:detail_flight_report' flight_report.pk %}"
+                                    class="btn btn-link btn-info btn-just-icon like"><i
+                                        class="material-icons">visibility</i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- end content-->
+    </div>
+    <!--  end card  -->
+    <div style="text-align: center;">
+        <a href="{% url 'index:create_flight_report' %}">
+            <button class="btn btn-info">Nuevo</button>
+        </a>
+    </div>
+    <hr>
+    <div class="card">
+        <div class="card-header card-header-info card-header-icon">
+            <div class="card-icon">
+                <i class="material-icons">&#xE905;</i>
+            </div>
+            <h4 class="card-title">Descarga de reportes</h4>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="card-header card-header-rose card-header-text">
+                                <h4 class="card-title">Fecha inicial</h4>
+                            </div>
+                            <div class="card-body ">
+                                <div class="form-group">
+                                    <input type="date" class="form-control datepicker" name="start_date"
+                                        id="id_start_date" {% if past_date %} value="{{past_date}}" {% endif %}
+                                        placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="card-header card-header-rose card-header-text">
+                                <h4 class="card-title">Fecha final</h4>
+                            </div>
+                            <div class="card-body ">
+                                <div class="form-group">
+                                    <input type="date" class="form-control datepicker" name="end_date" id="id_end_date"
+                                        {% if current_date %} value="{{current_date}}" {% endif %} placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h4 class="card-title">Reportes de vuelo</h4>
-            </div>
-            <div class="card-body">
-                <div class="material-datatables">
-                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0"width="100%" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th>Unidad de aviación que ejecuta</th>
-                                <th>Fecha y hora</th>
-                                <th>División/Convenio/Fuerza</th>
-                                <th>Matricula Aeronave</th>
-                                <th>Tipo de misión</th>
-                                <th class="disabled-sorting text-right">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for flight_report in flight_report_list %}
-                                <tr>
-                                    <td>{{flight_report.aviation_mission}} </td>
-                                    <td>{{flight_report.date}} - {{flight_report.time}}</td>
-                                    <td>{{flight_report.charged_unit}}</td>
-                                    <td>{{flight_report.aircraft.enrollment}}</td>
-                                    <td>{{flight_report.aviation_mission.mission_type}}</td>
-                                    <td class="text-right">
-                                    <a href="{% url 'index:detail_flight_report' flight_report.pk %}" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">visibility</i></a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>   
-            </div>
-            
-            <!-- end content-->
+                <div style="text-align: center;">
+                    <button type="submit" formaction="{% url 'index:report_aircraft_excel' %}"
+                        class="btn btn-info">Descargar reportes de aeronaves Excel</button>
+                    <button type="submit" formaction="/flight_report/pdf/" class="btn btn-info">Descargar PARTE DE
+                        AERONAVES ASIGNADAS AL DISPOSITIVO OPERACIONAL
+                        PDF</button>
+                    <button type="submit" formaction="{% url 'index:report_aircraft_excel2' %}"
+                        class="btn btn-info">Descargar reportes de unidades Excel</button>
+                </div>
+            </form>
         </div>
-        <!--  end card  -->
-        <div style="text-align: center;">
-            <a href="{% url 'index:create_flight_report' %}">
-                <button class="btn btn-info">Nuevo</button>
-            </a>
-        </div>
-        <hr>
-        <div style="text-align: center;">
-            <a href="{% url 'index:report_aircraft_excel' %}" download>
-                <button class="btn btn-info">Descargar reportes de aeronaves Excel</button>
-            </a>
-            <a href="/flight_report/pdf/" download>
-                <button class="btn btn-info">Descargar PARTE DE AERONAVES ASIGNADAS AL DISPOSITIVO OPERACIONAL PDF</button>
-            </a>
-            <a href="{% url 'index:report_aircraft_excel' %}" download>
-                <button class="btn btn-info">Descargar reportes de unidades Excel</button>
-            </a>
-        </div>
+        <!-- end content-->
     </div>
-    <!-- end col-md-12 -->
-    </div>
-    <!-- end row -->
+</div>
+<!-- end col-md-12 -->
+</div>
+<!-- end row -->
 {% include 'layouts/dashboard/modal_delete.html' %}
 {% endblock content %}

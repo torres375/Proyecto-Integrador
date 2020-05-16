@@ -15,7 +15,9 @@ from apps.index.models import *
 from apps.index.forms import *
 from apps.users.forms import *
 from apps.users.utils import *
+from apps.index.utils import *
 from datetime import datetime
+from datetime import timedelta
 import json
 
 
@@ -29,7 +31,7 @@ class IndexView(TemplateView):
 
 
 # Aircraft Views
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions_2(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListAircraft (ListView):
     template_name = 'aircraft/list.html'
     model = AirCraft
@@ -71,7 +73,7 @@ class CreateAircraft (CreateView):
         return reverse('index:detail_aircraft', kwargs={'pk': pk})
 
 
-@method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions_2(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailAircraft(DetailView):
     template_name = "aircraft/detail.html"
     model = AirCraft
@@ -119,7 +121,7 @@ class CreateCrew(CreateView):
         return reverse('index:detail_crew', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailCrew(DetailView):
     template_name = "crew/detail.html"
     model = Crew
@@ -144,7 +146,7 @@ class DeleteCrew(DeleteView):
     success_url = reverse_lazy('index:list_crew')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListCrew(ListView):
     template_name = "crew/list.html"
     model = Crew
@@ -164,11 +166,56 @@ class CreateUOMA(CreateView):
         pk = self.object.pk
         return reverse('index:detail_uoma', kwargs={'pk': pk})
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        for aircraft_model in aircraft_models:
+            assigned_hours = 0
+            aircraft_model.assigned_hours = int(assigned_hours)
+        context['aircraft_models'] = aircraft_models
+        return context
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+    def form_valid(self, form):
+        self.object = form.save()
+        aircraft_models = list(AirCraftModel.objects.all().order_by('name'))
+        assigned_aircrafts = []
+        for aircraft_model in aircraft_models:
+            input_id = "model_" + str(aircraft_model.pk)
+            assigned_hours = int(self.request.POST.get(input_id, 0))
+            data = {'aircraft_model': aircraft_model,
+                    'assigned_hours': assigned_hours}
+            assigned_aircrafts.append(data)
+        for assigned_data in assigned_aircrafts:
+            aircraft_model = assigned_data['aircraft_model']
+            assigned_hours = assigned_data['assigned_hours']
+            assigned = get_one_or_none(AssignedHourMajorOperationAircraftModel,
+                                       major_operative_unit=self.object, aircraft_model=aircraft_model)
+            if assigned is None:
+                assigned = AssignedHourMajorOperationAircraftModel(
+                    major_operative_unit=self.object, aircraft_model=aircraft_model, assigned_hours=0)
+            assigned.assigned_hours = assigned_hours
+            assigned.save()
+        return super(CreateUOMA, self).form_valid(form)
+
+
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailUOMA(DetailView):
     template_name = "uoma/detail.html"
     model = MajorOperativeUnit
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        instance = self.get_object()
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        for aircraft_model in aircraft_models:
+            assigned_hours = 0
+            assigned = get_one_or_none(AssignedHourMajorOperationAircraftModel,
+                                       major_operative_unit=instance, aircraft_model=aircraft_model)
+            if assigned is not None:
+                assigned_hours = assigned.assigned_hours
+            aircraft_model.assigned_hours = int(assigned_hours)
+        context['aircraft_models'] = aircraft_models
+        return context
 
 
 @method_decorator(user_passes_test(lambda u: write_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
@@ -182,6 +229,42 @@ class UpdateUOMA(UpdateView):
         pk = self.object.pk
         return reverse('index:detail_uoma', kwargs={'pk': pk})
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        instance = self.get_object()
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        for aircraft_model in aircraft_models:
+            assigned_hours = 0
+            assigned = get_one_or_none(AssignedHourMajorOperationAircraftModel,
+                                       major_operative_unit=instance, aircraft_model=aircraft_model)
+            if assigned is not None:
+                assigned_hours = assigned.assigned_hours
+            aircraft_model.assigned_hours = int(assigned_hours)
+        context['aircraft_models'] = aircraft_models
+        return context
+
+    def form_valid(self, form):
+        self.object = form.save()
+        aircraft_models = list(AirCraftModel.objects.all().order_by('name'))
+        assigned_aircrafts = []
+        for aircraft_model in aircraft_models:
+            input_id = "model_" + str(aircraft_model.pk)
+            assigned_hours = int(self.request.POST.get(input_id, 0))
+            data = {'aircraft_model': aircraft_model,
+                    'assigned_hours': assigned_hours}
+            assigned_aircrafts.append(data)
+        for assigned_data in assigned_aircrafts:
+            aircraft_model = assigned_data['aircraft_model']
+            assigned_hours = assigned_data['assigned_hours']
+            assigned = get_one_or_none(AssignedHourMajorOperationAircraftModel,
+                                       major_operative_unit=self.object, aircraft_model=aircraft_model)
+            if assigned is None:
+                assigned = AssignedHourMajorOperationAircraftModel(
+                    major_operative_unit=self.object, aircraft_model=aircraft_model, assigned_hours=0)
+            assigned.assigned_hours = assigned_hours
+            assigned.save()
+        return super(UpdateUOMA, self).form_valid(form)
+
 
 @method_decorator(user_passes_test(lambda u: write_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
 class DeleteUOMA(DeleteView):
@@ -189,7 +272,7 @@ class DeleteUOMA(DeleteView):
     success_url = reverse_lazy('index:list_uoma')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListUOMA(ListView):
     template_name = "uoma/list.html"
     model = MajorOperativeUnit
@@ -210,7 +293,7 @@ class CreateUOME(CreateView):
         return reverse('index:detail_uome', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailUOME(DetailView):
     template_name = "uome/detail.html"
     model = MinorOperativeUnit
@@ -234,7 +317,7 @@ class DeleteUOME(DeleteView):
     success_url = reverse_lazy('index:list_uome')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListUOME(ListView):
     template_name = "uome/list.html"
     model = MinorOperativeUnit
@@ -259,7 +342,7 @@ class CreateTacticUnit(CreateView):
         return context
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailTacticUnit(DetailView):
     template_name = "tactic_unit/detail.html"
     model = TacticUnit
@@ -288,7 +371,7 @@ class DeleteTacticUnit(DeleteView):
     success_url = reverse_lazy('index:list_tactic_unit')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListTacticUnit(ListView):
     template_name = "tactic_unit/list.html"
     model = TacticUnit
@@ -309,7 +392,7 @@ class CreateMajorOperation(CreateView):
         return reverse('index:detail_major_operation', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailMajorOperation(DetailView):
     template_name = "major_operation/detail.html"
     model = MajorOperation
@@ -333,7 +416,7 @@ class DeleteMajorOperation(DeleteView):
     success_url = reverse_lazy('index:list_major_operation')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListMajorOperation(ListView):
     template_name = "major_operation/list.html"
     model = MajorOperation
@@ -354,7 +437,7 @@ class CreateOperation(CreateView):
         return reverse('index:detail_operation', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailOperation(DetailView):
     template_name = "operation/detail.html"
     model = Operation
@@ -378,7 +461,7 @@ class DeleteOperation(DeleteView):
     success_url = reverse_lazy('index:list_operation')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListOperation(ListView):
     template_name = "operation/list.html"
     model = Operation
@@ -399,7 +482,7 @@ class CreateFlightCondition(CreateView):
         return reverse('index:detail_flight_condition', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailFlightCondition(DetailView):
     template_name = "flight_condition/detail.html"
     model = FlightCondition
@@ -423,7 +506,7 @@ class DeleteFlightCondition(DeleteView):
     success_url = reverse_lazy('index:list_flight_condition')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListFlightCondition(ListView):
     template_name = "flight_condition/list.html"
     model = FlightCondition
@@ -443,11 +526,56 @@ class CreateAgreement(CreateView):
         pk = self.object.pk
         return reverse('index:detail_agreement', kwargs={'pk': pk})
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        for aircraft_model in aircraft_models:
+            assigned_hours = 0
+            aircraft_model.assigned_hours = int(assigned_hours)
+        context['aircraft_models'] = aircraft_models
+        return context
+
+    def form_valid(self, form):
+        self.object = form.save()
+        aircraft_models = list(AirCraftModel.objects.all().order_by('name'))
+        assigned_aircrafts = []
+        for aircraft_model in aircraft_models:
+            input_id = "model_" + str(aircraft_model.pk)
+            assigned_hours = int(self.request.POST.get(input_id, 0))
+            data = {'aircraft_model': aircraft_model,
+                    'assigned_hours': assigned_hours}
+            assigned_aircrafts.append(data)
+        for assigned_data in assigned_aircrafts:
+            aircraft_model = assigned_data['aircraft_model']
+            assigned_hours = assigned_data['assigned_hours']
+            assigned = get_one_or_none(
+                AssignedHourAgreementAircraftModel, agreement=self.object, aircraft_model=aircraft_model)
+            if assigned is None:
+                assigned = AssignedHourAgreementAircraftModel(
+                    agreement=self.object, aircraft_model=aircraft_model, assigned_hours=0)
+            assigned.assigned_hours = assigned_hours
+            assigned.save()
+        return super(CreateAgreement, self).form_valid(form)
+
 
 @method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailAgreement(DetailView):
     template_name = "agreement/detail.html"
     model = Agreement
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        instance = self.get_object()
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        for aircraft_model in aircraft_models:
+            assigned_hours = 0
+            assigned = get_one_or_none(
+                AssignedHourAgreementAircraftModel, agreement=instance, aircraft_model=aircraft_model)
+            if assigned is not None:
+                assigned_hours = assigned.assigned_hours
+            aircraft_model.assigned_hours = int(assigned_hours)
+        context['aircraft_models'] = aircraft_models
+        return context
 
 
 @method_decorator(user_passes_test(lambda u: write_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
@@ -461,6 +589,42 @@ class UpdateAgreement(UpdateView):
         pk = self.object.pk
         return reverse('index:detail_agreement', kwargs={'pk': pk})
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        instance = self.get_object()
+        aircraft_models = AirCraftModel.objects.all().order_by('name')
+        for aircraft_model in aircraft_models:
+            assigned_hours = 0
+            assigned = get_one_or_none(
+                AssignedHourAgreementAircraftModel, agreement=instance, aircraft_model=aircraft_model)
+            if assigned is not None:
+                assigned_hours = assigned.assigned_hours
+            aircraft_model.assigned_hours = int(assigned_hours)
+        context['aircraft_models'] = aircraft_models
+        return context
+
+    def form_valid(self, form):
+        self.object = form.save()
+        aircraft_models = list(AirCraftModel.objects.all().order_by('name'))
+        assigned_aircrafts = []
+        for aircraft_model in aircraft_models:
+            input_id = "model_" + str(aircraft_model.pk)
+            assigned_hours = int(self.request.POST.get(input_id, 0))
+            data = {'aircraft_model': aircraft_model,
+                    'assigned_hours': assigned_hours}
+            assigned_aircrafts.append(data)
+        for assigned_data in assigned_aircrafts:
+            aircraft_model = assigned_data['aircraft_model']
+            assigned_hours = assigned_data['assigned_hours']
+            assigned = get_one_or_none(
+                AssignedHourAgreementAircraftModel, agreement=self.object, aircraft_model=aircraft_model)
+            if assigned is None:
+                assigned = AssignedHourAgreementAircraftModel(
+                    agreement=self.object, aircraft_model=aircraft_model, assigned_hours=0)
+            assigned.assigned_hours = assigned_hours
+            assigned.save()
+        return super(UpdateAgreement, self).form_valid(form)
+
 
 @method_decorator(user_passes_test(lambda u: write_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
 class DeleteAgreement(DeleteView):
@@ -468,7 +632,7 @@ class DeleteAgreement(DeleteView):
     success_url = reverse_lazy('index:list_agreement')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListAgreement(ListView):
     template_name = "agreement/list.html"
     model = Agreement
@@ -489,7 +653,7 @@ class CreateAirCraftType(CreateView):
         return reverse('index:detail_aircraft_type', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailAirCraftType(DetailView):
     template_name = "aircraft_type/detail.html"
     model = AirCraftType
@@ -513,7 +677,7 @@ class DeleteAirCraftType(DeleteView):
     success_url = reverse_lazy('index:list_aircraft_type')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListAirCraftType(ListView):
     template_name = "aircraft_type/list.html"
     model = AirCraftType
@@ -534,7 +698,7 @@ class CreateAirCraftModel(CreateView):
         return reverse('index:detail_aircraft_model', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailAirCraftModel(DetailView):
     template_name = "aircraft_model/detail.html"
     model = AirCraftModel
@@ -558,7 +722,7 @@ class DeleteAirCraftModel(DeleteView):
     success_url = reverse_lazy('index:list_aircraft_model')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListAirCraftModel(ListView):
     template_name = "aircraft_model/list.html"
     model = AirCraftModel
@@ -585,7 +749,7 @@ class CreateAviationEvent(CreateView):
         return reverse('index:detail_aviation_event', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailAviationEvent(DetailView):
     template_name = "aviation_event/detail.html"
     model = AviationEvent
@@ -618,7 +782,7 @@ class DeleteAviationEvent(DeleteView):
     success_url = reverse_lazy('index:list_aviation_event')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListAviationEvent(ListView):
     template_name = "aviation_event/list.html"
     model = AviationEvent
@@ -639,7 +803,7 @@ class CreateMissionType(CreateView):
         return reverse('index:detail_mission_type', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailMissionType(DetailView):
     template_name = "mission_type/detail.html"
     model = MissionType
@@ -663,7 +827,7 @@ class DeleteMissionType(DeleteView):
     success_url = reverse_lazy('index:list_mission_type')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListMissionType(ListView):
     template_name = "mission_type/list.html"
     model = MissionType
@@ -684,7 +848,7 @@ class CreateAviationMission(CreateView):
         return reverse('index:detail_aviation_mission', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailAviationMission(DetailView):
     template_name = "aviation_mission/detail.html"
     model = AviationMission
@@ -708,7 +872,7 @@ class DeleteAviationMission(DeleteView):
     success_url = reverse_lazy('index:list_aviation_mission')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListAviationMission(ListView):
     template_name = "aviation_mission/list.html"
     model = AviationMission
@@ -729,7 +893,7 @@ class CreateConfiguration(CreateView):
         return reverse('index:detail_configuration', kwargs={'pk': pk})
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailConfiguration(DetailView):
     template_name = "configuration/detail.html"
     model = Configuration
@@ -753,7 +917,7 @@ class DeleteConfiguration(DeleteView):
     success_url = reverse_lazy('index:list_configuration')
 
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
 class ListConfiguration(ListView):
     template_name = "configuration/list.html"
     model = Configuration
@@ -885,20 +1049,43 @@ def get_tactic_unit_aviation(request):
 
 
 # FlightReport Views
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: True, login_url=reverse_lazy('index:login')), name='dispatch')
 class ListFlightReport(ListView):
     template_name = "flight_report/list.html"
     model = FlightReport
     context_object_name = "flight_report_list"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        now = timezone.localtime(timezone.now())
+        context['current_date'] = now.strftime('%Y-%m-%d')
+        context['past_date'] = (now-timedelta(days=30)).strftime('%Y-%m-%d')
+        return context
 
-@method_decorator(user_passes_test(lambda u: read_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
+    def get_queryset(self):
+        user = self.request.user
+        queryset = FlightReport.objects.all()
+        profile = user.profile
+        if profile.user_type.code == 3 or profile.user_type.code == 5:
+            queryset = queryset.filter(aviation_unit=profile.tactic_unit)
+        return queryset
+
+
+@method_decorator(user_passes_test(lambda u: True, login_url=reverse_lazy('index:login')), name='dispatch')
 class DetailFlightReport(DetailView):
     template_name = "flight_report/detail.html"
     model = FlightReport
+    
+    def get_queryset(self):
+        user = self.request.user
+        queryset = FlightReport.objects.all()
+        profile = user.profile
+        if profile.user_type.code == 3 or profile.user_type.code == 5:
+            queryset = queryset.filter(aviation_unit=profile.tactic_unit)
+        return queryset
 
 
-@method_decorator(login_required(login_url=reverse_lazy('index:login')), name='dispatch')
+@method_decorator(user_passes_test(lambda u: report_permissions(u), login_url=reverse_lazy('index:login')), name='dispatch')
 class CreateFlightReport(CreateView):
     template_name = 'flight_report/create.html'
     model = FlightReport
@@ -1072,14 +1259,28 @@ def get_static(path):
         return static(path)
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def gen_pdf(request):
     ids = request.GET.get('id')
     cid = request.GET.get('cid')
+
+    start = request.GET.get('start_date',  None)
+    end = request.GET.get('end_date',  None)
+
+    basic_query = FlightReport.objects.all()
+    if start is not None and end is not None:
+        basic_query = FlightReport.objects.filter(date__range=[start, end])
+    
+    user = request.user
+    profile = user.profile
+    if profile.user_type.code == 3 or profile.user_type.code == 5:
+        basic_query = basic_query.filter(aviation_unit=profile.tactic_unit)
+
     aircraft_models = AirCraftModel.objects.all().order_by('name')
     aircraft_models_dict = {}
     for aircraft_model in aircraft_models:
-        flight_reports = FlightReport.objects.filter(
-            aircraft__air_craft_models=aircraft_model).select_related().order_by('tactic_unit')
+        flight_reports = basic_query.filter(aircraft__air_craft_models=aircraft_model).select_related().distinct(
+            'aviation_unit', 'major_operative_unit', 'agreement', 'aircraft').order_by('aircraft', 'major_operative_unit')
         if flight_reports.count() > 0:
             aircraft_models_dict[aircraft_model.name] = flight_reports
     url = get_static('images/escudo_ejercito.png')
@@ -1104,12 +1305,17 @@ def gen_pdf(request):
 # graphic elements
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def graph_bar_battalion(request):
     battalions = TacticUnit.objects.filter(is_aviation=True).order_by('name')
     fly_hours_list = []
     assigned_hours_list = []
+    user = request.user
+    profile = user.profile
     for battalion in battalions:
         battalion_query = FlightReport.objects.filter(aviation_unit=battalion)
+        if profile.user_type.code == 3 or profile.user_type.code == 5:
+            battalion_query = battalion_query.filter(aviation_unit=profile.tactic_unit)
         battalion_total_assigned = battalion_query.aggregate(
             Sum('aircraft__assigned_hours'))
         battalion_total_assigned = battalion_total_assigned.get(
@@ -1131,6 +1337,7 @@ def graph_bar_battalion(request):
     return render(request, 'graphic/graph_bar_battalion.html', {'battalions': mark_safe(json.dumps(battalions)), 'data': mark_safe(json.dumps(data))})
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def graphic_bar_month(request):
     # filter_mounth =
     now = datetime.now()
@@ -1304,10 +1511,13 @@ def graphic_bar_month(request):
     })
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def graphic_bar_years(request):
     dates = FlightReport.objects.dates('date', 'year')
     year_list = []
     data = {}
+    user = request.user
+    profile = user.profile
     for date in dates:
         year = date.year
         year_list.append(year)
@@ -1316,6 +1526,8 @@ def graphic_bar_years(request):
         for month in range(1, 13):
             month_query = FlightReport.objects.filter(date__year=year,
                                                       date__month=month)
+            if profile.user_type.code == 3 or profile.user_type.code == 5:
+                month_query = month_query.filter(aviation_unit=profile.tactic_unit) 
             month_total_assigned = month_query.aggregate(
                 Sum('aircraft__assigned_hours'))
             month_total_assigned = month_total_assigned.get(
@@ -1334,14 +1546,19 @@ def graphic_bar_years(request):
     return render(request, 'graphic/graphic_bar.html', {'years': year_list, 'data': mark_safe(json.dumps(data)), 'first_year': first_year})
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def graph_bar_aircraft_model_hours(request):
     aircraft_models = AirCraftModel.objects.all().order_by('name')
     data = {}
     assigned_hours_list = []
     fly_hours_list = []
+    user = request.user
+    profile = user.profile
     for aircraft_model in aircraft_models:
         model_query = FlightReport.objects.filter(
             aircraft__air_craft_models=aircraft_model)
+        if profile.user_type.code == 3 or profile.user_type.code == 5:
+            model_query = model_query.filter(aviation_unit=profile.tactic_unit) 
         model_total_assigned = model_query.aggregate(
             Sum('aircraft__assigned_hours'))
         model_total_assigned = model_total_assigned.get(
@@ -1356,10 +1573,36 @@ def graph_bar_aircraft_model_hours(request):
         fly_hours_list.append(model_total_fly)
     data = [{'name': 'Horas Voladas', 'data': fly_hours_list}, {
         'name': 'Horas Asignadas', 'data': assigned_hours_list}]
+    # Operationals
+    operationals = AviationMission.objects.filter(
+        mission_type__name__icontains='Misiones Tácticas de Aviación')
+    op_hours_list = []
+    for aircraft_model in aircraft_models:
+        model_query = FlightReport.objects.filter(aviation_mission__pk__in=operationals.values(
+            'pk'), aircraft__air_craft_models=aircraft_model)
+        if profile.user_type.code == 3 or profile.user_type.code == 5:
+            model_query = model_query.filter(aviation_unit=profile.tactic_unit) 
+        model_total_fly = model_query.aggregate(Sum('aircraft__fly_hours'))
+        model_total_fly = model_total_fly.get('aircraft__fly_hours__sum')
+        op_hours_list.append(model_total_fly)
+    # No Operationals
+    no_operationals = AviationMission.objects.exclude(
+        mission_type__name__icontains='Misiones Tácticas de Aviación')
+    no_op_hours_list = []
+    for aircraft_model in aircraft_models:
+        model_query = FlightReport.objects.filter(aviation_mission__pk__in=no_operationals.values(
+            'pk'), aircraft__air_craft_models=aircraft_model)
+        if profile.user_type.code == 3 or profile.user_type.code == 5:
+            model_query = model_query.filter(aviation_unit=profile.tactic_unit) 
+        model_total_fly = model_query.aggregate(Sum('aircraft__fly_hours'))
+        model_total_fly = model_total_fly.get('aircraft__fly_hours__sum')
+        no_op_hours_list.append(model_total_fly)
+    data2 = [{'name': 'Horas Voladas', 'data': fly_hours_list}, {'name': 'Horas Asignadas', 'data': assigned_hours_list}, {
+        'name': 'Horas Operacionales', 'data': op_hours_list}, {'name': 'Horas No Operacionales', 'data': no_op_hours_list}]
     # print(aircraft_models, data)
     aircraft_models = list(aircraft_models.values_list(
         'name', flat=True).distinct())
-    return render(request, 'graphic/graph_bar_aircraft_model.html', {'aircraft_models': mark_safe(json.dumps(aircraft_models)), 'data': mark_safe(json.dumps(data))})
+    return render(request, 'graphic/graph_bar_aircraft_model.html', {'aircraft_models': mark_safe(json.dumps(aircraft_models)), 'data': mark_safe(json.dumps(data)), 'data2': mark_safe(json.dumps(data2))})
 
 
 # def graph_bar_aircraft_model_operation(request):
@@ -1391,32 +1634,46 @@ def graph_bar_aircraft_model_hours(request):
 # PDF Views
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def graph_pie_operational(request):
+    user = request.user
+    profile = user.profile
     operationals = AviationMission.objects.filter(
         mission_type__name__icontains='Misiones Tácticas de Aviación')
-    total_count = FlightReport.objects.filter(
-        aviation_mission__pk__in=operationals.values('pk')).count()
+    query = FlightReport.objects.filter(aviation_mission__pk__in=operationals.values('pk'))
+    if profile.user_type.code == 3 or profile.user_type.code == 5:
+        query = query.filter(aviation_unit=profile.tactic_unit) 
+    total_count = query.count()
     percentage_results = []
     for aviation_mission in operationals:
         report_count = FlightReport.objects.filter(
             aviation_mission=aviation_mission).count()
-        percentage = (report_count * 100) / total_count
+        percentage = 0
+        if total_count != 0:
+            percentage = (report_count * 100) / total_count
         data = {'name': aviation_mission.name + ' - ' +
                 aviation_mission.abbreviation, 'y': percentage}
         percentage_results.append(data)
     return render(request, 'graphic/graphic_pie_operational.html', {'data': mark_safe(json.dumps(percentage_results))})
 
 
+@login_required(login_url=reverse_lazy('index:login'))
 def graphic_pie_no_operational(request):
+    user = request.user
+    profile = user.profile
     no_operationals = AviationMission.objects.exclude(
         mission_type__name__icontains='Misiones Tácticas de Aviación')
-    total_count = FlightReport.objects.filter(
-        aviation_mission__pk__in=no_operationals.values('pk')).count()
+    query = FlightReport.objects.filter(aviation_mission__pk__in=no_operationals.values('pk'))
+    total_count = query.count()
+    if profile.user_type.code == 3 or profile.user_type.code == 5:
+        query = query.filter(aviation_unit=profile.tactic_unit) 
     percentage_results = []
     for aviation_mission in no_operationals:
         report_count = FlightReport.objects.filter(
             aviation_mission=aviation_mission).count()
-        percentage = (report_count * 100) / total_count
+        percentage = 0
+        if total_count != 0:
+            percentage = (report_count * 100) / total_count
         data = {'name': aviation_mission.name + ' - ' +
                 aviation_mission.abbreviation, 'y': percentage}
         percentage_results.append(data)

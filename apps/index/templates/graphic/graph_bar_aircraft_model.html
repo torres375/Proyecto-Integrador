@@ -12,9 +12,6 @@
         <a href=" {% url 'index:graph_bar' %} ">
             <button type="button" class="btn btn-dark" disabled>Horas aeronaves</button>
         </a>
-        <a href="">
-            <button type="button" class="btn btn-dark">Equipo</button>
-        </a>
         <a href=" {% url 'index:graphic_pie_operational' %} ">
             <button type="button" class="btn btn-dark">Misiones operacionales</button>
         </a>
@@ -39,6 +36,7 @@
 </div>
 
 <div id="container"></div>
+<div id="container2"></div>
 <script>
 
 
@@ -81,6 +79,50 @@
             }
         },
         series: data,
+        exporting: {
+            allowHTML: false
+        }
+    });
+
+    const data2 = JSON.parse('{{data2}}');
+    // console.log(data);
+
+    var chart = Highcharts.chart('container2', {
+
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'HORAS DE AERONAVE DEL EJERCITO NACIONAL DE COLOMBIA'
+        },
+        subtitle: {
+            text: 'Comparación de horas voladas, horas asignadas, horas operacionales y no operacionales del ejercito por Equipo'
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f} hrs</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        xAxis: {
+            categories: JSON.parse('{{aircraft_models}}'),
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Horas (hrs)'
+            }
+        },
+        series: data2,
         exporting: {
             allowHTML: false
         }
