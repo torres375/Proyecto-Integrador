@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $('#datatables').DataTable({
         "pagingType": "full_numbers",
         "lengthMenu": [
@@ -16,11 +16,11 @@ $(document).ready(function() {
             lengthMenu: "Mostrando _MENU_ registros",
             processing: "Buscando...",
             zeroRecords: "No hay resultados",
-            paginate:{
-            first:"Inicio",
-            last:"Final",
-            next:"Siguiente",
-            previous:"Anterior",
+            paginate: {
+                first: "Inicio",
+                last: "Final",
+                next: "Siguiente",
+                previous: "Anterior",
             },
         }
     });
@@ -28,26 +28,38 @@ $(document).ready(function() {
     var table = $('#datatable').DataTable();
 
     // Edit record
-    table.on('click', '.edit', function() {
-    $tr = $(this).closest('tr');
-    var data = table.row($tr).data();
-    alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
+    table.on('click', '.edit', function () {
+        $tr = $(this).closest('tr');
+        var data = table.row($tr).data();
+        alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
     });
 
     // Delete a record
-    table.on('click', '.remove', function(e) {
-    $tr = $(this).closest('tr');
-    table.row($tr).remove().draw();
-    e.preventDefault();
+    table.on('click', '.remove', function (e) {
+        $tr = $(this).closest('tr');
+        table.row($tr).remove().draw();
+        e.preventDefault();
     });
 
     //Like record
-    table.on('click', '.like', function() {
-    alert('You clicked on Like button');
+    table.on('click', '.like', function () {
+        alert('You clicked on Like button');
     });
 });
 function modalDelete(obj) {
     var url = obj.getAttribute("data-link");
     $('#form_delete').attr('action', url);
     return false;
-  }
+}
+
+function modalEnable(obj) {
+    var url = obj.getAttribute("data-link");
+    $('#form_enable').attr('action', url);
+    return false;
+}
+
+function modalDisable(obj) {
+    var url = obj.getAttribute("data-link");
+    $('#form_disable').attr('action', url);
+    return false;
+}

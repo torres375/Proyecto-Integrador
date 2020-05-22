@@ -32,6 +32,56 @@
                     </tr>
                 </tbody>
             </table>
+            <h4 class="text-uppercase bottom20">tripulación</h4>
+            <table class="table table-striped table-responsive">
+                <tbody>
+                    {% if object.has_pam %}
+                    <tr>
+                        <td><b>Piloto al Mando</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_pilot %}
+                    <tr>
+                        <td><b>Piloto</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_flight_engineer %}
+                    <tr>
+                        <td><b>Ingeniero de Vuelo</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_crew_chief %}
+                    <tr>
+                        <td><b>Jefe de Tripulación</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_flight_technician %}
+                    <tr>
+                        <td><b>Técnico de Vuelo</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_gunner %}
+                    <tr>
+                        <td><b>Artillero</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_commander %}
+                    <tr>
+                        <td><b>Comandante</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_mission_operator %}
+                    <tr>
+                        <td><b>Operador de Misión</b></td>
+                    </tr>
+                    {% endif %}
+                    {% if object.has_vehicle_operator %}
+                    <tr>
+                        <td><b>Operador de Vehículo</b></td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
             <div class="row">
                 {% if can_write %}
                 <div class="create-btn-div col-sm-6" style="text-align:center">

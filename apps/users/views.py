@@ -43,7 +43,7 @@ class LoginView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
-            return redirect('index:list_aircraft')
+            return redirect('index:list_flight_report')
         return super(LoginView, self).get(request, **kwargs)
 
     def post(self, request):
@@ -51,7 +51,7 @@ class LoginView(TemplateView):
         if form.is_valid():
             user = form.login(request)
             login(request, user)
-            return redirect('index:list_aircraft')
+            return redirect('index:list_flight_report')
         return render(request, self.template_name, {'form': form })
 
 
@@ -87,18 +87,54 @@ class UserDetail(DetailView):
 @method_decorator(user_passes_test(lambda u: u.profile.user_type.code == 1, login_url=reverse_lazy('index:login')), name='dispatch')
 class UserUpdate(UpdateView):
     model = User
-    template_name = "user/user.html"
-    form_class = RegisterForm
+    template_name = "user/edit.html"
+    form_class = EditUserForm
     
     def get_success_url(self):
         pk = self.object.pk
         return reverse('users:detail', kwargs={'pk': pk})
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'EDITAR CONTRASEÑA DE USUARIO'
+        return context
+
+
+@method_decorator(user_passes_test(lambda u: u.is_authenticated, login_url=reverse_lazy('index:login')), name='dispatch')
+class ChangeMyPasswordUpdate(UpdateView):
+    model = User
+    template_name = "user/edit.html"
+    form_class = EditUserForm
+    
+    def get_object(self):
+        return self.request.user
+    
+    def get_success_url(self):
+        return reverse('index:login')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'EDITAR MI CONTRASEÑA'
+        return context
 
 
 @method_decorator(user_passes_test(lambda u: u.profile.user_type.code == 1, login_url=reverse_lazy('index:login')), name='dispatch')
 class UserDelete(DeleteView):
     model = User
     success_url = reverse_lazy('users:list')
+    
+
+@method_decorator(user_passes_test(lambda u: u.profile.user_type.code == 1, login_url=reverse_lazy('index:login')), name='dispatch')
+class UserDisable(DeleteView):
+    model = User
+    success_url = reverse_lazy('users:list')
+    
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.is_active = not self.object.is_active
+        self.object.save()
+        return HttpResponseRedirect(success_url)
 
 
 @method_decorator(user_passes_test(lambda u: u.profile.user_type.code == 1, login_url=reverse_lazy('index:login')), name='dispatch')

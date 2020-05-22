@@ -1,0 +1,148 @@
+{% extends 'layouts/dashboard/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="col-md-12">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">&#xE905;</i>
+                </div>
+                <div class="card-text">
+                    <h4 class="card-title">{{title}}</h4>
+                </div>
+            </div>
+            <div class="card-body ">
+                {% if form.non_field_errors %}
+                <ul class="errorlist">
+                    {% for error in form.non_field_errors %}
+                    <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Nombre de Usuario</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" id="id_username"
+                                value="{{object.username}}" placeholder="" readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Contraseña</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password1" id="id_password1"
+                                {% if form.password1.value %} value="{{form.password1.value}}" {% endif %}
+                                placeholder="" required>
+                            {% if form.password1.help_text %}
+                            <p class="help">{{ form.password1.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.password1.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.password1.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Confirmar Contraseña</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password2" id="id_password2"
+                                {% if form.password2.value %} value="{{form.password2.value}}" {% endif %}
+                                placeholder="" required>
+                            {% if form.password2.help_text %}
+                            <p class="help">{{ form.password2.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.password2.erros %}
+                            <ul class="errorlist">
+                                {% for error in form.password2.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer ml-auto mr-auto">
+                            <button type="submit" class="btn btn-rose">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+</form>
+</div>
+</div>
+
+{% endblock content %}
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#id_major_operative_unit").on("change", getMinorOperativeUnits);
+        $("#id_minor_operative_unit").on("change", getTactic);
+    });
+
+    function getMinorOperativeUnits() {
+        var major_operative_unitId = $("#id_major_operative_unit").val();
+        $("#id_tactic_unit").html("<option value='' selected='selected'>---------</option>");
+        $("#id_tactic_unit").selectpicker("refresh");
+        if (major_operative_unitId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_minor_operative_unit").html("");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_minor_operative_units' %}",
+                data: {
+                    "id_major_operative_unit": major_operative_unitId,
+                },
+            });
+            request.done(function (response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_minor_operative_unit").html(response.minor_operative_units);
+                $("#id_minor_operative_unit").selectpicker("refresh");
+            });
+        } else {
+            $("#id_minor_operative_unit").html("<option value='' selected='selected'>---------</option>");
+            $("#id_minor_operative_unit").selectpicker("refresh");
+        }
+    }
+
+    function getTactic() {
+        var minor_operative_unitId = $("#id_minor_operative_unit").val();
+        if (minor_operative_unitId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_tactic_unit").html("");
+            $("#id_tactic_unit").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_get_aviation_tactic_units' %}",
+                data: {
+                    "id_minor_operative_unit": minor_operative_unitId,
+                },
+            });
+            request.done(function (response) {
+                console.log(response);
+                // Agregamos los resultados al select
+                $("#id_tactic_unit").html(response.tactic_units);
+                $("#id_tactic_unit").selectpicker("refresh");
+            });
+        } else {
+            $("#id_tactic_unit").html("<option value='' selected='selected'>---------</option>");
+            $("#id_tactic_unit").selectpicker("refresh");
+        }
+    }
+
+</script>
+{% endblock js %}

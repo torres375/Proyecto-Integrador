@@ -611,7 +611,7 @@ class ExcelHoursAircraft(TemplateView):
             if column_letter not in column_widths:
                 column_widths[column_letter] = 0
             if len(str(column_title)) >= column_widths[column_letter]:
-                column_widths[column_letter] = len(str(column_title)) + 1
+                column_widths[column_letter] = len(str(column_title)) + 5
             # Second columns
             cell = ws.cell(row=cont+1, column=col_num)
             cell.value = second_columns[col_num-1]
@@ -624,7 +624,7 @@ class ExcelHoursAircraft(TemplateView):
                 column_widths[column_letter] = 0
             if len(str(second_columns[col_num-1])) >= column_widths[column_letter]:
                 column_widths[column_letter] = len(
-                    str(second_columns[col_num-1])) + 1
+                    str(second_columns[col_num-1])) + 5
         cont += 1
         # ws.merge_cells(start_row=1, start_column=1, end_row=2, end_column=1)
         # ws.merge_cells(start_row=1, start_column=2, end_row=2, end_column=2)
@@ -684,7 +684,7 @@ class ExcelHoursAircraft(TemplateView):
             if column_letter not in column_widths:
                 column_widths[column_letter] = 0
             if len(str(column_title)) >= column_widths[column_letter]:
-                column_widths[column_letter] = len(str(column_title)) + 1
+                column_widths[column_letter] = len(str(column_title)) + 5
 
         ws.merge_cells(start_row=cont, start_column=1,
                        end_row=cont, end_column=2)
@@ -778,7 +778,7 @@ class ExcelHoursAircraft(TemplateView):
             if column_letter not in column_widths:
                 column_widths[column_letter] = 0
             if len(str(column_title)) >= column_widths[column_letter]:
-                column_widths[column_letter] = len(str(column_title)) + 1
+                column_widths[column_letter] = len(str(column_title)) + 5
 
         value_first_column = 0
         cell = ws.cell(row=cont, column=3)
@@ -817,7 +817,7 @@ class ExcelHoursAircraft(TemplateView):
             if column_letter not in column_widths:
                 column_widths[column_letter] = 0
             if len(str(column_title)) >= column_widths[column_letter]:
-                column_widths[column_letter] = len(str(column_title)) + 1
+                column_widths[column_letter] = len(str(column_title)) + 5
 
         for idx_merge in range(2):
             cont_merge = current_cont + idx_merge
@@ -860,7 +860,7 @@ class ExcelHoursAircraft(TemplateView):
             if column_letter not in column_widths:
                 column_widths[column_letter] = 0
             if len(str(column_title)) >= column_widths[column_letter]:
-                column_widths[column_letter] = len(str(column_title)) + 1
+                column_widths[column_letter] = len(str(column_title)) + 5
 
         for state_idx in range(len(aircraft_states)):
             cell = ws.cell(row=cont, column=state_idx+3)
@@ -920,7 +920,19 @@ class ExcelHoursAircraft(TemplateView):
                 if column_letter not in column_widths:
                     column_widths[column_letter] = 0
                 if len(str(column_title)) >= column_widths[column_letter]:
-                    column_widths[column_letter] = len(str(column_title)) + 1
+                    column_widths[column_letter] = len(str(column_title)) + 5
+        
+        cont += 1
+        cell = ws.cell(row=cont, column=2)
+        cell.value = '% ALISTAMIENTO'
+        cell.border = border_bottom
+
+        cell = ws.cell(row=cont, column=3)
+        cell.value = (total_states[-1] / total_states[0]) / 100
+        cell.number_format = '0.00%'
+        cell.border = border_bottom
+        
+        ws.merge_cells(start_row=cont, start_column=3, end_row=cont, end_column=8)
 
         # TABLE 4
         cont = table_4_cont - 1
@@ -964,8 +976,8 @@ class ExcelHoursAircraft(TemplateView):
                 column_letter = get_column_letter(col_num)
                 if column_letter not in column_widths:
                     column_widths[column_letter] = 0
-                if len(str(column_title)) >= column_widths[column_letter]:
-                    column_widths[column_letter] = len(str(column_title)) + 1
+                if len(str(column_title)) + 5 >= column_widths[column_letter]:
+                    column_widths[column_letter] = len(str(column_title)) + 5
         
         
         # TABLE 5
@@ -996,9 +1008,14 @@ class ExcelHoursAircraft(TemplateView):
                 if column_letter not in column_widths:
                     column_widths[column_letter] = 0
                 if len(str(column_title['content'])) >= column_widths[column_letter]:
-                    column_widths[column_letter] = len(str(column_title['content'])) + 1
+                    column_widths[column_letter] = len(str(column_title['content'])) + 5
         
         ws.merge_cells(start_row=table_4_cont, start_column=16, end_row=table_4_cont, end_column=17)
+        
+        # for col_num, column_title in enumerate(second_columns, 1):
+        #     column_letter = get_column_letter(col_num)
+        #     column_dimensions = ws.column_dimensions[column_letter]
+        #     column_dimensions.width = column_widths[column_letter]
 
         filename = "ReporteDeUnidadesExcel.xlsx"
         response = HttpResponse(content_type="application/ms-excel")

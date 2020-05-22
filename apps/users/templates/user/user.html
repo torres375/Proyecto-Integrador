@@ -183,7 +183,7 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <select class="selectpicker" data-style="select-with-transition" name="minor_operative_unit"
-                                id="id_minor_operative_unit" required>
+                                id="id_minor_operative_unit">
                                 {% for x,y in form.fields.minor_operative_unit.choices %}
                                 <option value="{{ x }}" {% if form.minor_operative_unit.value == x %}
                                     selected{% endif %}>
@@ -205,11 +205,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <label class="col-sm-2 col-form-label">Unidad tactica</label>
+                    <label class="col-sm-2 col-form-label">Unidad táctica</label>
                     <div class="col-sm-7">
                         <div class="form-group">
                             <select class="selectpicker" data-style="select-with-transition" name="tactic_unit"
-                                id="id_tactic_unit" required>
+                                id="id_tactic_unit">
                                 {% for x,y in form.fields.tactic_unit.choices %}
                                 <option value="{{ x }}" {% if form.tactic_unit.value == x %} selected{% endif %}>
                                     {{ y }}

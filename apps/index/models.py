@@ -43,9 +43,25 @@ class AirCraftModel(models.Model):
     has_commander = models.BooleanField(default=False)
     has_mission_operator = models.BooleanField(default=False)
     has_vehicle_operator = models.BooleanField(default=False)
-    
+
     def function(self, value):
         return value
+
+    def get_choices_charge(self):
+        charge_choices = {'PAM': {'name': 'Piloto al Mando', 'value': self.has_pam},
+                          'P': {'name': 'Piloto', 'value': self.has_pilot},
+                          'IV': {'name': 'Ingeniero de vuelo', 'value': self.has_flight_engineer},
+                          'JT': {'name': 'Jefe de Tripulacion', 'value': self.has_crew_chief},
+                          'TV': {'name': 'Tecnico de vuelo', 'value': self.has_flight_technician},
+                          'ART': {'name': 'Artillero', 'value': self.has_gunner},
+                          'CMA': {'name': 'Comandante de misión aérea', 'value': self.has_commander},
+                          'OMI': {'name': 'Operador de Mision', 'value': self.has_mission_operator},
+                          'OVE': {'name': 'Operador de vehiculo', 'value': self.has_vehicle_operator}}
+        current_charge_choices = {}
+        for charge in charge_choices:
+            if charge_choices[charge]['value']:
+                current_charge_choices[charge] = charge_choices[charge]['name']
+        return current_charge_choices
 
     def __str__(self):
         return self.name
@@ -184,11 +200,25 @@ class UserProfile(models.Model):
         Rank, on_delete=models.CASCADE, related_name="rank_users")
     user_type = models.ForeignKey(
         UserType, on_delete=models.CASCADE, related_name="user_type_users")
+    major_operative_unit = models.ForeignKey(
+        MajorOperativeUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="major_operative_unit_users")
+    minor_operative_unit = models.ForeignKey(
+        MinorOperativeUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="minor_operative_unit_users")
     tactic_unit = models.ForeignKey(
-        TacticUnit, on_delete=models.CASCADE, related_name="tactic_unit_users")
+        TacticUnit, on_delete=models.CASCADE, null=True, blank=True, related_name="tactic_unit_users")
 
     def __str__(self):
         return self.user.username
+    
+    def get_unit(self):
+        if self.tactic_unit is not None:
+            return self.tactic_unit
+        if self.minor_operative_unit is not None:
+            return self.minor_operative_unit
+        if self.major_operative_unit is not None:
+            return self.major_operative_unit
+    
+    unit = property(get_unit)
 
 
 class Crew(models.Model):

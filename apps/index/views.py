@@ -59,12 +59,12 @@ def get_municipalities(request):
 class CreateAircraft (CreateView):
     template_name = 'aircraft/form.html'
     model = AirCraft
-    form = AirCraftForm
-    fields = "__all__"
+    form_class = AirCraftForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'].fields['municipality'].queryset = Municipality.objects.none()
+        context['form'].fields['air_craft_models'].queryset = AirCraftModel.objects.none()
         context['departments'] = Department.objects.all()
         return context
 
@@ -84,8 +84,7 @@ class DetailAircraft(DetailView):
 class UpdateAircraft(UpdateView):
     template_name = "aircraft/form.html"
     model = AirCraft
-    form = AirCraftForm
-    fields = "__all__"
+    form_class = AirCraftForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -113,12 +112,20 @@ class DeleteAircraft (DeleteView):
 class CreateCrew(CreateView):
     template_name = 'crew/create.html'
     model = Crew
-    form = CrewForm
-    fields = '__all__'
+    form_class = CrewForm
 
     def get_success_url(self):
         pk = self.object.pk
         return reverse('index:detail_crew', kwargs={'pk': pk})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # instance = self.get_object()
+        STATUS_CHOICES = (
+        )
+        context['form'].fields['flight_charge'].choices = STATUS_CHOICES
+        context['form'].fields['air_craft_models'].queryset = AirCraftModel.objects.none()
+        return context
 
 
 @method_decorator(user_passes_test(lambda u: read_permissions(u, True), login_url=reverse_lazy('index:login')), name='dispatch')
@@ -132,8 +139,7 @@ class DetailCrew(DetailView):
 class UpdateCrew(UpdateView):
     template_name = "crew/create.html"
     model = Crew
-    form = CrewForm
-    fields = '__all__'
+    form_class = CrewForm
 
     def get_success_url(self):
         pk = self.object.pk
@@ -926,6 +932,24 @@ class ListConfiguration(ListView):
 
 
 # Javi
+def get_charges(request):
+    id_aircraft_model = request.GET.get('id_aircraft_model')
+    options = '<option value="" selected="selected">---------</option>'
+    aircraft_model = None
+    if id_aircraft_model:
+        aircraft_model = get_one_or_none(AirCraftModel, pk=id_aircraft_model)
+    if aircraft_model is not None:
+        choices_charge = aircraft_model.get_choices_charge()
+        for value, option in choices_charge.items():
+            options += '<option value="%s">%s</option>' % (
+                value,
+                option
+            )
+    response = {}
+    response['charges'] = options
+    return JsonResponse(response)
+
+
 def get_aircraft_models(request):
     id_aircraft_type = request.GET.get('id_aircraft_type')
     aircraft_models = AirCraftModel.objects.none()
@@ -1075,7 +1099,7 @@ class ListFlightReport(ListView):
 class DetailFlightReport(DetailView):
     template_name = "flight_report/detail.html"
     model = FlightReport
-    
+
     def get_queryset(self):
         user = self.request.user
         queryset = FlightReport.objects.all()
@@ -1108,8 +1132,14 @@ class CreateFlightReport(CreateView):
         if profile.user_type.code == 1 or profile.user_type.code == 4:
             context['aviation_units'] = TacticUnit.objects.filter(
                 is_aviation=True)
-        else:
+        elif self.request.user.profile.tactic_unit is not None:
             context['aviation_unit'] = self.request.user.profile.tactic_unit
+        elif self.request.user.profile.minor_operative_unit is not None:
+            context['aviation_units'] = TacticUnit.objects.filter(
+                is_aviation=True, minor_operative_unit=self.request.user.profile.minor_operative_unit)
+        else:
+            context['aviation_units'] = TacticUnit.objects.filter(
+                is_aviation=True, minor_operative_unit__major_operative_unit=self.request.user.profile.major_operative_unit)
         return context
 
     def post(self, request, *args, **kwargs):
@@ -1220,26 +1250,33 @@ class CrewFormView(TemplateView):
         context = super().get_context_data(**kwargs)
         aircraft_id = self.request.GET.get('aircraft_id')
         aircraft = get_object_or_404(AirCraft, pk=aircraft_id)
+        air_craft_type = aircraft.air_craft_type
         aircraft_model = aircraft.air_craft_models
         context['aircraft_model'] = aircraft_model
+        basic_query_crew = Crew.objects.filter(air_craft_type=air_craft_type)
         if aircraft_model.has_pam:
-            context['pam_crew'] = Crew.objects.filter(flight_charge=Crew.PAM)
+            context['pam_crew'] = basic_query_crew.filter(
+                flight_charge=Crew.PAM)
         if aircraft_model.has_pilot:
-            context['p_crew'] = Crew.objects.filter(flight_charge=Crew.PI)
+            context['p_crew'] = basic_query_crew.filter(flight_charge=Crew.PI)
         if aircraft_model.has_flight_engineer:
-            context['iv_crew'] = Crew.objects.filter(flight_charge=Crew.IV)
+            context['iv_crew'] = basic_query_crew.filter(flight_charge=Crew.IV)
         if aircraft_model.has_crew_chief:
-            context['jt_crew'] = Crew.objects.filter(flight_charge=Crew.JT)
+            context['jt_crew'] = basic_query_crew.filter(flight_charge=Crew.JT)
         if aircraft_model.has_flight_technician:
-            context['tv_crew'] = Crew.objects.filter(flight_charge=Crew.TV)
+            context['tv_crew'] = basic_query_crew.filter(flight_charge=Crew.TV)
         if aircraft_model.has_gunner:
-            context['art_crew'] = Crew.objects.filter(flight_charge=Crew.ART)
+            context['art_crew'] = basic_query_crew.filter(
+                flight_charge=Crew.ART)
         if aircraft_model.has_commander:
-            context['cma_crew'] = Crew.objects.filter(flight_charge=Crew.CMA)
+            context['cma_crew'] = basic_query_crew.filter(
+                flight_charge=Crew.CMA)
         if aircraft_model.has_mission_operator:
-            context['omi_crew'] = Crew.objects.filter(flight_charge=Crew.OMI)
+            context['omi_crew'] = basic_query_crew.filter(
+                flight_charge=Crew.OMI)
         if aircraft_model.has_vehicle_operator:
-            context['ove_crew'] = Crew.objects.filter(flight_charge=Crew.OVE)
+            context['ove_crew'] = basic_query_crew.filter(
+                flight_charge=Crew.OVE)
         return context
 # FlightReport Views
 
@@ -1270,7 +1307,7 @@ def gen_pdf(request):
     basic_query = FlightReport.objects.all()
     if start is not None and end is not None:
         basic_query = FlightReport.objects.filter(date__range=[start, end])
-    
+
     user = request.user
     profile = user.profile
     if profile.user_type.code == 3 or profile.user_type.code == 5:
@@ -1315,7 +1352,8 @@ def graph_bar_battalion(request):
     for battalion in battalions:
         battalion_query = FlightReport.objects.filter(aviation_unit=battalion)
         if profile.user_type.code == 3 or profile.user_type.code == 5:
-            battalion_query = battalion_query.filter(aviation_unit=profile.tactic_unit)
+            battalion_query = battalion_query.filter(
+                aviation_unit=profile.tactic_unit)
         battalion_total_assigned = battalion_query.aggregate(
             Sum('aircraft__assigned_hours'))
         battalion_total_assigned = battalion_total_assigned.get(
@@ -1527,7 +1565,8 @@ def graphic_bar_years(request):
             month_query = FlightReport.objects.filter(date__year=year,
                                                       date__month=month)
             if profile.user_type.code == 3 or profile.user_type.code == 5:
-                month_query = month_query.filter(aviation_unit=profile.tactic_unit) 
+                month_query = month_query.filter(
+                    aviation_unit=profile.tactic_unit)
             month_total_assigned = month_query.aggregate(
                 Sum('aircraft__assigned_hours'))
             month_total_assigned = month_total_assigned.get(
@@ -1558,7 +1597,7 @@ def graph_bar_aircraft_model_hours(request):
         model_query = FlightReport.objects.filter(
             aircraft__air_craft_models=aircraft_model)
         if profile.user_type.code == 3 or profile.user_type.code == 5:
-            model_query = model_query.filter(aviation_unit=profile.tactic_unit) 
+            model_query = model_query.filter(aviation_unit=profile.tactic_unit)
         model_total_assigned = model_query.aggregate(
             Sum('aircraft__assigned_hours'))
         model_total_assigned = model_total_assigned.get(
@@ -1581,7 +1620,7 @@ def graph_bar_aircraft_model_hours(request):
         model_query = FlightReport.objects.filter(aviation_mission__pk__in=operationals.values(
             'pk'), aircraft__air_craft_models=aircraft_model)
         if profile.user_type.code == 3 or profile.user_type.code == 5:
-            model_query = model_query.filter(aviation_unit=profile.tactic_unit) 
+            model_query = model_query.filter(aviation_unit=profile.tactic_unit)
         model_total_fly = model_query.aggregate(Sum('aircraft__fly_hours'))
         model_total_fly = model_total_fly.get('aircraft__fly_hours__sum')
         op_hours_list.append(model_total_fly)
@@ -1593,7 +1632,7 @@ def graph_bar_aircraft_model_hours(request):
         model_query = FlightReport.objects.filter(aviation_mission__pk__in=no_operationals.values(
             'pk'), aircraft__air_craft_models=aircraft_model)
         if profile.user_type.code == 3 or profile.user_type.code == 5:
-            model_query = model_query.filter(aviation_unit=profile.tactic_unit) 
+            model_query = model_query.filter(aviation_unit=profile.tactic_unit)
         model_total_fly = model_query.aggregate(Sum('aircraft__fly_hours'))
         model_total_fly = model_total_fly.get('aircraft__fly_hours__sum')
         no_op_hours_list.append(model_total_fly)
@@ -1640,9 +1679,10 @@ def graph_pie_operational(request):
     profile = user.profile
     operationals = AviationMission.objects.filter(
         mission_type__name__icontains='Misiones Tácticas de Aviación')
-    query = FlightReport.objects.filter(aviation_mission__pk__in=operationals.values('pk'))
+    query = FlightReport.objects.filter(
+        aviation_mission__pk__in=operationals.values('pk'))
     if profile.user_type.code == 3 or profile.user_type.code == 5:
-        query = query.filter(aviation_unit=profile.tactic_unit) 
+        query = query.filter(aviation_unit=profile.tactic_unit)
     total_count = query.count()
     percentage_results = []
     for aviation_mission in operationals:
@@ -1663,10 +1703,11 @@ def graphic_pie_no_operational(request):
     profile = user.profile
     no_operationals = AviationMission.objects.exclude(
         mission_type__name__icontains='Misiones Tácticas de Aviación')
-    query = FlightReport.objects.filter(aviation_mission__pk__in=no_operationals.values('pk'))
+    query = FlightReport.objects.filter(
+        aviation_mission__pk__in=no_operationals.values('pk'))
     total_count = query.count()
     if profile.user_type.code == 3 or profile.user_type.code == 5:
-        query = query.filter(aviation_unit=profile.tactic_unit) 
+        query = query.filter(aviation_unit=profile.tactic_unit)
     percentage_results = []
     for aviation_mission in no_operationals:
         report_count = FlightReport.objects.filter(

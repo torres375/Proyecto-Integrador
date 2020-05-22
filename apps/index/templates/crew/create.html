@@ -3,168 +3,232 @@
 
 {% block content %}
 
-    <div class="col-md-12">
-        <form method="post"enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="card">
-                <div class="card-header card-header-rose card-header-icon">
-                    <div class="card-icon">
-                        <i class="material-icons">storage</i>
-                    </div>
-                    <div class="card-text">
-                        <h4 class="card-title">REGISTRAR TRIPULANTE</h4>
-                        {% if form.non_field_errors %}
+<div class="col-md-12">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-header card-header-rose card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">storage</i>
+                </div>
+                <div class="card-text">
+                    <h4 class="card-title">REGISTRAR TRIPULANTE</h4>
+                    {% if form.non_field_errors %}
                     <ul class="errorlist">
                         {% for error in form.non_field_errors %}
-                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
                         {% endfor %}
                     </ul>
-                {% endif %}
-                    </div>
-                </div>  
-                <div class="card-body ">
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Nombre</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                                <input class="text-capitalize" type="text" class="form-control" name="name" id="id_name" {% if form.name.value %} value="{{form.name.value}}" {% endif %} placeholder="" required>
-                                {% if form.name.help_text %}
-                                <p class="help">{{ form.name.help_text|safe }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="card-body ">
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input class="text-capitalize" type="text" class="form-control" name="name" id="id_name"
+                                {% if form.name.value %} value="{{form.name.value}}" {% endif %} placeholder=""
+                                required>
+                            {% if form.name.help_text %}
+                            <p class="help">{{ form.name.help_text|safe }}</p>
                             {% endif %}
                             {% if form.name.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.name.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Rango</label>
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <select class="form-control" name="rank" id="id_rank" required>
+                                {% for x,y in form.fields.rank.choices %}
+                                <option value="{{ x }}" {% if form.rank.value == x %} selected{% endif %}>
+                                    {{ y }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.rank.help_text %}
+                            <p class="help">{{ form.rank.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.rank.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.rank.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Tipo</label>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" title="Elegir Tipo"
+                                data-size="7" name="air_craft_type" id="id_air_craft_type" required>
+                                {% for x,y in form.fields.air_craft_type.choices %}
+                                <option value="{{ x }}" {% if form.air_craft_type.value == x %} selected{% endif %}>
+                                    {{ y }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.air_craft_type.help_text %}
+                            <p class="help">{{ form.air_craft_type.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.air_craft_type.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.air_craft_type.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <label class="col-sm-2 col-form-label">Modelo</label>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" title="Elegir Modelo"
+                                data-size="7" name="air_craft_models" id="id_air_craft_models" required>
+                                {% for x,y in form.fields.air_craft_models.choices %}
+                                <option value="{{ x }}" {% if form.air_craft_models.value == x %} selected{% endif %}>
+                                    {{ y }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.air_craft_models.help_text %}
+                            <p class="help">{{ form.air_craft_models.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.air_craft_models.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.air_craft_models.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Cargo de vuelo</label>
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <select class="selectpicker" data-style="select-with-transition" title="Elegir Cargo de vuelo"
+                                data-size="7" name="flight_charge" id="id_flight_charge" required>
+                                {% for x,y in form.fields.flight_charge.choices %}
+                                <option value="{{ x }}" {% if form.flight_charge.value == x %} selected{% endif %}>
+                                    {{ y }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.flight_charge.help_text %}
+                            <p class="help">{{ form.flight_charge.help_text|safe }}</p>
+                            {% endif %}
+                            {% if form.flight_charge.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.flight_charge.errors %}
+                                <li><strong class="text-danger">{{ error|escape }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <label class="col-sm-2 col-form-label">¿Está activo?</label>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" name="status" id="id_status" type="checkbox"
+                                    {% if form.status.value %} checked {% endif %}>
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                                {% if form.status.help_text %}
+                                <p class="help">{{ form.status.help_text|safe }}</p>
+                                {% endif %}
+                                {% if form.status.errors %}
                                 <ul class="errorlist">
-                                    {% for error in form.name.errors %}
+                                    {% for error in form.status.errors %}
                                     <li><strong class="text-danger">{{ error|escape }}</strong></li>
                                     {% endfor %}
                                 </ul>
-                            {% endif %}
-                            </div>
+                                {% endif %}
+                            </label>
                         </div>
                     </div>
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Rango</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                                <select class="form-control" name="rank" id="id_rank" required>
-                                    {% for x,y in form.fields.rank.choices %}
-                                    <option value="{{ x }}"{% if form.rank.value == x %} selected{% endif %} >
-                                    {{ y }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.rank.help_text %}
-                                    <p class="help">{{ form.rank.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.rank.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.rank.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">¿Está activo?</label>
-                        <div class="col-sm-10">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" name="status" id="id_status" type="checkbox"
-                                        {% if form.status.value %} checked {% endif %}>
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                    {% if form.status.help_text %}
-                                    <p class="help">{{ form.status.help_text|safe }}</p>
-                                    {% endif %}
-                                    {% if form.status.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.status.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endif %}
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Modelo</label>
-                        <div class="col-sm-7">
-                            <div class="form-group">
-                                <select class="form-control" name="air_craft_models" id="id_air_craft_models" required>
-                                    {% for x,y in form.fields.air_craft_models.choices %}
-                                    <option value="{{ x }}"{% if form.air_craft_models.value == x %} selected{% endif %} >
-                                    {{ y }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.air_craft_models.help_text %}
-                                    <p class="help">{{ form.air_craft_models.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.air_craft_models.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.air_craft_models.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div> <br>  <br>
-                    <div class="row">
-                        <label class="col-sm-2 col-form-label">Cargo de vuelo</label>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Estado" data-size="7" name="flight_charge" id="id_flight_charge" required>
-                                    {% for x,y in form.fields.flight_charge.choices %}
-                                        <option value="{{ x }}" {% if form.flight_charge.value == x %} selected{% endif %} >
-                                            {{ y }}
-                                        </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.flight_charge.help_text %}
-                                    <p class="help">{{ form.flight_charge.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.flight_charge.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.flight_charge.errors %}
-                                            <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                        </div>    
-                        <label class="col-sm-2 col-form-label">Tipo</label>
-                        <div class="col-sm-3">
-                            <div class="form-group">
-                                <select class="selectpicker" data-style="select-with-transition" title="Elegir Tipo" data-size="7" name="air_craft_type" id="id_air_craft_type" required>
-                                    {% for x,y in form.fields.air_craft_type.choices %}
-                                    <option value="{{ x }}" {% if form.air_craft_type.value == x %} selected{% endif %}>
-                                        {{ y }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                                {% if form.air_craft_type.help_text %}
-                                    <p class="help">{{ form.air_craft_type.help_text|safe }}</p>
-                                {% endif %}
-                                {% if form.air_craft_type.errors %}
-                                    <ul class="errorlist">
-                                        {% for error in form.air_craft_type.errors %}
-                                        <li><strong class="text-danger">{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-                <div class="card-footer ml-auto mr-auto">
-                    <button type="submit" class="btn btn-rose">Guardar</button>
                 </div>
             </div>
-        </form>
-    </div>
-</div>    
+            <div class="card-footer ml-auto mr-auto">
+                <button type="submit" class="btn btn-rose">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
 {% endblock content %}
+
+
+{% block js %}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#id_air_craft_type").on("change", getAircraftModels);
+        $("#id_air_craft_models").on("change", getCharges);
+    });
+
+    function getAircraftModels() {
+        var aircraftTypeId = $("#id_air_craft_type").val();
+        if (aircraftTypeId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_air_craft_models").html("");
+            $("#id_air_craft_models").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_aircraft_models' %}",
+                data: {
+                    "id_aircraft_type": aircraftTypeId,
+                },
+            });
+            request.done(function (response) {
+                // console.log(response);
+                // Agregamos los resultados al select
+                $("#id_air_craft_models").html(response.aircraft_models);
+                $("#id_air_craft_models").selectpicker("refresh");
+            });
+        } else {
+            $("#id_air_craft_models").html("<option value='' selected='selected'>---------</option>");
+            $("#id_air_craft_models").selectpicker("refresh");
+        }
+    }
+
+    function getCharges() {
+        var aircraftModelId= $("#id_air_craft_models").val();
+        if (aircraftModelId) {
+            // Eliminamos las opciones anteriores del select
+            $("#id_flight_charge").html("");
+            $("#id_flight_charge").selectpicker("refresh");
+            var request = $.ajax({
+                type: "GET",
+                url: "{% url 'index:ajax_charges' %}",
+                data: {
+                    "id_aircraft_model": aircraftModelId,
+                },
+            });
+            request.done(function (response) {
+                // console.log(response);
+                // Agregamos los resultados al select
+                $("#id_flight_charge").html(response.charges);
+                $("#id_flight_charge").selectpicker("refresh");
+            });
+        } else {
+            $("#id_flight_charge").html("<option value='' selected='selected'>---------</option>");
+            $("#id_flight_charge").selectpicker("refresh");
+        }
+    }
+
+</script>
+{% endblock js %}

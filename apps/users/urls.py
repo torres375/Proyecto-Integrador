@@ -11,5 +11,7 @@ urlpatterns = [
     path('detail/<int:pk>/', UserDetail.as_view(), name="detail"),
     path('update/<int:pk>/', UserUpdate.as_view(), name="update"), 
     path('delete/<int:pk>/', UserDelete.as_view(), name="delete"),
+    path('disable_enable/<int:pk>/', UserDisable.as_view(), name="disable_enable"),
     path('list/', UserList.as_view(), name="list"),
+    path('change_password/', ChangeMyPasswordUpdate.as_view(), name="change_password"),
 ]

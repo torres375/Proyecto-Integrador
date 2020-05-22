@@ -20,6 +20,7 @@ urlpatterns = [
     path('aircraft/delete/<int:pk>/', views.DeleteAircraft.as_view(), name='delete_aircraft'),
     path('ajax/get_municipalities/', views.get_municipalities, name='ajax_municipalities'),
     path('ajax/get_aircraft_models/', views.get_aircraft_models, name='ajax_aircraft_models'),
+    path('ajax/get_charges/', views.get_charges, name='ajax_charges'),
     path('ajax/get_aircrafts/', views.get_aircrafts, name='ajax_aircrafts'),
     path('ajax/get_aviation_missions/', views.get_aviation_missions, name='ajax_aviation_missions'),
     path('ajax/get_operations/', views.get_operations, name='ajax_operations'),
